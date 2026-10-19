@@ -16,6 +16,14 @@
   <script>
     tailwind.config = {
       theme: {
+        screens: {
+          xs: '420px',
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1280px',
+          '2xl': '1536px'
+        },
         extend: {
           colors: {
             forest: {
@@ -60,6 +68,15 @@
   </script>
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    section[id] {
+      scroll-margin-top: 96px;
+    }
+    input[type="date"] {
+      color-scheme: dark;
+    }
     html, body {
       overflow-x: clip;
       font-family: 'Outfit', sans-serif;
@@ -208,6 +225,7 @@
       background-color: #04140E !important;
       background: #04140E !important;
       border-top: 1px solid rgba(212, 163, 70, 0.3) !important;
+      padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px)) !important;
     }
   </style>
 </head>
@@ -215,13 +233,13 @@
 
   <!-- ================= 01. REGAL TOP STATUS & UTILITY BAR (WELL-MANNERED SINGLE-LINE) ================= -->
   <aside aria-label="Announcement & Status Bar" class="top-announcement-bar bg-forest-950 text-white text-[11px] sticky top-0 z-50 overflow-hidden" style="background-color: #04140E;">
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 h-9 flex items-center justify-between gap-4 text-xs">
+    <div class="max-w-[1400px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10 h-8 sm:h-9 flex items-center justify-between gap-2 text-xs">
       
-      <!-- Left: Location & Real-time Weather (Strict Single-Line) -->
-      <div class="flex items-center gap-2.5 shrink-0 whitespace-nowrap">
+      <!-- Left: Location & Real-time Weather -->
+      <div class="flex items-center gap-2 shrink-0 whitespace-nowrap">
         <div class="flex items-center gap-1.5 text-gold-300">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-          <span class="font-cinzel text-[10px] font-bold tracking-wider uppercase">Mohan Chatti, Rishikesh</span>
+          <span class="font-cinzel text-[9px] sm:text-[10px] font-bold tracking-wider uppercase">Mohan Chatti, Rishikesh</span>
         </div>
         <span class="text-forest-700 hidden sm:inline">•</span>
         <div class="hidden sm:flex items-center gap-1.5 text-silk-300 text-[10.5px]">
@@ -231,7 +249,7 @@
         </div>
       </div>
 
-      <!-- Center: Broadcast Value Guarantee (Never Ellipsized) -->
+      <!-- Center: Broadcast Value Guarantee (Desktop) -->
       <div class="hidden md:flex items-center justify-center gap-2 text-center whitespace-nowrap px-2">
         <span class="text-gold-400 text-xs">✦</span>
         <span class="font-cinzel text-[10px] tracking-[0.16em] text-gold-200 font-bold uppercase">
@@ -240,19 +258,19 @@
         <span class="text-gold-400 text-xs">✦</span>
       </div>
 
-      <!-- Right: Nature Ambience Toggle & Direct Phone (Single-Line) -->
-      <div class="flex items-center gap-3 shrink-0 whitespace-nowrap">
+      <!-- Right: Ambience Audio Toggle & Direct Phone -->
+      <div class="flex items-center gap-2 shrink-0 whitespace-nowrap">
         
-        <!-- Mountain River Audio Ambience Toggle -->
-        <button id="natureSoundBtn" onclick="toggleNatureAmbience()" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-forest-900/80 border border-gold-500/30 text-gold-300 hover:text-white text-[10px] font-bold transition-all shadow-sm active:scale-95 cursor-pointer">
+        <!-- Ambience Toggle (hidden on mobile) -->
+        <button id="natureSoundBtn" onclick="toggleNatureAmbience()" class="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-forest-900/80 border border-gold-500/30 text-gold-300 hover:text-white text-[9.5px] font-bold transition-all active:scale-95 cursor-pointer">
           <span id="soundIcon">🔇</span>
-          <span id="soundLabel" class="hidden xs:inline">River Ambience</span>
+          <span id="soundLabel">River Ambience</span>
         </button>
 
-        <span class="text-forest-700 hidden xs:inline">|</span>
+        <span class="text-forest-700 hidden sm:inline">|</span>
 
         <!-- Direct Phone -->
-        <a href="tel:+918511129570" class="hover:text-gold-300 text-silk-200 transition-colors flex items-center gap-1.5 font-bold tracking-wide text-[11px]">
+        <a href="tel:+918511129570" class="hover:text-gold-300 text-silk-200 transition-colors flex items-center gap-1 font-bold tracking-wide text-[10px] sm:text-[11px]">
           <span class="text-gold-400">📞</span>
           <span class="font-cinzel">+91 85111 29570</span>
         </a>
@@ -263,27 +281,27 @@
   </aside>
 
   <!-- ================= 02. LUXURY ARCHITECTURAL NAVIGATION HEADER ================= -->
-  <header class="site-header bg-forest-950 sticky top-[36px] z-40 transition-all shadow-2xl" style="background-color: #04140E;">
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 h-[66px] flex items-center justify-between gap-4 xl:gap-8">
+  <header class="site-header bg-forest-950 sticky top-[32px] sm:top-[36px] z-40 transition-all shadow-2xl" style="background-color: #04140E;">
+    <div class="max-w-[1400px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10 h-[62px] sm:h-[66px] flex items-center justify-between gap-2 sm:gap-4 xl:gap-8">
       
       <!-- Brand Royal Insignia Logo -->
-      <a href="#home" class="flex items-center gap-2.5 sm:gap-3 group shrink-0 whitespace-nowrap">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-forest-900 border-2 border-gold-400 text-gold-400 flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:border-gold-300 transition-all duration-300">
+      <a href="#home" class="flex items-center gap-2 sm:gap-3 group shrink-0 whitespace-nowrap">
+        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-forest-900 border-2 border-gold-400 text-gold-400 flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:border-gold-300 transition-all duration-300">
           <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current text-gold-400" viewBox="0 0 24 24">
             <path d="M12 2L1 21h22L12 2zm0 3.8l7.2 13.2H4.8L12 5.8zm0 4.2l-4 7h8l-4-7z"/>
           </svg>
         </div>
         <div class="leading-none">
-          <span class="font-cormorant font-bold text-xl sm:text-2xl tracking-widest text-white block group-hover:text-gold-300 transition-colors drop-shadow-sm">
+          <span class="font-cormorant font-bold text-lg sm:text-2xl tracking-widest text-white block group-hover:text-gold-300 transition-colors drop-shadow-sm">
             AMRAH
           </span>
-          <span class="font-cinzel text-[7.5px] sm:text-[8.5px] tracking-[0.22em] text-gold-400 font-bold uppercase block mt-0.5 sm:mt-1 drop-shadow-sm">
+          <span class="font-cinzel text-[7px] sm:text-[8.5px] tracking-[0.2em] text-gold-400 font-bold uppercase block mt-0.5 drop-shadow-sm">
             RESORT & CAMP • RISHIKESH
           </span>
         </div>
       </a>
 
-      <!-- Desktop Luxury Editorial Menu (Strict Single-Line Horizontal Layout) -->
+      <!-- Desktop Luxury Editorial Menu -->
       <nav class="hidden lg:flex items-center justify-center gap-3 xl:gap-5 2xl:gap-6 text-[10.5px] xl:text-[11px] font-cinzel font-bold tracking-[0.08em] xl:tracking-[0.12em] uppercase shrink-0">
         <a href="#accommodations" class="py-1 relative text-white/90 hover:text-gold-300 transition-colors whitespace-nowrap group">
           <span>Suites & Tents</span>
@@ -319,25 +337,26 @@
         </a>
       </nav>
 
-      <!-- Right Action Controls (Clean, Compact & Balanced) -->
-      <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
+      <!-- Right Action Controls -->
+      <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
         
-        <!-- Corporate / Group Quote Modal Trigger -->
+        <!-- Corporate Trigger (Desktop xl+) -->
         <button onclick="openGroupModal()" class="hidden xl:inline-flex items-center px-3.5 py-1.5 rounded-full border border-gold-400/60 bg-forest-900/80 text-gold-300 hover:text-white hover:bg-gold-500/20 text-[10.5px] font-cinzel font-bold tracking-wider uppercase transition-all cursor-pointer whitespace-nowrap shadow-sm">
           <span>Corporate</span>
         </button>
 
-        <!-- Instant WhatsApp VIP Booking Button with Shimmer Sweep -->
-        <a href="https://wa.me/918511129570?text=Namaste%20Amrah%20Resort,%20I%20am%20looking%20to%20book%20a%20luxury%20stay%20and%20rafting%20package." target="_blank" class="inline-flex items-center gap-1.5 sm:gap-2 px-4 py-2 rounded-full btn-gold-shimmer text-forest-950 text-[11px] sm:text-xs font-cinzel font-black tracking-wider uppercase shadow-lg hover:brightness-110 active:scale-95 transition-all whitespace-nowrap">
-          <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-forest-950 shrink-0" viewBox="0 0 24 24">
+        <!-- Book Direct Button -->
+        <a href="https://wa.me/918511129570?text=Namaste%20Amrah%20Resort,%20I%20am%20looking%20to%20book%20a%20luxury%20stay%20and%20rafting%20package." target="_blank" class="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full btn-gold-shimmer text-forest-950 text-[10px] sm:text-xs font-cinzel font-black tracking-wider uppercase shadow-md hover:brightness-110 active:scale-95 transition-all whitespace-nowrap shrink-0">
+          <svg class="w-3 h-3 sm:w-4 sm:h-4 fill-forest-950 shrink-0" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
           </svg>
-          <span>Book Direct</span>
+          <span class="hidden xs:inline">Book Direct</span>
+          <span class="xs:hidden">Book</span>
         </a>
 
         <!-- Mobile Drawer Hamburger -->
-        <button onclick="toggleMobileMenu()" class="lg:hidden w-9 h-9 rounded-xl bg-forest-900 border border-gold-500/40 flex items-center justify-center text-gold-400 hover:text-white cursor-pointer" aria-label="Toggle Navigation">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <button onclick="toggleMobileMenu()" class="lg:hidden w-8 h-8 rounded-xl bg-forest-900 border border-gold-500/40 flex items-center justify-center text-gold-400 hover:text-white cursor-pointer shrink-0" aria-label="Toggle Navigation">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -535,11 +554,11 @@
               </div>
 
               <!-- Submit WhatsApp Confirmation -->
-              <button type="submit" class="w-full py-3 rounded-xl btn-gold-shimmer text-forest-950 font-cinzel font-black text-xs uppercase tracking-widest shadow-lg flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all cursor-pointer">
-                <svg class="w-4 h-4 fill-forest-950" viewBox="0 0 24 24">
+              <button type="submit" class="w-full py-3.5 px-4 rounded-xl btn-gold-shimmer text-forest-950 font-cinzel font-black text-xs uppercase tracking-wider sm:tracking-widest shadow-lg flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all cursor-pointer">
+                <svg class="w-4 h-4 fill-forest-950 shrink-0" viewBox="0 0 24 24">
                   <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
                 </svg>
-                <span>REQUEST INSTANT WHATSAPP CONFIRMATION</span>
+                <span class="whitespace-nowrap">Instant WhatsApp Booking</span>
               </button>
 
             </form>
@@ -1487,12 +1506,12 @@
           </div>
 
           <!-- Route Action Buttons -->
-          <div class="flex flex-wrap items-center gap-3.5 pt-2">
-            <a href="https://www.google.com/maps/place/Amrah+Resorts/@30.0636875,78.3774375,17z" target="_blank" class="px-7 py-3.5 rounded-full btn-gold-shimmer text-forest-950 font-cinzel font-bold text-xs uppercase tracking-widest flex items-center gap-2 shadow-lg hover:brightness-110 active:scale-95 transition-all">
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+            <a href="https://www.google.com/maps/place/Amrah+Resorts/@30.0636875,78.3774375,17z" target="_blank" class="px-5 sm:px-7 py-3.5 rounded-full btn-gold-shimmer text-forest-950 font-cinzel font-bold text-xs uppercase tracking-wider sm:tracking-widest flex items-center justify-center gap-2 shadow-lg hover:brightness-110 active:scale-95 transition-all text-center">
               <span>📍 Open Google Maps Navigation</span>
               <span>→</span>
             </a>
-            <a href="tel:+918511129570" class="px-6 py-3.5 rounded-full bg-white border border-forest-900/30 text-forest-950 font-cinzel font-bold text-xs uppercase tracking-wider hover:bg-silk-50 shadow-sm transition-all flex items-center gap-2">
+            <a href="tel:+918511129570" class="px-5 sm:px-6 py-3.5 rounded-full bg-white border border-forest-900/30 text-forest-950 font-cinzel font-bold text-xs uppercase tracking-wider hover:bg-silk-50 shadow-sm transition-all flex items-center justify-center gap-2 text-center">
               <span>📞 Road Pilot Assistance</span>
             </a>
           </div>
@@ -1742,8 +1761,8 @@
     </div>
   </footer>
 
-  <!-- ================= 17. FLOATING QUICK WHATSAPP CONCIERGE DRAWER ================= -->
-  <div class="fixed bottom-20 lg:bottom-6 right-4 sm:right-6 z-50">
+  <!-- ================= 17. FLOATING QUICK WHATSAPP CONCIERGE DRAWER (DESKTOP ONLY) ================= -->
+  <div class="hidden lg:block fixed bottom-6 right-6 z-50">
     <!-- Floating Concierge Menu (Hidden by default) -->
     <div id="quickConciergeMenu" class="hidden mb-3 bg-forest-950/95 backdrop-blur-xl border border-gold-500/40 rounded-3xl p-4 w-64 shadow-2xl text-white space-y-2 fade-enter">
       <div class="flex items-center justify-between pb-2 border-b border-forest-900">
@@ -1773,16 +1792,26 @@
     </button>
   </div>
 
-  <!-- ================= 18. STICKY MOBILE CONCIERGE BAR ================= -->
-  <aside aria-label="Mobile Quick Action Bar" class="mobile-quick-bar lg:hidden fixed bottom-0 inset-x-0 z-50 bg-forest-950 backdrop-blur-md border-t border-gold-500/30 p-2.5 flex items-center gap-2 shadow-2xl" style="background-color: #04140E;">
-    <a href="tel:+918511129570" class="flex-1 py-3.5 rounded-xl bg-forest-900 border border-gold-500/40 text-gold-300 font-cinzel font-bold text-[11px] uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 shadow-md">
-      <span>📞 Call Desk</span>
+  <!-- ================= 18. STICKY MOBILE CONCIERGE BAR (CALL / WHATSAPP / ROOMS) ================= -->
+  <aside aria-label="Mobile Quick Action Bar" class="mobile-quick-bar lg:hidden fixed bottom-0 inset-x-0 z-50 bg-forest-950/95 backdrop-blur-xl border-t border-gold-500/35 px-2.5 py-2 flex items-center justify-between gap-1.5 shadow-[0_-10px_25px_rgba(0,0,0,0.6)]" style="background-color: #04140E;">
+    <!-- 1. Call Desk -->
+    <a href="tel:+918511129570" class="flex-1 py-2.5 px-1 rounded-xl bg-forest-900 border border-gold-500/30 text-gold-300 font-cinzel font-bold text-[10.5px] uppercase tracking-wider flex items-center justify-center gap-1 active:scale-95 shadow-md hover:border-gold-400 transition-all text-center">
+      <span class="text-xs">📞</span>
+      <span class="whitespace-nowrap">Call Desk</span>
     </a>
-    <a href="https://wa.me/918511129570?text=Hello%20Amrah%20Resort,%20I%20am%20inquiring%20about%20stay%20and%20rafting%20packages." target="_blank" class="flex-1 py-3.5 rounded-xl btn-gold-shimmer text-forest-950 font-cinzel font-black text-[11px] uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 shadow-lg">
-      <svg class="w-4 h-4 fill-forest-950" viewBox="0 0 24 24">
+
+    <!-- 2. WhatsApp (Center Hero Shimmer) -->
+    <a href="https://wa.me/918511129570?text=Namaste%20Amrah%20Resort,%20I%20am%20inquiring%20about%20stay%20and%20rafting%20packages." target="_blank" class="flex-[1.2] py-2.5 px-2 rounded-xl btn-gold-shimmer text-forest-950 font-cinzel font-black text-[11px] uppercase tracking-wider flex items-center justify-center gap-1 active:scale-95 shadow-lg text-center">
+      <svg class="w-3.5 h-3.5 fill-forest-950 shrink-0" viewBox="0 0 24 24">
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
       </svg>
-      <span>Instant WhatsApp</span>
+      <span class="whitespace-nowrap">WhatsApp</span>
+    </a>
+
+    <!-- 3. Rooms -->
+    <a href="#accommodations" class="flex-1 py-2.5 px-1 rounded-xl bg-forest-900 border border-gold-500/30 text-silk-100 font-cinzel font-bold text-[10.5px] uppercase tracking-wider flex items-center justify-center gap-1 active:scale-95 shadow-md hover:border-gold-400 transition-all text-center">
+      <span class="text-xs">🏕️</span>
+      <span class="whitespace-nowrap">Rooms</span>
     </a>
   </aside>
 
