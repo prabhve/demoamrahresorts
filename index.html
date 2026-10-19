@@ -236,10 +236,10 @@
 
   <!-- ================= 01. REGAL TOP STATUS & UTILITY BAR (WELL-MANNERED SINGLE-LINE) ================= -->
   <aside aria-label="Announcement & Status Bar" class="top-announcement-bar bg-forest-950 text-white text-[11px] sticky top-0 z-50 overflow-hidden" style="background-color: #04140E;">
-    <div class="max-w-[1400px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10 h-8 sm:h-9 flex items-center justify-between gap-2 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-8 sm:h-9 flex items-center justify-between text-xs">
       
       <!-- Left: Location & Real-time Weather -->
-      <div class="flex items-center gap-2 shrink-0 whitespace-nowrap">
+      <div class="flex items-center justify-start flex-1 gap-2 shrink-0 whitespace-nowrap">
         <div class="flex items-center gap-1.5 text-gold-300">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
           <span class="font-cinzel text-[9px] sm:text-[10px] font-bold tracking-wider uppercase">Mohan Chatti, Rishikesh</span>
@@ -253,16 +253,16 @@
       </div>
 
       <!-- Center: Broadcast Value Guarantee (Desktop) -->
-      <div class="hidden md:flex items-center justify-center gap-2 text-center whitespace-nowrap px-2">
-        <span class="text-gold-400 text-xs">✦</span>
+      <div class="hidden md:flex items-center justify-center shrink-0 px-2 text-center whitespace-nowrap">
+        <span class="text-gold-400 text-xs mr-2">✦</span>
         <span class="font-cinzel text-[10px] tracking-[0.16em] text-gold-200 font-bold uppercase">
           0% OTA COMMISSION • DIRECT RATE GUARANTEE • ALL MEALS & RAFTING
         </span>
-        <span class="text-gold-400 text-xs">✦</span>
+        <span class="text-gold-400 text-xs ml-2">✦</span>
       </div>
 
       <!-- Right: Ambience Audio Toggle & Direct Phone -->
-      <div class="flex items-center gap-2 shrink-0 whitespace-nowrap">
+      <div class="flex items-center justify-end flex-1 gap-2 shrink-0 whitespace-nowrap">
         
         <!-- Ambience Toggle (hidden on mobile) -->
         <button id="natureSoundBtn" onclick="toggleNatureAmbience()" class="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-forest-900/80 border border-gold-500/30 text-gold-300 hover:text-white text-[9.5px] font-bold transition-all active:scale-95 cursor-pointer">
@@ -285,27 +285,29 @@
 
   <!-- ================= 02. LUXURY ARCHITECTURAL NAVIGATION HEADER ================= -->
   <header class="site-header bg-forest-950 sticky top-[32px] sm:top-[36px] z-40 transition-all shadow-2xl" style="background-color: #04140E;">
-    <div class="max-w-[1400px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10 h-[62px] sm:h-[66px] flex items-center justify-between gap-2 sm:gap-4 xl:gap-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[64px] sm:h-[70px] flex items-center justify-between">
       
-      <!-- Brand Royal Insignia Logo -->
-      <a href="#home" class="flex items-center gap-2 sm:gap-3 group shrink-0 whitespace-nowrap">
-        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-forest-900 border-2 border-gold-400 text-gold-400 flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:border-gold-300 transition-all duration-300">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current text-gold-400" viewBox="0 0 24 24">
-            <path d="M12 2L1 21h22L12 2zm0 3.8l7.2 13.2H4.8L12 5.8zm0 4.2l-4 7h8l-4-7z"/>
-          </svg>
-        </div>
-        <div class="leading-none">
-          <span class="font-cormorant font-bold text-lg sm:text-2xl tracking-widest text-white block group-hover:text-gold-300 transition-colors drop-shadow-sm">
-            AMRAH
-          </span>
-          <span class="font-cinzel text-[7px] sm:text-[8.5px] tracking-[0.2em] text-gold-400 font-bold uppercase block mt-0.5 drop-shadow-sm">
-            RESORT & CAMP • RISHIKESH
-          </span>
-        </div>
-      </a>
+      <!-- Left: Brand Royal Insignia Logo (Anchored to Left, Flex-1) -->
+      <div class="flex items-center justify-start flex-1 shrink-0">
+        <a href="#home" class="flex items-center gap-2 sm:gap-3 group shrink-0 whitespace-nowrap">
+          <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-forest-900 border-2 border-gold-400 text-gold-400 flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:border-gold-300 transition-all duration-300">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current text-gold-400" viewBox="0 0 24 24">
+              <path d="M12 2L1 21h22L12 2zm0 3.8l7.2 13.2H4.8L12 5.8zm0 4.2l-4 7h8l-4-7z"/>
+            </svg>
+          </div>
+          <div class="leading-none">
+            <span class="font-cormorant font-bold text-lg sm:text-2xl tracking-widest text-white block group-hover:text-gold-300 transition-colors drop-shadow-sm">
+              AMRAH
+            </span>
+            <span class="font-cinzel text-[7px] sm:text-[8.5px] tracking-[0.2em] text-gold-400 font-bold uppercase block mt-0.5 drop-shadow-sm">
+              RESORT & CAMP • RISHIKESH
+            </span>
+          </div>
+        </a>
+      </div>
 
-      <!-- Desktop Luxury Editorial Menu -->
-      <nav class="hidden lg:flex items-center justify-center gap-2.5 xl:gap-4 2xl:gap-5 text-[10.5px] xl:text-[11px] font-cinzel font-bold tracking-[0.08em] xl:tracking-[0.12em] uppercase shrink-0">
+      <!-- Center: Desktop Luxury Editorial Menu (EXACTLY Centered) -->
+      <nav class="hidden lg:flex items-center justify-center gap-3 xl:gap-5 text-[10px] xl:text-[11px] font-cinzel font-bold tracking-[0.08em] xl:tracking-[0.1em] uppercase shrink-0 px-2">
         <a href="#real-footage" class="py-1 relative text-gold-300 hover:text-white transition-colors whitespace-nowrap group">
           <span>Real Footage</span>
           <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
@@ -330,10 +332,6 @@
           <span>Dining</span>
           <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
         </a>
-        <a href="#comparison" class="py-1 relative text-white/90 hover:text-gold-300 transition-colors whitespace-nowrap group">
-          <span>Why Direct</span>
-          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
-        </a>
         <a href="#gallery" class="py-1 relative text-white/90 hover:text-gold-300 transition-colors whitespace-nowrap group">
           <span>Gallery</span>
           <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
@@ -344,17 +342,17 @@
         </a>
       </nav>
 
-      <!-- Right Action Controls -->
-      <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+      <!-- Right: Action Controls (Anchored to Right, Flex-1 Symmetrical with Left) -->
+      <div class="flex items-center justify-end gap-2 sm:gap-2.5 flex-1 shrink-0">
         
         <!-- Corporate Trigger (Desktop xl+) -->
-        <button onclick="openGroupModal()" class="hidden xl:inline-flex items-center px-3.5 py-1.5 rounded-full border border-gold-400/60 bg-forest-900/80 text-gold-300 hover:text-white hover:bg-gold-500/20 text-[10.5px] font-cinzel font-bold tracking-wider uppercase transition-all cursor-pointer whitespace-nowrap shadow-sm">
+        <button onclick="openGroupModal()" class="hidden xl:inline-flex items-center px-3 py-1.5 rounded-full border border-gold-400/60 bg-forest-900/80 text-gold-300 hover:text-white hover:bg-gold-500/20 text-[10px] xl:text-[10.5px] font-cinzel font-bold tracking-wider uppercase transition-all cursor-pointer whitespace-nowrap shadow-sm">
           <span>Corporate</span>
         </button>
 
         <!-- Book Direct Button -->
-        <a href="https://wa.me/918511129570?text=Namaste%20Amrah%20Resort,%20I%20am%20looking%20to%20book%20a%20luxury%20stay%20and%20rafting%20package." target="_blank" class="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full btn-gold-shimmer text-forest-950 text-[10px] sm:text-xs font-cinzel font-black tracking-wider uppercase shadow-md hover:brightness-110 active:scale-95 transition-all whitespace-nowrap shrink-0">
-          <svg class="w-3 h-3 sm:w-4 sm:h-4 fill-forest-950 shrink-0" viewBox="0 0 24 24">
+        <a href="https://wa.me/918511129570?text=Namaste%20Amrah%20Resort,%20I%20am%20looking%20to%20book%20a%20luxury%20stay%20and%20rafting%20package." target="_blank" class="inline-flex items-center gap-1 sm:gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full btn-gold-shimmer text-forest-950 text-[10px] sm:text-xs font-cinzel font-black tracking-wider uppercase shadow-md hover:brightness-110 active:scale-95 transition-all whitespace-nowrap shrink-0">
+          <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-forest-950 shrink-0" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
           </svg>
           <span class="hidden xs:inline">Book Direct</span>
@@ -403,7 +401,7 @@
       <div class="absolute inset-0 bg-[radial-gradient(#D4A346_0.8px,transparent_0.8px)] [background-size:28px_28px] opacity-10"></div>
     </div>
 
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 relative z-10 w-full">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 xl:gap-12 items-center">
         
         <!-- Left Hero Copy & Editorial Storytelling -->
