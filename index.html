@@ -191,46 +191,48 @@
 </head>
 <body class="bg-silk-100 text-silk-800 antialiased selection:bg-gold-500 selection:text-forest-950 safe-bottom-padding lg:pb-0">
 
-  <!-- ================= 01. REGAL TOP STATUS & NATURE SOUNDSCAPE BAR ================= -->
-  <aside aria-label="Announcement & Status Bar" class="bg-forest-950 text-white text-[11px] font-medium border-b border-forest-900 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
+  <!-- ================= 01. REGAL TOP STATUS & UTILITY BAR (WELL-MANNERED SINGLE-LINE) ================= -->
+  <aside aria-label="Announcement & Status Bar" class="bg-forest-950 text-white text-[11px] border-b border-forest-900/80 sticky top-0 z-50 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between gap-4 text-xs">
       
-      <!-- Left: Location & Real-time Himalayan Weather Status -->
-      <div class="flex items-center gap-3">
+      <!-- Left: Location & Real-time Weather (Strict Single-Line) -->
+      <div class="flex items-center gap-2.5 shrink-0 whitespace-nowrap">
         <div class="flex items-center gap-1.5 text-gold-300">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-          <span class="font-cinzel tracking-wider text-[10px] font-bold uppercase">Mohan Chatti, Rishikesh</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+          <span class="font-cinzel text-[10px] font-bold tracking-wider uppercase">Mohan Chatti, Rishikesh</span>
         </div>
-        <span class="hidden md:inline text-forest-700">•</span>
-        <div class="hidden md:flex items-center gap-1.5 text-silk-300">
-          <span>☀️ 24°C Pleasant Valley Air</span>
+        <span class="text-forest-700 hidden sm:inline">•</span>
+        <div class="hidden sm:flex items-center gap-1.5 text-silk-300 text-[10.5px]">
+          <span>☀️ 24°C Pleasant Air</span>
           <span class="text-forest-700">•</span>
           <span class="text-emerald-400 font-semibold">1,200m Altitude</span>
         </div>
       </div>
 
-      <!-- Center: Broadcast Value Guarantee -->
-      <div class="hidden sm:flex items-center gap-2 text-center truncate">
+      <!-- Center: Broadcast Value Guarantee (Never Ellipsized) -->
+      <div class="hidden md:flex items-center justify-center gap-2 text-center whitespace-nowrap px-2">
         <span class="text-gold-400 text-xs">✦</span>
-        <span class="font-cinzel text-[10px] tracking-[0.18em] text-gold-200 font-bold uppercase truncate">
-          DIRECT BOOKING RATE GUARANTEE • 0% OTA COMMISSION • ALL MEALS & RAFTING
+        <span class="font-cinzel text-[10px] tracking-[0.16em] text-gold-200 font-bold uppercase">
+          0% OTA COMMISSION • DIRECT RATE GUARANTEE • ALL MEALS & RAFTING
         </span>
         <span class="text-gold-400 text-xs">✦</span>
       </div>
 
-      <!-- Right: Interactive Soundscape Toggle & Direct Contact -->
-      <div class="flex items-center gap-3 sm:gap-4 shrink-0">
+      <!-- Right: Nature Ambience Toggle & Direct Phone (Single-Line) -->
+      <div class="flex items-center gap-3 shrink-0 whitespace-nowrap">
         
-        <!-- Mountain River Audio Ambience Toggle (Synthesized Audio API) -->
-        <button id="natureSoundBtn" onclick="toggleNatureAmbience()" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-forest-900/90 border border-gold-500/40 text-gold-300 hover:text-white text-[10px] font-bold transition-all shadow-sm active:scale-95 cursor-pointer">
+        <!-- Mountain River Audio Ambience Toggle -->
+        <button id="natureSoundBtn" onclick="toggleNatureAmbience()" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-forest-900/80 border border-gold-500/30 text-gold-300 hover:text-white text-[10px] font-bold transition-all shadow-sm active:scale-95 cursor-pointer">
           <span id="soundIcon">🔇</span>
           <span id="soundLabel" class="hidden xs:inline">River Ambience</span>
         </button>
 
+        <span class="text-forest-700 hidden xs:inline">|</span>
+
         <!-- Direct Phone -->
-        <a href="tel:+918511129570" class="hover:text-gold-300 transition-colors flex items-center gap-1 font-bold tracking-wide">
+        <a href="tel:+918511129570" class="hover:text-gold-300 text-silk-200 transition-colors flex items-center gap-1.5 font-bold tracking-wide text-[11px]">
           <span class="text-gold-400">📞</span>
-          <span class="font-cinzel text-[11px]">+91 85111 29570</span>
+          <span class="font-cinzel">+91 85111 29570</span>
         </a>
 
       </div>
@@ -239,57 +241,80 @@
   </aside>
 
   <!-- ================= 02. LUXURY ARCHITECTURAL NAVIGATION HEADER ================= -->
-  <header class="bg-forest-950/95 backdrop-blur-md border-b border-gold-500/20 sticky top-[33px] z-40 transition-all shadow-xl">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+  <header class="bg-forest-950/98 backdrop-blur-md border-b border-gold-500/20 sticky top-[36px] z-40 transition-all shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
       
       <!-- Brand Royal Insignia Logo -->
-      <a href="#home" class="flex items-center gap-3.5 group shrink-0">
-        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-forest-900 via-forest-950 to-forest-900 border-2 border-gold-400/90 text-gold-400 flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:border-gold-300 transition-all duration-300">
-          <svg class="w-6 h-6 fill-current text-gold-400" viewBox="0 0 24 24">
+      <a href="#home" class="flex items-center gap-3 group shrink-0 whitespace-nowrap">
+        <div class="w-11 h-11 rounded-full bg-gradient-to-br from-forest-900 via-forest-950 to-forest-900 border-2 border-gold-400/90 text-gold-400 flex items-center justify-center shadow-md group-hover:scale-105 group-hover:border-gold-300 transition-all duration-300">
+          <svg class="w-5 h-5 fill-current text-gold-400" viewBox="0 0 24 24">
             <path d="M12 2L1 21h22L12 2zm0 3.8l7.2 13.2H4.8L12 5.8zm0 4.2l-4 7h8l-4-7z"/>
           </svg>
         </div>
         <div class="leading-none">
-          <span class="font-cormorant font-bold text-2xl sm:text-3xl tracking-widest text-white block group-hover:text-gold-300 transition-colors">
+          <span class="font-cormorant font-bold text-2xl tracking-widest text-white block group-hover:text-gold-300 transition-colors">
             AMRAH
           </span>
-          <span class="font-cinzel text-[8.5px] sm:text-[9.5px] tracking-[0.3em] text-gold-400 font-bold uppercase block mt-1">
+          <span class="font-cinzel text-[8.5px] tracking-[0.25em] text-gold-400 font-bold uppercase block mt-1">
             RESORT & CAMP • RISHIKESH
           </span>
         </div>
       </a>
 
-      <!-- Desktop Luxury Editorial Menu -->
-      <nav class="hidden xl:flex items-center gap-6 text-[11px] font-cinzel font-semibold tracking-[0.2em] uppercase text-silk-200">
-        <a href="#accommodations" class="hover:text-gold-400 transition-colors">Suites & Tents</a>
-        <a href="#experiences" class="hover:text-gold-400 transition-colors">Experiences</a>
-        <a href="#packages" class="hover:text-gold-400 transition-colors">Rafting Deals</a>
-        <a href="#itinerary" class="hover:text-gold-400 transition-colors">Weekend Plan</a>
-        <a href="#dining" class="hover:text-gold-400 transition-colors">Dining</a>
-        <a href="#comparison" class="hover:text-gold-400 transition-colors">Why Book Direct</a>
-        <a href="#gallery" class="hover:text-gold-400 transition-colors">Gallery</a>
-        <a href="#route" class="hover:text-gold-400 transition-colors">Route Guide</a>
+      <!-- Desktop Luxury Editorial Menu (Strict Single-Line Horizontal Layout) -->
+      <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-[11px] font-cinzel font-semibold tracking-[0.14em] uppercase text-silk-200 shrink-0">
+        <a href="#accommodations" class="py-1 relative hover:text-gold-300 transition-colors whitespace-nowrap group">
+          <span>Suites & Tents</span>
+          <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="#experiences" class="py-1 relative hover:text-gold-300 transition-colors whitespace-nowrap group">
+          <span>Experiences</span>
+          <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="#packages" class="py-1 relative hover:text-gold-300 transition-colors whitespace-nowrap group">
+          <span>Packages</span>
+          <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="#itinerary" class="py-1 relative hover:text-gold-300 transition-colors whitespace-nowrap group">
+          <span>Itinerary</span>
+          <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="#dining" class="py-1 relative hover:text-gold-300 transition-colors whitespace-nowrap group">
+          <span>Dining</span>
+          <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="#comparison" class="py-1 relative hover:text-gold-300 transition-colors whitespace-nowrap group">
+          <span>Why Direct</span>
+          <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="#gallery" class="py-1 relative hover:text-gold-300 transition-colors whitespace-nowrap group">
+          <span>Gallery</span>
+          <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="#route" class="py-1 relative hover:text-gold-300 transition-colors whitespace-nowrap group">
+          <span>Route</span>
+          <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
+        </a>
       </nav>
 
-      <!-- Right Action Controls -->
-      <div class="flex items-center gap-3">
+      <!-- Right Action Controls (Clean, Compact & Balanced) -->
+      <div class="flex items-center gap-3 shrink-0">
         
         <!-- Corporate / Group Quote Modal Trigger -->
-        <button onclick="openGroupModal()" class="hidden md:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-gold-400/40 text-gold-300 hover:bg-gold-500/10 text-[10.5px] font-cinzel font-bold tracking-wider uppercase transition-all cursor-pointer">
-          <span>Corporate & Groups</span>
+        <button onclick="openGroupModal()" class="hidden md:inline-flex items-center px-3.5 py-2 rounded-full border border-gold-400/40 text-gold-300 hover:bg-gold-500/10 text-[10.5px] font-cinzel font-bold tracking-wider uppercase transition-all cursor-pointer whitespace-nowrap">
+          <span>Corporate</span>
         </button>
 
         <!-- Instant WhatsApp VIP Booking Button with Shimmer Sweep -->
-        <a href="https://wa.me/918511129570?text=Namaste%20Amrah%20Resort,%20I%20am%20looking%20to%20book%20a%20luxury%20stay%20and%20rafting%20package." target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full btn-gold-shimmer text-forest-950 text-xs font-cinzel font-black tracking-wider uppercase shadow-xl hover:brightness-110 active:scale-95 transition-all">
-          <svg class="w-4 h-4 fill-forest-950" viewBox="0 0 24 24">
+        <a href="https://wa.me/918511129570?text=Namaste%20Amrah%20Resort,%20I%20am%20looking%20to%20book%20a%20luxury%20stay%20and%20rafting%20package." target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full btn-gold-shimmer text-forest-950 text-xs font-cinzel font-black tracking-wider uppercase shadow-xl hover:brightness-110 active:scale-95 transition-all whitespace-nowrap">
+          <svg class="w-4 h-4 fill-forest-950 shrink-0" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
           </svg>
-          <span class="hidden sm:inline">Book Direct</span>
-          <span class="sm:hidden">Book</span>
+          <span>Book Direct</span>
         </a>
 
         <!-- Mobile Drawer Hamburger -->
-        <button onclick="toggleMobileMenu()" class="xl:hidden w-10 h-10 rounded-xl bg-forest-900 border border-gold-500/30 flex items-center justify-center text-gold-400 hover:text-white cursor-pointer" aria-label="Toggle Navigation">
+        <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 rounded-xl bg-forest-900 border border-gold-500/30 flex items-center justify-center text-gold-400 hover:text-white cursor-pointer" aria-label="Toggle Navigation">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -301,7 +326,7 @@
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div id="mobileMenu" class="hidden xl:hidden border-t border-forest-900 bg-forest-950/98 px-6 py-6 space-y-4 text-xs font-cinzel font-bold uppercase tracking-widest text-silk-200 shadow-2xl">
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-forest-900 bg-forest-950/98 px-6 py-6 space-y-4 text-xs font-cinzel font-bold uppercase tracking-widest text-silk-200 shadow-2xl">
       <a href="#accommodations" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900 hover:text-gold-400">Luxury Cottages & Glamping Tents</a>
       <a href="#experiences" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900 hover:text-gold-400">Resort Pool, Bonfire & Rafting</a>
       <a href="#packages" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900 hover:text-gold-400">All-Inclusive Weekend Packages</a>
