@@ -6,6 +6,9 @@
   <title>Amrah Resort & Camp | 5-Star Riverside Cottages, Mountain Pool & Ganga Rafting • Mohan Chatti, Rishikesh</title>
   <meta name="description" content="Official Amrah Resort & Camp Rishikesh. Ultra-luxury Swiss AC Cottages, Hilltop Swimming Pool, 16KM Ganga White Water Rafting, Evening Bonfire & DJ in Mohan Chatti. Book Direct at 0% Commission.">
 
+  <!-- Preload Hero Authentic Property Image -->
+  <link rel="preload" as="image" href="images/amrah_cottages_dusk.jpg">
+
   <!-- World-Class Premium Luxury Font Stack -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -302,7 +305,11 @@
       </a>
 
       <!-- Desktop Luxury Editorial Menu -->
-      <nav class="hidden lg:flex items-center justify-center gap-3 xl:gap-5 2xl:gap-6 text-[10.5px] xl:text-[11px] font-cinzel font-bold tracking-[0.08em] xl:tracking-[0.12em] uppercase shrink-0">
+      <nav class="hidden lg:flex items-center justify-center gap-2.5 xl:gap-4 2xl:gap-5 text-[10.5px] xl:text-[11px] font-cinzel font-bold tracking-[0.08em] xl:tracking-[0.12em] uppercase shrink-0">
+        <a href="#real-footage" class="py-1 relative text-gold-300 hover:text-white transition-colors whitespace-nowrap group">
+          <span>Real Footage</span>
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
+        </a>
         <a href="#accommodations" class="py-1 relative text-white/90 hover:text-gold-300 transition-colors whitespace-nowrap group">
           <span>Suites & Tents</span>
           <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
@@ -368,6 +375,7 @@
 
     <!-- Mobile Navigation Drawer -->
     <div id="mobileMenu" class="site-mobile-menu hidden lg:hidden bg-forest-950 px-6 py-6 space-y-4 text-xs font-cinzel font-bold uppercase tracking-widest text-silk-200 shadow-2xl" style="background-color: #04140E;">
+      <a href="#real-footage" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900/80 text-gold-300 font-bold hover:text-white">📸 Verified Property Reels & Ground Footage</a>
       <a href="#accommodations" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900/80 hover:text-gold-400">Luxury Cottages & Glamping Tents</a>
       <a href="#experiences" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900/80 hover:text-gold-400">Resort Pool, Bonfire & Rafting</a>
       <a href="#packages" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900/80 hover:text-gold-400">All-Inclusive Weekend Packages</a>
@@ -390,7 +398,7 @@
     
     <!-- Hero Background Image Carousel with Cinematic Ken Burns Motion -->
     <div class="absolute inset-0 z-0 overflow-hidden">
-      <img id="heroBgImage" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2000&q=85" alt="Amrah Luxury Resort Mohan Chatti" class="w-full h-full object-cover transition-opacity duration-1000 brightness-[0.35] ken-burns">
+      <img id="heroBgImage" src="images/amrah_cottages_dusk.jpg" alt="Amrah Luxury Resort Mohan Chatti" class="w-full h-full object-cover transition-opacity duration-1000 brightness-[0.38] ken-burns">
       <div class="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/60 to-forest-950/80"></div>
       <div class="absolute inset-0 bg-[radial-gradient(#D4A346_0.8px,transparent_0.8px)] [background-size:28px_28px] opacity-10"></div>
     </div>
@@ -616,6 +624,186 @@
     </div>
   </section>
 
+  <!-- ================= 04B. AUTHENTIC PROPERTY REELS & VERIFIED MOMENTS ================= -->
+  <section id="real-footage" class="py-16 sm:py-20 bg-forest-950 text-white relative border-b border-gold-500/20 overflow-hidden">
+    <!-- Ambient Backdrop Gradient -->
+    <div class="absolute inset-0 bg-[radial-gradient(#D4A346_0.8px,transparent_0.8px)] [background-size:28px_28px] opacity-10 pointer-events-none"></div>
+    <div class="absolute top-0 right-1/4 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 reveal-item">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-forest-900 border border-gold-400/40 backdrop-blur-md mb-3">
+          <span class="text-gold-400 text-xs">🎥</span>
+          <span class="font-cinzel text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase text-gold-200">
+            UNFILTERED GROUND TRUTH • OFFICIAL RESORT CAPTURES
+          </span>
+        </div>
+        <h2 class="font-cormorant font-bold text-3xl sm:text-5xl text-white leading-tight">
+          Verified Property Reels & <br class="hidden sm:inline">
+          <span class="italic font-normal text-gold-300">Raw Mountain Atmosphere.</span>
+        </h2>
+        <p class="font-signature text-2xl sm:text-3xl text-gold-300/90 mt-1">
+          Actual guest perspectives, twilight views, and riverside energy.
+        </p>
+        <p class="text-silk-300 text-xs sm:text-sm mt-3 leading-relaxed font-outfit max-w-2xl mx-auto">
+          We believe in 100% genuine transparency. Explore authentic captures straight from Amrah Resort Mohan Chatti — showcasing our twilight Swiss cottages, crystal swimming pool, riverside pathway, and electric DJ nights under Himalayan skies.
+        </p>
+      </div>
+
+      <!-- 3-Column Ground Footage Showcase Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        
+        <!-- Reel Card 1: Twilight Cottages & Pool -->
+        <div class="rounded-3xl overflow-hidden bg-forest-900/80 border border-gold-500/30 shadow-2xl flex flex-col justify-between group luxury-hover-card reveal-item delay-100">
+          <div>
+            <div class="relative aspect-[9/14] sm:aspect-[4/5] overflow-hidden bg-forest-950 cursor-pointer" onclick="openLightbox('images/amrah_cottages_dusk.jpg', 'Authentic Amrah Resort Swiss Cottages & Hilltop Pool at Twilight (Mohan Chatti)')">
+              <img src="images/amrah_cottages_dusk.jpg" alt="Amrah Resort Twilight Cottages and Pool" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/20 to-transparent"></div>
+              
+              <!-- Badges -->
+              <span class="absolute top-3.5 left-3.5 bg-forest-950/90 backdrop-blur-md text-gold-300 font-cinzel text-[9.5px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-gold-400/40">
+                📸 Twilight View
+              </span>
+              <span class="absolute top-3.5 right-3.5 bg-emerald-500/90 text-white font-cinzel text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider flex items-center gap-1 shadow-md">
+                <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> Ground Verified
+              </span>
+
+              <!-- Tap to Zoom Overlay Hint -->
+              <div class="absolute bottom-3 right-3 px-3 py-1.5 rounded-xl bg-forest-950/80 backdrop-blur-md border border-gold-500/30 text-gold-300 text-[10.5px] font-cinzel uppercase tracking-wider opacity-90 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+                <span>Tap to Zoom</span> 🔍
+              </div>
+            </div>
+
+            <div class="p-6 space-y-2.5">
+              <div class="flex items-center gap-2">
+                <span class="text-xs text-gold-400">🏕️</span>
+                <span class="font-cinzel text-[10px] font-bold tracking-widest uppercase text-silk-300">Property Highlight</span>
+              </div>
+              <h3 class="font-cormorant font-bold text-2xl text-white leading-tight">Swiss Cottages & Pool House</h3>
+              <p class="text-silk-300 text-xs leading-relaxed font-outfit">
+                Actual evening illumination along stone garden walkways, private cottage balconies, and serene swimming pool nestled against Mohan Chatti mountains.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0 border-t border-forest-800/80 mt-2 flex items-center justify-between">
+            <span class="text-[10px] font-cinzel text-gold-400 font-semibold tracking-wider">@amrah_resort_rishikesh</span>
+            <button onclick="openLightbox('images/amrah_cottages_dusk.jpg', 'Authentic Amrah Resort Swiss Cottages & Hilltop Pool at Twilight')" class="px-4 py-2 rounded-full bg-forest-800 hover:bg-gold-500 hover:text-forest-950 text-gold-300 font-cinzel font-bold text-[10.5px] uppercase tracking-wider transition-all cursor-pointer">
+              View High-Res
+            </button>
+          </div>
+        </div>
+
+        <!-- Reel Card 2: Resort Entrance & Direct River Trail -->
+        <div class="rounded-3xl overflow-hidden bg-forest-900/80 border border-gold-500/30 shadow-2xl flex flex-col justify-between group luxury-hover-card reveal-item delay-200">
+          <div>
+            <div class="relative aspect-[9/14] sm:aspect-[4/5] overflow-hidden bg-forest-950 cursor-pointer" onclick="openLightbox('images/amrah_resort_entrance.jpg', 'Amrah Resort Main Entrance Gateway & River Stream Walkway (Village Sinduri)')">
+              <img src="images/amrah_resort_entrance.jpg" alt="Amrah Resort Main Entrance Gateway" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/20 to-transparent"></div>
+              
+              <!-- Badges -->
+              <span class="absolute top-3.5 left-3.5 bg-forest-950/90 backdrop-blur-md text-gold-300 font-cinzel text-[9.5px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-gold-400/40">
+                📍 Gateway View
+              </span>
+              <span class="absolute top-3.5 right-3.5 bg-emerald-500/90 text-white font-cinzel text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider flex items-center gap-1 shadow-md">
+                <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> Ground Verified
+              </span>
+
+              <!-- Tap to Zoom Overlay Hint -->
+              <div class="absolute bottom-3 right-3 px-3 py-1.5 rounded-xl bg-forest-950/80 backdrop-blur-md border border-gold-500/30 text-gold-300 text-[10.5px] font-cinzel uppercase tracking-wider opacity-90 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+                <span>Tap to Zoom</span> 🔍
+              </div>
+            </div>
+
+            <div class="p-6 space-y-2.5">
+              <div class="flex items-center gap-2">
+                <span class="text-xs text-gold-400">🚪</span>
+                <span class="font-cinzel text-[10px] font-bold tracking-widest uppercase text-silk-300">Mohan Chatti Gateway</span>
+              </div>
+              <h3 class="font-cormorant font-bold text-2xl text-white leading-tight">Entrance & River Stream Descent</h3>
+              <p class="text-silk-300 text-xs leading-relaxed font-outfit">
+                Direct entrance stairway and path leading to Amrah Resort, Village Sinduri. Private 100m direct walking descent to Mohan Chatti river stream.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0 border-t border-forest-800/80 mt-2 flex items-center justify-between">
+            <span class="text-[10px] font-cinzel text-gold-400 font-semibold tracking-wider">Village Sinduri, Bairagarh</span>
+            <button onclick="openLightbox('images/amrah_resort_entrance.jpg', 'Amrah Resort Main Entrance Gateway & River Stream Walkway')" class="px-4 py-2 rounded-full bg-forest-800 hover:bg-gold-500 hover:text-forest-950 text-gold-300 font-cinzel font-bold text-[10.5px] uppercase tracking-wider transition-all cursor-pointer">
+              View High-Res
+            </button>
+          </div>
+        </div>
+
+        <!-- Reel Card 3: Electric DJ Night & Bonfire -->
+        <div class="rounded-3xl overflow-hidden bg-forest-900/80 border border-gold-500/30 shadow-2xl flex flex-col justify-between group luxury-hover-card reveal-item delay-300">
+          <div>
+            <div class="relative aspect-[9/14] sm:aspect-[4/5] overflow-hidden bg-forest-950 cursor-pointer" onclick="openLightbox('images/amrah_dj_night.jpg', 'Electric DJ Night & Bonfire Party Lawn at Amrah Resort Mohan Chatti')">
+              <img src="images/amrah_dj_night.jpg" alt="Amrah Resort DJ Night and Bonfire" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/20 to-transparent"></div>
+              
+              <!-- Badges -->
+              <span class="absolute top-3.5 left-3.5 bg-forest-950/90 backdrop-blur-md text-gold-300 font-cinzel text-[9.5px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-gold-400/40">
+                🔥 Night Atmosphere
+              </span>
+              <span class="absolute top-3.5 right-3.5 bg-emerald-500/90 text-white font-cinzel text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider flex items-center gap-1 shadow-md">
+                <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> Ground Verified
+              </span>
+
+              <!-- Tap to Zoom Overlay Hint -->
+              <div class="absolute bottom-3 right-3 px-3 py-1.5 rounded-xl bg-forest-950/80 backdrop-blur-md border border-gold-500/30 text-gold-300 text-[10.5px] font-cinzel uppercase tracking-wider opacity-90 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+                <span>Tap to Zoom</span> 🔍
+              </div>
+            </div>
+
+            <div class="p-6 space-y-2.5">
+              <div class="flex items-center gap-2">
+                <span class="text-xs text-gold-400">🎶</span>
+                <span class="font-cinzel text-[10px] font-bold tracking-widest uppercase text-silk-300">Weekend Entertainment</span>
+              </div>
+              <h3 class="font-cormorant font-bold text-2xl text-white leading-tight">Illuminated DJ Lawn & Bonfire</h3>
+              <p class="text-silk-300 text-xs leading-relaxed font-outfit">
+                High-energy evening party lawn with laser illumination, crackling mountain bonfire, and curated music under the Garhwal stars.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0 border-t border-forest-800/80 mt-2 flex items-center justify-between">
+            <span class="text-[10px] font-cinzel text-gold-400 font-semibold tracking-wider">Live DJ Every Weekend</span>
+            <button onclick="openLightbox('images/amrah_dj_night.jpg', 'Electric DJ Night & Bonfire Party Lawn at Amrah Resort')" class="px-4 py-2 rounded-full bg-forest-800 hover:bg-gold-500 hover:text-forest-950 text-gold-300 font-cinzel font-bold text-[10.5px] uppercase tracking-wider transition-all cursor-pointer">
+              View High-Res
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Trust Strip / Official Handle Footer -->
+      <div class="mt-12 p-6 rounded-2xl bg-forest-900/60 border border-gold-500/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left reveal-item">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full gold-gradient-bg flex items-center justify-center text-forest-950 font-bold shrink-0 text-lg">
+            📷
+          </div>
+          <div>
+            <h4 class="font-cinzel text-sm font-bold text-gold-200">Want to see daily live stories & guest videos?</h4>
+            <p class="text-xs text-silk-300 font-outfit">Follow our official Instagram handle for fresh valley updates and guest tags.</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
+          <a href="https://www.instagram.com/amrah_resort_rishikesh/" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full border border-gold-400 text-gold-300 hover:bg-gold-500 hover:text-forest-950 font-cinzel font-bold text-xs uppercase tracking-wider transition-all">
+            @amrah_resort_rishikesh ↗
+          </a>
+          <a href="https://wa.me/918511129570?text=Namaste%20Amrah%20Resorts,%20please%20send%20latest%20resort%20videos%20and%20rates." target="_blank" class="px-5 py-2.5 rounded-full btn-gold-shimmer text-forest-950 font-cinzel font-bold text-xs uppercase tracking-wider hover:brightness-110 transition-all">
+            WhatsApp Live Videos
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ================= 05. ACCOMMODATIONS & LUXURY SUITES (SCROLL REVEAL ANIMATIONS) ================= -->
   <section id="accommodations" class="py-20 bg-silk-50 border-b border-silk-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -642,11 +830,14 @@
         <!-- Room 1: Swiss Cottage -->
         <div class="bg-white rounded-3xl overflow-hidden border border-silk-200 shadow-lg flex flex-col justify-between group luxury-hover-card reveal-item delay-100">
           <div>
-            <div class="relative aspect-[4/3] overflow-hidden bg-forest-950">
-              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Riverside Swiss AC Cottage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+            <div class="relative aspect-[4/3] overflow-hidden bg-forest-950 cursor-pointer" onclick="openLightbox('images/cottage_interior_luxury.jpg', 'Riverside Swiss AC Cottage — Amrah Resort Mohan Chatti')">
+              <img src="images/cottage_interior_luxury.jpg" alt="Riverside Swiss AC Cottage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
               <span class="absolute top-3 left-3 bg-forest-950/90 text-gold-300 font-cinzel text-[9.5px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-gold-400/40">
                 Most Popular
               </span>
+              <div class="absolute bottom-2 right-2 px-2 py-1 rounded-lg bg-forest-950/70 text-gold-300 text-[9.5px] font-cinzel opacity-0 group-hover:opacity-100 transition-opacity">
+                Zoom 🔍
+              </div>
             </div>
             <div class="p-6 space-y-3">
               <h3 class="font-cormorant font-bold text-2xl text-forest-950 leading-tight">Riverside Swiss AC Cottage</h3>
@@ -674,11 +865,14 @@
         <!-- Room 2: Mountain View Room -->
         <div class="bg-white rounded-3xl overflow-hidden border border-silk-200 shadow-lg flex flex-col justify-between group luxury-hover-card reveal-item delay-200">
           <div>
-            <div class="relative aspect-[4/3] overflow-hidden bg-forest-950">
-              <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Deluxe Mountain Room" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+            <div class="relative aspect-[4/3] overflow-hidden bg-forest-950 cursor-pointer" onclick="openLightbox('images/deluxe_room_interior.jpg', 'Deluxe Mountain Valley Bedroom — Amrah Resort Mohan Chatti')">
+              <img src="images/deluxe_room_interior.jpg" alt="Deluxe Mountain Room" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
               <span class="absolute top-3 left-3 bg-forest-950/90 text-gold-300 font-cinzel text-[9.5px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-gold-400/40">
                 Panoramic View
               </span>
+              <div class="absolute bottom-2 right-2 px-2 py-1 rounded-lg bg-forest-950/70 text-gold-300 text-[9.5px] font-cinzel opacity-0 group-hover:opacity-100 transition-opacity">
+                Zoom 🔍
+              </div>
             </div>
             <div class="p-6 space-y-3">
               <h3 class="font-cormorant font-bold text-2xl text-forest-950 leading-tight">Deluxe Mountain Room</h3>
@@ -706,11 +900,14 @@
         <!-- Room 3: Adventure Glamping Tent -->
         <div class="bg-white rounded-3xl overflow-hidden border border-silk-200 shadow-lg flex flex-col justify-between group luxury-hover-card reveal-item delay-300">
           <div>
-            <div class="relative aspect-[4/3] overflow-hidden bg-forest-950">
-              <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=800&q=80" alt="Glamping Swiss Tent" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+            <div class="relative aspect-[4/3] overflow-hidden bg-forest-950 cursor-pointer" onclick="openLightbox('images/glamping_tent_luxury.jpg', 'Adventure Glamping Swiss Tent in Nature — Amrah Resort Mohan Chatti')">
+              <img src="images/glamping_tent_luxury.jpg" alt="Glamping Swiss Tent" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
               <span class="absolute top-3 left-3 bg-forest-950/90 text-gold-300 font-cinzel text-[9.5px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-gold-400/40">
                 All Meals Included
               </span>
+              <div class="absolute bottom-2 right-2 px-2 py-1 rounded-lg bg-forest-950/70 text-gold-300 text-[9.5px] font-cinzel opacity-0 group-hover:opacity-100 transition-opacity">
+                Zoom 🔍
+              </div>
             </div>
             <div class="p-6 space-y-3">
               <h3 class="font-cormorant font-bold text-2xl text-forest-950 leading-tight">Glamping Swiss Tent</h3>
@@ -738,11 +935,14 @@
         <!-- Room 4: Royal Family Valley Suite -->
         <div class="bg-white rounded-3xl overflow-hidden border border-silk-200 shadow-lg flex flex-col justify-between group luxury-hover-card reveal-item delay-400">
           <div>
-            <div class="relative aspect-[4/3] overflow-hidden bg-forest-950">
-              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Royal Family Suite" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+            <div class="relative aspect-[4/3] overflow-hidden bg-forest-950 cursor-pointer" onclick="openLightbox('images/presidential_suite.jpg', 'Royal Presidential 2-BHK Family Suite — Amrah Resort Mohan Chatti')">
+              <img src="images/presidential_suite.jpg" alt="Royal Family Suite" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
               <span class="absolute top-3 left-3 bg-forest-950/90 text-gold-300 font-cinzel text-[9.5px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-gold-400/40">
                 Presidential 2-BHK
               </span>
+              <div class="absolute bottom-2 right-2 px-2 py-1 rounded-lg bg-forest-950/70 text-gold-300 text-[9.5px] font-cinzel opacity-0 group-hover:opacity-100 transition-opacity">
+                Zoom 🔍
+              </div>
             </div>
             <div class="p-6 space-y-3">
               <h3 class="font-cormorant font-bold text-2xl text-forest-950 leading-tight">Royal Family Valley Suite</h3>
@@ -1161,8 +1361,8 @@
         
         <!-- Experience 1: Swimming Pool -->
         <div class="rounded-3xl overflow-hidden border border-silk-200 bg-white p-5 space-y-3 shadow-md group luxury-hover-card reveal-item delay-100">
-          <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-forest-950">
-            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80" alt="Mountain Swimming Pool" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+          <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-forest-950 cursor-pointer" onclick="openLightbox('images/hilltop_pool.jpg', 'Hilltop Swimming Pool & Sun Deck — Amrah Resort Mohan Chatti')">
+            <img src="images/hilltop_pool.jpg" alt="Mountain Swimming Pool" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
           </div>
           <h3 class="font-cormorant font-bold text-2xl text-forest-950">Hilltop Swimming Pool</h3>
           <p class="text-silk-700 text-xs leading-relaxed font-outfit">
@@ -1172,8 +1372,8 @@
 
         <!-- Experience 2: Bonfire & DJ Night -->
         <div class="rounded-3xl overflow-hidden border border-silk-200 bg-white p-5 space-y-3 shadow-md group luxury-hover-card reveal-item delay-200">
-          <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-forest-950">
-            <img src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format&fit=crop&w=800&q=80" alt="Evening Bonfire & DJ" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+          <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-forest-950 cursor-pointer" onclick="openLightbox('images/bonfire_evening_gathering.jpg', 'Evening Bonfire & Acoustic Live Sessions — Amrah Resort')">
+            <img src="images/bonfire_evening_gathering.jpg" alt="Evening Bonfire & DJ" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
           </div>
           <h3 class="font-cormorant font-bold text-2xl text-forest-950">Evening Bonfire & Acoustic DJ</h3>
           <p class="text-silk-700 text-xs leading-relaxed font-outfit">
@@ -1183,8 +1383,8 @@
 
         <!-- Experience 3: Ganga River Rafting -->
         <div class="rounded-3xl overflow-hidden border border-silk-200 bg-white p-5 space-y-3 shadow-md group luxury-hover-card reveal-item delay-300">
-          <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-forest-950">
-            <img src="https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?auto=format&fit=crop&w=800&q=80" alt="Ganga White Water Rafting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+          <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-forest-950 cursor-pointer" onclick="openLightbox('images/ganga_rafting_rapid.jpg', '16 KM Ganga River Rafting & Cliff Jumping')">
+            <img src="images/ganga_rafting_rapid.jpg" alt="Ganga White Water Rafting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
           </div>
           <h3 class="font-cormorant font-bold text-2xl text-forest-950">16 KM & 26 KM Ganga Rafting</h3>
           <p class="text-silk-700 text-xs leading-relaxed font-outfit">
@@ -1194,8 +1394,8 @@
 
         <!-- Experience 4: Bungee Jumping (Jumpin Heights) -->
         <div class="rounded-3xl overflow-hidden border border-silk-200 bg-white p-5 space-y-3 shadow-md group luxury-hover-card reveal-item delay-100">
-          <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-forest-950">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Bungee Jumping Mohan Chatti" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+          <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-forest-950 cursor-pointer" onclick="openLightbox('images/bungee_jumping_mohan_chatti.jpg', 'Jumpin Heights Mohan Chatti — 83m Fixed Bungee Platform (5 mins away)')">
+            <img src="images/bungee_jumping_mohan_chatti.jpg" alt="Bungee Jumping Mohan Chatti" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
           </div>
           <h3 class="font-cormorant font-bold text-2xl text-forest-950">Jumpin Heights Bungee (5 Mins Away)</h3>
           <p class="text-silk-700 text-xs leading-relaxed font-outfit">
@@ -1205,8 +1405,8 @@
 
         <!-- Experience 5: Dining & Culinary Buffet -->
         <div class="rounded-3xl overflow-hidden border border-silk-200 bg-white p-5 space-y-3 shadow-md group luxury-hover-card reveal-item delay-200">
-          <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-forest-950">
-            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Gourmet Dining Hall" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+          <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-forest-950 cursor-pointer" onclick="openLightbox('images/dining_buffet_spread.jpg', 'Gourmet Buffet Dining & Pahadi Delicacies — Amrah Resort')">
+            <img src="images/dining_buffet_spread.jpg" alt="Gourmet Dining Hall" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
           </div>
           <h3 class="font-cormorant font-bold text-2xl text-forest-950">Pahadi & North Indian Feasts</h3>
           <p class="text-silk-700 text-xs leading-relaxed font-outfit">
@@ -1216,8 +1416,8 @@
 
         <!-- Experience 6: River Pebble Trail -->
         <div class="rounded-3xl overflow-hidden border border-silk-200 bg-white p-5 space-y-3 shadow-md group luxury-hover-card reveal-item delay-300">
-          <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-forest-950">
-            <img src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=800&q=80" alt="River Stream Trail" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+          <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-forest-950 cursor-pointer" onclick="openLightbox('images/riverside_nature_trail.jpg', 'Direct Walking Path to Mohan Chatti River Stream')">
+            <img src="images/riverside_nature_trail.jpg" alt="River Stream Trail" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
           </div>
           <h3 class="font-cormorant font-bold text-2xl text-forest-950">Riverside Pebble Trail & Waterfall</h3>
           <p class="text-silk-700 text-xs leading-relaxed font-outfit">
@@ -1330,11 +1530,11 @@
         
         <!-- Left Culinary Imagery Grid -->
         <div class="lg:col-span-6 grid grid-cols-2 gap-4 reveal-item">
-          <div class="aspect-[4/5] rounded-3xl overflow-hidden border border-gold-500/30">
-            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=80" alt="Himalayan Gourmet Dining" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700 ease-out">
+          <div class="aspect-[4/5] rounded-3xl overflow-hidden border border-gold-500/30 cursor-pointer" onclick="openLightbox('images/dining_buffet_spread.jpg', 'Multi-Cuisine Buffet Spread — The Pine & Pebble Restaurant')">
+            <img src="images/dining_buffet_spread.jpg" alt="Himalayan Gourmet Buffet" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700 ease-out">
           </div>
-          <div class="aspect-[4/5] rounded-3xl overflow-hidden border border-gold-500/30 mt-6">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80" alt="Candlelight Dining by Pool" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700 ease-out">
+          <div class="aspect-[4/5] rounded-3xl overflow-hidden border border-gold-500/30 mt-6 cursor-pointer" onclick="openLightbox('images/dining_cuisine_dish.jpg', 'Pahadi & North Indian Signature Gourmet Dishes')">
+            <img src="images/dining_cuisine_dish.jpg" alt="Pahadi Gourmet Dish" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700 ease-out">
           </div>
         </div>
 
@@ -1418,43 +1618,78 @@
       <!-- Gallery Grid -->
       <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         
-        <div class="gallery-item cottages aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-100" onclick="openLightbox('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=85', 'Riverside Swiss AC Cottage Exterior')">
-          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=700&q=80" alt="Swiss Cottage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <!-- 1. Authentic Twilight Cottages -->
+        <div class="gallery-item cottages aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-100" onclick="openLightbox('images/amrah_cottages_dusk.jpg', 'Authentic Amrah Resort Swiss Cottages & Hilltop Pool at Twilight')">
+          <img src="images/amrah_cottages_dusk.jpg" alt="Amrah Cottages Twilight" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <span class="absolute top-2 left-2 bg-forest-950/80 backdrop-blur-sm text-gold-300 font-cinzel text-[8.5px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider border border-gold-400/30">Verified Property</span>
           <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
         </div>
 
-        <div class="gallery-item pool aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-100" onclick="openLightbox('https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1400&q=85', 'Hilltop Mountain View Swimming Pool')">
-          <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=700&q=80" alt="Swimming Pool" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <!-- 2. Hilltop Swimming Pool -->
+        <div class="gallery-item pool aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-100" onclick="openLightbox('images/hilltop_pool.jpg', 'Hilltop Swimming Pool & Sun Deck overlooking Pine Valley')">
+          <img src="images/hilltop_pool.jpg" alt="Swimming Pool" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
         </div>
 
-        <div class="gallery-item cottages aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-200" onclick="openLightbox('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1400&q=85', 'Deluxe Mountain Valley Bedroom')">
-          <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=700&q=80" alt="Deluxe Room" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <!-- 3. Authentic DJ Night Lawn -->
+        <div class="gallery-item nightlife aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-200" onclick="openLightbox('images/amrah_dj_night.jpg', 'Verified Weekend DJ Night & Starlit Bonfire Lawn')">
+          <img src="images/amrah_dj_night.jpg" alt="DJ Night Lawn" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <span class="absolute top-2 left-2 bg-forest-950/80 backdrop-blur-sm text-gold-300 font-cinzel text-[8.5px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider border border-gold-400/30">Verified Ground</span>
           <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
         </div>
 
-        <div class="gallery-item rafting aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-200" onclick="openLightbox('https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?auto=format&fit=crop&w=1400&q=85', '16KM White Water Ganga River Rafting')">
-          <img src="https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?auto=format&fit=crop&w=700&q=80" alt="Ganga Rafting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <!-- 4. Swiss Cottage Interior -->
+        <div class="gallery-item cottages aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-200" onclick="openLightbox('images/cottage_interior_luxury.jpg', 'Riverside Swiss AC Cottage Interior & Balcony')">
+          <img src="images/cottage_interior_luxury.jpg" alt="Swiss Cottage Interior" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
         </div>
 
-        <div class="gallery-item nightlife aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-300" onclick="openLightbox('https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format&fit=crop&w=1400&q=85', 'Evening Starlit Bonfire with DJ Music')">
-          <img src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format&fit=crop&w=700&q=80" alt="Bonfire Night" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <!-- 5. Ganga River Rafting Rapids -->
+        <div class="gallery-item rafting aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-300" onclick="openLightbox('images/ganga_rafting_rapid.jpg', '16KM White Water Ganga River Rafting Rapids')">
+          <img src="images/ganga_rafting_rapid.jpg" alt="Ganga Rafting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
         </div>
 
-        <div class="gallery-item cottages aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-300" onclick="openLightbox('https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1400&q=85', 'Adventure Glamping Swiss Tent in Nature')">
-          <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=700&q=80" alt="Glamping Tent" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <!-- 6. Authentic Resort Entrance & River Walkway -->
+        <div class="gallery-item cottages aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-300" onclick="openLightbox('images/amrah_resort_entrance.jpg', 'Amrah Resort Main Entrance Gateway & River Stream Walkway')">
+          <img src="images/amrah_resort_entrance.jpg" alt="Resort Entrance" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <span class="absolute top-2 left-2 bg-forest-950/80 backdrop-blur-sm text-gold-300 font-cinzel text-[8.5px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider border border-gold-400/30">Verified Ground</span>
           <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
         </div>
 
-        <div class="gallery-item rafting aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-400" onclick="openLightbox('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=85', 'Jumpin Heights Bungee Jumping Mohan Chatti Valley')">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80" alt="Bungee Jumping Valley" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <!-- 7. Bonfire Night Gathering -->
+        <div class="gallery-item nightlife aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-400" onclick="openLightbox('images/bonfire_evening_gathering.jpg', 'Evening Starlit Bonfire Gathering with Live Music')">
+          <img src="images/bonfire_evening_gathering.jpg" alt="Bonfire Night" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
         </div>
 
-        <div class="gallery-item nightlife aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-400" onclick="openLightbox('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1400&q=85', 'Group Celebration & Dining Ambiance')">
-          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80" alt="Group Reunion" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <!-- 8. Deluxe Mountain Room -->
+        <div class="gallery-item cottages aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-400" onclick="openLightbox('images/deluxe_room_interior.jpg', 'Deluxe Mountain Valley Bedroom Suite')">
+          <img src="images/deluxe_room_interior.jpg" alt="Deluxe Room" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
+        </div>
+
+        <!-- 9. Jumpin Heights Bungee Jumping -->
+        <div class="gallery-item rafting aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-100" onclick="openLightbox('images/bungee_jumping_mohan_chatti.jpg', 'Jumpin Heights Mohan Chatti — 83m Fixed Bungee Platform')">
+          <img src="images/bungee_jumping_mohan_chatti.jpg" alt="Bungee Jumping Valley" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
+        </div>
+
+        <!-- 10. Glamping Swiss Tent in Nature -->
+        <div class="gallery-item cottages aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-200" onclick="openLightbox('images/glamping_tent_luxury.jpg', 'Adventure Glamping Swiss Tent in Nature')">
+          <img src="images/glamping_tent_luxury.jpg" alt="Glamping Tent" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
+        </div>
+
+        <!-- 11. Royal Presidential Family Suite -->
+        <div class="gallery-item cottages aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-300" onclick="openLightbox('images/presidential_suite.jpg', 'Royal Presidential 2-BHK Family Suite')">
+          <img src="images/presidential_suite.jpg" alt="Family Suite" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
+        </div>
+
+        <!-- 12. Mohan Chatti Valley Dusk Terrace View -->
+        <div class="gallery-item pool aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-400" onclick="openLightbox('images/resort_valley_dusk.jpg', 'Panoramic Mohan Chatti Mountain Dusk Valley View')">
+          <img src="images/resort_valley_dusk.jpg" alt="Valley Dusk View" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
         </div>
 
@@ -1877,12 +2112,14 @@
     let ambientGain = null;
     let isPromoApplied = true;
 
-    // Background Image Carousel list
+    // Background Image Carousel list (Local High-Resolution & Verified Assets)
     const heroImages = [
-      'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2000&q=85',
-      'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2000&q=85',
-      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=85',
-      'https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format&fit=crop&w=2000&q=85'
+      'images/amrah_cottages_dusk.jpg',
+      'images/hero_valley_panoramic.jpg',
+      'images/hilltop_pool.jpg',
+      'images/amrah_dj_night.jpg',
+      'images/bonfire_evening_gathering.jpg',
+      'images/resort_valley_dusk.jpg'
     ];
     let currentHeroIdx = 0;
 
