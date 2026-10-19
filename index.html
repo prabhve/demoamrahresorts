@@ -187,12 +187,34 @@
     .timeline-dot {
       box-shadow: 0 0 0 4px rgba(212, 163, 70, 0.25);
     }
+
+    /* Bulletproof Royal Header & Navigation Styling */
+    .top-announcement-bar {
+      background-color: #04140E !important;
+      border-bottom: 1px solid rgba(212, 163, 70, 0.25) !important;
+    }
+    .site-header {
+      background-color: #04140E !important;
+      background: #04140E !important;
+      border-bottom: 1px solid rgba(212, 163, 70, 0.28) !important;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7) !important;
+    }
+    .site-mobile-menu {
+      background-color: #04140E !important;
+      background: #04140E !important;
+      border-top: 1px solid rgba(212, 163, 70, 0.2) !important;
+    }
+    .mobile-quick-bar {
+      background-color: #04140E !important;
+      background: #04140E !important;
+      border-top: 1px solid rgba(212, 163, 70, 0.3) !important;
+    }
   </style>
 </head>
 <body class="bg-silk-100 text-silk-800 antialiased selection:bg-gold-500 selection:text-forest-950 safe-bottom-padding lg:pb-0">
 
   <!-- ================= 01. REGAL TOP STATUS & UTILITY BAR (WELL-MANNERED SINGLE-LINE) ================= -->
-  <aside aria-label="Announcement & Status Bar" class="bg-forest-950 text-white text-[11px] border-b border-forest-900/80 sticky top-0 z-50 overflow-hidden">
+  <aside aria-label="Announcement & Status Bar" class="top-announcement-bar bg-forest-950 text-white text-[11px] sticky top-0 z-50 overflow-hidden" style="background-color: #04140E;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between gap-4 text-xs">
       
       <!-- Left: Location & Real-time Weather (Strict Single-Line) -->
@@ -241,59 +263,59 @@
   </aside>
 
   <!-- ================= 02. LUXURY ARCHITECTURAL NAVIGATION HEADER ================= -->
-  <header class="bg-forest-950/98 backdrop-blur-md border-b border-gold-500/20 sticky top-[36px] z-40 transition-all shadow-xl">
+  <header class="site-header bg-forest-950 sticky top-[36px] z-40 transition-all shadow-2xl" style="background-color: #04140E;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
       
       <!-- Brand Royal Insignia Logo -->
       <a href="#home" class="flex items-center gap-3 group shrink-0 whitespace-nowrap">
-        <div class="w-11 h-11 rounded-full bg-gradient-to-br from-forest-900 via-forest-950 to-forest-900 border-2 border-gold-400/90 text-gold-400 flex items-center justify-center shadow-md group-hover:scale-105 group-hover:border-gold-300 transition-all duration-300">
+        <div class="w-11 h-11 rounded-full bg-forest-900 border-2 border-gold-400 text-gold-400 flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:border-gold-300 transition-all duration-300">
           <svg class="w-5 h-5 fill-current text-gold-400" viewBox="0 0 24 24">
             <path d="M12 2L1 21h22L12 2zm0 3.8l7.2 13.2H4.8L12 5.8zm0 4.2l-4 7h8l-4-7z"/>
           </svg>
         </div>
         <div class="leading-none">
-          <span class="font-cormorant font-bold text-2xl tracking-widest text-white block group-hover:text-gold-300 transition-colors">
+          <span class="font-cormorant font-bold text-2xl tracking-widest text-white block group-hover:text-gold-300 transition-colors drop-shadow-sm">
             AMRAH
           </span>
-          <span class="font-cinzel text-[8.5px] tracking-[0.25em] text-gold-400 font-bold uppercase block mt-1">
+          <span class="font-cinzel text-[8.5px] tracking-[0.25em] text-gold-400 font-bold uppercase block mt-1 drop-shadow-sm">
             RESORT & CAMP • RISHIKESH
           </span>
         </div>
       </a>
 
       <!-- Desktop Luxury Editorial Menu (Strict Single-Line Horizontal Layout) -->
-      <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-[11px] font-cinzel font-semibold tracking-[0.14em] uppercase text-silk-200 shrink-0">
-        <a href="#accommodations" class="py-1 relative hover:text-gold-300 transition-colors whitespace-nowrap group">
+      <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-[11.5px] font-cinzel font-bold tracking-[0.14em] uppercase shrink-0">
+        <a href="#accommodations" class="py-1.5 relative text-white/90 hover:text-gold-300 transition-colors whitespace-nowrap group">
           <span>Suites & Tents</span>
-          <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
         </a>
-        <a href="#experiences" class="py-1 relative hover:text-gold-300 transition-colors whitespace-nowrap group">
+        <a href="#experiences" class="py-1.5 relative text-white/90 hover:text-gold-300 transition-colors whitespace-nowrap group">
           <span>Experiences</span>
-          <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
         </a>
-        <a href="#packages" class="py-1 relative hover:text-gold-300 transition-colors whitespace-nowrap group">
+        <a href="#packages" class="py-1.5 relative text-white/90 hover:text-gold-300 transition-colors whitespace-nowrap group">
           <span>Packages</span>
-          <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
         </a>
-        <a href="#itinerary" class="py-1 relative hover:text-gold-300 transition-colors whitespace-nowrap group">
+        <a href="#itinerary" class="py-1.5 relative text-white/90 hover:text-gold-300 transition-colors whitespace-nowrap group">
           <span>Itinerary</span>
-          <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
         </a>
-        <a href="#dining" class="py-1 relative hover:text-gold-300 transition-colors whitespace-nowrap group">
+        <a href="#dining" class="py-1.5 relative text-white/90 hover:text-gold-300 transition-colors whitespace-nowrap group">
           <span>Dining</span>
-          <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
         </a>
-        <a href="#comparison" class="py-1 relative hover:text-gold-300 transition-colors whitespace-nowrap group">
+        <a href="#comparison" class="py-1.5 relative text-white/90 hover:text-gold-300 transition-colors whitespace-nowrap group">
           <span>Why Direct</span>
-          <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
         </a>
-        <a href="#gallery" class="py-1 relative hover:text-gold-300 transition-colors whitespace-nowrap group">
+        <a href="#gallery" class="py-1.5 relative text-white/90 hover:text-gold-300 transition-colors whitespace-nowrap group">
           <span>Gallery</span>
-          <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
         </a>
-        <a href="#route" class="py-1 relative hover:text-gold-300 transition-colors whitespace-nowrap group">
+        <a href="#route" class="py-1.5 relative text-white/90 hover:text-gold-300 transition-colors whitespace-nowrap group">
           <span>Route</span>
-          <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-400 group-hover:w-full transition-all duration-300"></span>
         </a>
       </nav>
 
@@ -301,7 +323,7 @@
       <div class="flex items-center gap-3 shrink-0">
         
         <!-- Corporate / Group Quote Modal Trigger -->
-        <button onclick="openGroupModal()" class="hidden md:inline-flex items-center px-3.5 py-2 rounded-full border border-gold-400/40 text-gold-300 hover:bg-gold-500/10 text-[10.5px] font-cinzel font-bold tracking-wider uppercase transition-all cursor-pointer whitespace-nowrap">
+        <button onclick="openGroupModal()" class="hidden md:inline-flex items-center px-4 py-2 rounded-full border border-gold-400/60 bg-forest-900/80 text-gold-300 hover:text-white hover:bg-gold-500/20 text-[11px] font-cinzel font-bold tracking-wider uppercase transition-all cursor-pointer whitespace-nowrap shadow-sm">
           <span>Corporate</span>
         </button>
 
@@ -314,7 +336,7 @@
         </a>
 
         <!-- Mobile Drawer Hamburger -->
-        <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 rounded-xl bg-forest-900 border border-gold-500/30 flex items-center justify-center text-gold-400 hover:text-white cursor-pointer" aria-label="Toggle Navigation">
+        <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 rounded-xl bg-forest-900 border border-gold-500/40 flex items-center justify-center text-gold-400 hover:text-white cursor-pointer" aria-label="Toggle Navigation">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -326,18 +348,18 @@
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div id="mobileMenu" class="hidden lg:hidden border-t border-forest-900 bg-forest-950/98 px-6 py-6 space-y-4 text-xs font-cinzel font-bold uppercase tracking-widest text-silk-200 shadow-2xl">
-      <a href="#accommodations" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900 hover:text-gold-400">Luxury Cottages & Glamping Tents</a>
-      <a href="#experiences" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900 hover:text-gold-400">Resort Pool, Bonfire & Rafting</a>
-      <a href="#packages" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900 hover:text-gold-400">All-Inclusive Weekend Packages</a>
-      <a href="#itinerary" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900 hover:text-gold-400">Weekend Adventure Itinerary (1N/2D)</a>
-      <a href="#dining" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900 hover:text-gold-400">Multi-Cuisine Dining & Barbecue</a>
-      <a href="#comparison" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900 hover:text-gold-400">Direct Booking vs MakeMyTrip</a>
-      <a href="#gallery" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900 hover:text-gold-400">Photo & Atmosphere Gallery</a>
-      <a href="#route" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900 hover:text-gold-400">How to Reach (Interactive Map)</a>
+    <div id="mobileMenu" class="site-mobile-menu hidden lg:hidden bg-forest-950 px-6 py-6 space-y-4 text-xs font-cinzel font-bold uppercase tracking-widest text-silk-200 shadow-2xl" style="background-color: #04140E;">
+      <a href="#accommodations" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900/80 hover:text-gold-400">Luxury Cottages & Glamping Tents</a>
+      <a href="#experiences" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900/80 hover:text-gold-400">Resort Pool, Bonfire & Rafting</a>
+      <a href="#packages" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900/80 hover:text-gold-400">All-Inclusive Weekend Packages</a>
+      <a href="#itinerary" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900/80 hover:text-gold-400">Weekend Adventure Itinerary (1N/2D)</a>
+      <a href="#dining" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900/80 hover:text-gold-400">Multi-Cuisine Dining & Barbecue</a>
+      <a href="#comparison" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900/80 hover:text-gold-400">Direct Booking vs MakeMyTrip</a>
+      <a href="#gallery" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900/80 hover:text-gold-400">Photo & Atmosphere Gallery</a>
+      <a href="#route" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900/80 hover:text-gold-400">How to Reach (Interactive Map)</a>
       <a href="#reviews" onclick="toggleMobileMenu()" class="block py-2.5 hover:text-gold-400">4.8★ Google Ratings (450+ Reviews)</a>
       <div class="pt-2">
-        <button onclick="openGroupModal(); toggleMobileMenu();" class="w-full py-3 rounded-xl border border-gold-400 text-gold-300 text-center font-bold">
+        <button onclick="openGroupModal(); toggleMobileMenu();" class="w-full py-3 rounded-xl border border-gold-400 bg-forest-900 text-gold-300 text-center font-bold">
           Group & Corporate Offsite Inquiry
         </button>
       </div>
@@ -1752,7 +1774,7 @@
   </div>
 
   <!-- ================= 18. STICKY MOBILE CONCIERGE BAR ================= -->
-  <aside aria-label="Mobile Quick Action Bar" class="lg:hidden fixed bottom-0 inset-x-0 z-50 bg-forest-950/98 backdrop-blur-md border-t border-gold-500/30 p-2.5 flex items-center gap-2 shadow-2xl">
+  <aside aria-label="Mobile Quick Action Bar" class="mobile-quick-bar lg:hidden fixed bottom-0 inset-x-0 z-50 bg-forest-950 backdrop-blur-md border-t border-gold-500/30 p-2.5 flex items-center gap-2 shadow-2xl" style="background-color: #04140E;">
     <a href="tel:+918511129570" class="flex-1 py-3.5 rounded-xl bg-forest-900 border border-gold-500/40 text-gold-300 font-cinzel font-bold text-[11px] uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 shadow-md">
       <span>📞 Call Desk</span>
     </a>
