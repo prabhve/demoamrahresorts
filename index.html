@@ -6,10 +6,10 @@
   <title>Amrah Resort & Camp | 5-Star Riverside Cottages, Mountain Pool & Ganga Rafting • Mohan Chatti, Rishikesh</title>
   <meta name="description" content="Official Amrah Resort & Camp Rishikesh. Ultra-luxury Swiss AC Cottages, Hilltop Swimming Pool, 16KM Ganga White Water Rafting, Evening Bonfire & DJ in Mohan Chatti. Book Direct at 0% Commission.">
 
-  <!-- Top Best Luxury Fonts: Cormorant Garamond, Cinzel, Outfit, Alex Brush -->
+  <!-- World-Class Premium Luxury Font Stack -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -51,7 +51,8 @@
             sans: ['"Outfit"', 'sans-serif'],
             serif: ['"Cormorant Garamond"', 'serif'],
             regal: ['"Cinzel"', 'serif'],
-            signature: ['"Alex Brush"', 'cursive']
+            signature: ['"Alex Brush"', 'cursive'],
+            editorial: ['"Playfair Display"', 'serif']
           }
         }
       }
@@ -68,11 +69,12 @@
       touch-action: manipulation;
     }
 
-    /* Editorial Serif Selection */
+    /* Editorial Fonts */
     .font-cormorant { font-family: 'Cormorant Garamond', serif; }
     .font-cinzel { font-family: 'Cinzel', serif; }
     .font-outfit { font-family: 'Outfit', sans-serif; }
     .font-signature { font-family: 'Alex Brush', cursive; }
+    .font-editorial { font-family: 'Playfair Display', serif; }
 
     /* Custom Luxury Gold Scrollbar */
     ::-webkit-scrollbar {
@@ -97,14 +99,79 @@
       background: linear-gradient(135deg, #ECC880 0%, #D4A346 50%, #B88229 100%);
     }
 
-    /* Ambient Subtle Glow */
-    .luxury-card-glow:hover {
-      box-shadow: 0 20px 40px -15px rgba(212, 163, 70, 0.2), 0 0 25px rgba(38, 115, 87, 0.15);
+    /* ================= KEYFRAME ANIMATIONS ================= */
+
+    /* 1. Shimmer Button Sweep */
+    @keyframes goldShimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .btn-gold-shimmer {
+      background: linear-gradient(90deg, #D4A346 0%, #ECC880 25%, #FFF8E7 50%, #ECC880 75%, #D4A346 100%);
+      background-size: 200% 100%;
+      animation: goldShimmer 3.5s infinite linear;
+    }
+
+    /* 2. Gentle Floating Bob */
+    @keyframes floatGentle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .animate-float {
+      animation: floatGentle 4.5s ease-in-out infinite;
+    }
+
+    /* 3. Ambient Breathing Halo */
+    @keyframes pulseHalo {
+      0%, 100% { box-shadow: 0 0 25px rgba(212, 163, 70, 0.2), 0 25px 60px -15px rgba(0,0,0,0.8); }
+      50% { box-shadow: 0 0 50px rgba(212, 163, 70, 0.45), 0 25px 60px -15px rgba(0,0,0,0.9); }
+    }
+    .halo-glow {
+      animation: pulseHalo 3.5s infinite ease-in-out;
+    }
+
+    /* 4. Cinematic Ken Burns Ambient Zoom */
+    @keyframes kenBurnsSlow {
+      0% { transform: scale(1) translate(0, 0); }
+      50% { transform: scale(1.08) translate(-1%, -1%); }
+      100% { transform: scale(1) translate(0, 0); }
+    }
+    .ken-burns {
+      animation: kenBurnsSlow 20s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+
+    /* 5. Smooth Scroll-Triggered Reveal Animations */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-item.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger Delays for Grid Children */
+    .delay-100 { transition-delay: 0.1s; }
+    .delay-200 { transition-delay: 0.2s; }
+    .delay-300 { transition-delay: 0.3s; }
+    .delay-400 { transition-delay: 0.4s; }
+
+    /* Luxury Hover Scale */
+    .luxury-hover-card {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+    }
+    .luxury-hover-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 45px -12px rgba(212, 163, 70, 0.25), 0 0 30px rgba(38, 115, 87, 0.15);
+      border-color: rgba(212, 163, 70, 0.6);
     }
 
     /* Safe Area Padding for Modern Mobile Devices (iPhones notch & home indicator) */
     .safe-bottom-padding {
-      padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+      padding-bottom: calc(5.2rem + env(safe-area-inset-bottom, 0px));
     }
 
     /* Modal Animation */
@@ -155,7 +222,7 @@
       <div class="flex items-center gap-3 sm:gap-4 shrink-0">
         
         <!-- Mountain River Audio Ambience Toggle (Synthesized Audio API) -->
-        <button id="natureSoundBtn" onclick="toggleNatureAmbience()" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-forest-900/90 border border-gold-500/40 text-gold-300 hover:text-white text-[10px] font-bold transition-all shadow-sm active:scale-95 cursor-pointer">
+        <button id="natureSoundBtn" onclick="toggleNatureAmbience()" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-forest-900/90 border border-gold-500/40 text-gold-300 hover:text-white text-[10px] font-bold transition-all shadow-sm active:scale-95 cursor-pointer">
           <span id="soundIcon">🔇</span>
           <span id="soundLabel" class="hidden xs:inline">River Ambience</span>
         </button>
@@ -212,8 +279,8 @@
           <span>Corporate & Groups</span>
         </button>
 
-        <!-- Instant WhatsApp VIP Booking Button -->
-        <a href="https://wa.me/918511129570?text=Namaste%20Amrah%20Resort,%20I%20am%20looking%20to%20book%20a%20luxury%20stay%20and%20rafting%20package." target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full gold-gradient-bg text-forest-950 text-xs font-cinzel font-black tracking-wider uppercase shadow-lg hover:brightness-110 active:scale-95 transition-all">
+        <!-- Instant WhatsApp VIP Booking Button with Shimmer Sweep -->
+        <a href="https://wa.me/918511129570?text=Namaste%20Amrah%20Resort,%20I%20am%20looking%20to%20book%20a%20luxury%20stay%20and%20rafting%20package." target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full btn-gold-shimmer text-forest-950 text-xs font-cinzel font-black tracking-wider uppercase shadow-xl hover:brightness-110 active:scale-95 transition-all">
           <svg class="w-4 h-4 fill-forest-950" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
           </svg>
@@ -255,9 +322,9 @@
   <!-- ================= 03. GRAND HERO BANNER WITH AMBIENT CAROUSEL & VIP BOOKING ENGINE ================= -->
   <section id="home" class="relative bg-forest-950 text-white min-h-[92vh] flex items-center py-12 lg:py-20 overflow-hidden">
     
-    <!-- Hero Background Image Carousel with Vignette Overlay -->
-    <div class="absolute inset-0 z-0">
-      <img id="heroBgImage" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2000&q=85" alt="Amrah Luxury Resort Mohan Chatti" class="w-full h-full object-cover transition-opacity duration-1000 brightness-[0.35]">
+    <!-- Hero Background Image Carousel with Cinematic Ken Burns Motion -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <img id="heroBgImage" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2000&q=85" alt="Amrah Luxury Resort Mohan Chatti" class="w-full h-full object-cover transition-opacity duration-1000 brightness-[0.35] ken-burns">
       <div class="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/60 to-forest-950/80"></div>
       <div class="absolute inset-0 bg-[radial-gradient(#D4A346_0.8px,transparent_0.8px)] [background-size:28px_28px] opacity-10"></div>
     </div>
@@ -268,8 +335,8 @@
         <!-- Left Hero Copy & Editorial Storytelling -->
         <div class="lg:col-span-7 space-y-5 sm:space-y-6">
           
-          <!-- Crest Badge -->
-          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-forest-900/80 border border-gold-400/40 backdrop-blur-md">
+          <!-- Crest Badge with Gentle Floating Animation -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-forest-900/80 border border-gold-400/40 backdrop-blur-md animate-float">
             <span class="text-gold-400">⚜️</span>
             <span class="font-cinzel text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase text-gold-200">
               MOHAN CHATTI • THE HIMALAYAN RIVERSIDE SANCTUARY
@@ -282,7 +349,7 @@
             <span class="italic font-normal text-gold-300">Meets River Luxury.</span>
           </h1>
 
-          <!-- Signature Callout -->
+          <!-- Signature Callout with Alex Brush -->
           <p class="font-signature text-3xl sm:text-4xl text-gold-300/90 -mt-2">
             Awaken to the melody of flowing water and pine-scented breezes.
           </p>
@@ -291,29 +358,29 @@
             Tucked away in the pristine valleys of Mohan Chatti, <strong>Amrah Resort & Camp</strong> blends five-star comfort with wild Himalayan nature. Private Swiss AC cottages, mountain swimming pool, crackling bonfire nights, and legendary 16KM Ganga white water rafting.
           </p>
 
-          <!-- 4 Pillars Quick Trust Pills -->
+          <!-- 4 Pillars Animated Counter Strip -->
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2">
-            <div class="p-2.5 rounded-2xl bg-forest-900/70 border border-gold-500/20 backdrop-blur-sm text-center">
-              <span class="font-cormorant font-bold text-xl text-gold-300 block">4.8 ★</span>
+            <div class="p-3 rounded-2xl bg-forest-900/70 border border-gold-500/20 backdrop-blur-sm text-center">
+              <span class="font-cormorant font-bold text-2xl text-gold-300 block" data-counter="4.8" data-float="true" data-suffix=" ★">4.8 ★</span>
               <span class="text-[9.5px] font-cinzel uppercase tracking-wider text-silk-300">Google Verified</span>
             </div>
-            <div class="p-2.5 rounded-2xl bg-forest-900/70 border border-gold-500/20 backdrop-blur-sm text-center">
-              <span class="font-cormorant font-bold text-xl text-gold-300 block">Hilltop Pool</span>
-              <span class="text-[9.5px] font-cinzel uppercase tracking-wider text-silk-300">Complimentary</span>
+            <div class="p-3 rounded-2xl bg-forest-900/70 border border-gold-500/20 backdrop-blur-sm text-center">
+              <span class="font-cormorant font-bold text-2xl text-gold-300 block" data-counter="100" data-suffix="%">100%</span>
+              <span class="text-[9.5px] font-cinzel uppercase tracking-wider text-silk-300">Power Backup & AC</span>
             </div>
-            <div class="p-2.5 rounded-2xl bg-forest-900/70 border border-gold-500/20 backdrop-blur-sm text-center">
-              <span class="font-cormorant font-bold text-xl text-gold-300 block">16 KM</span>
+            <div class="p-3 rounded-2xl bg-forest-900/70 border border-gold-500/20 backdrop-blur-sm text-center">
+              <span class="font-cormorant font-bold text-2xl text-gold-300 block" data-counter="16" data-suffix=" KM">16 KM</span>
               <span class="text-[9.5px] font-cinzel uppercase tracking-wider text-silk-300">Ganga Rafting</span>
             </div>
-            <div class="p-2.5 rounded-2xl bg-forest-900/70 border border-gold-500/20 backdrop-blur-sm text-center">
-              <span class="font-cormorant font-bold text-xl text-gold-300 block">0% Fee</span>
+            <div class="p-3 rounded-2xl bg-forest-900/70 border border-gold-500/20 backdrop-blur-sm text-center">
+              <span class="font-cormorant font-bold text-2xl text-gold-300 block" data-counter="0" data-suffix="% Fee">0% Fee</span>
               <span class="text-[9.5px] font-cinzel uppercase tracking-wider text-silk-300">Direct Booking</span>
             </div>
           </div>
 
           <!-- Hero Action Buttons -->
           <div class="flex flex-wrap items-center gap-3.5 pt-2">
-            <a href="#bookingEngine" class="px-8 py-4 rounded-full gold-gradient-bg hover:brightness-110 text-forest-950 font-cinzel font-bold text-xs tracking-widest uppercase transition-all shadow-2xl hover:scale-105 active:scale-95 flex items-center gap-2">
+            <a href="#bookingEngine" class="px-8 py-4 rounded-full btn-gold-shimmer text-forest-950 font-cinzel font-bold text-xs tracking-widest uppercase transition-all shadow-2xl hover:scale-105 active:scale-95 flex items-center gap-2">
               <span>EXPLORE PACKAGES & RATES</span>
               <span>→</span>
             </a>
@@ -327,7 +394,7 @@
         <!-- Right Hero: Interactive VIP Availability, Cost Calculator & Promo Code Engine -->
         <div id="bookingEngine" class="lg:col-span-5 relative">
           
-          <div class="bg-forest-900/90 backdrop-blur-xl rounded-3xl p-6 sm:p-7 text-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] border border-gold-500/40 relative">
+          <div class="bg-forest-900/90 backdrop-blur-xl rounded-3xl p-6 sm:p-7 text-white halo-glow border border-gold-500/40 relative">
             
             <!-- Card Header -->
             <div class="flex items-center justify-between pb-4 border-b border-gold-500/20">
@@ -421,7 +488,7 @@
               </div>
 
               <!-- Submit WhatsApp Confirmation -->
-              <button type="submit" class="w-full py-4 rounded-2xl gold-gradient-bg text-forest-950 font-cinzel font-black text-xs uppercase tracking-widest shadow-xl flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all cursor-pointer">
+              <button type="submit" class="w-full py-4 rounded-2xl btn-gold-shimmer text-forest-950 font-cinzel font-black text-xs uppercase tracking-widest shadow-xl flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all cursor-pointer">
                 <svg class="w-5 h-5 fill-forest-950" viewBox="0 0 24 24">
                   <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
                 </svg>
@@ -483,12 +550,12 @@
     </div>
   </section>
 
-  <!-- ================= 05. ACCOMMODATIONS & LUXURY SUITES ================= -->
+  <!-- ================= 05. ACCOMMODATIONS & LUXURY SUITES (SCROLL REVEAL ANIMATIONS) ================= -->
   <section id="accommodations" class="py-20 bg-silk-50 border-b border-silk-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Section Heading -->
-      <div class="text-center max-w-3xl mx-auto mb-14">
+      <!-- Section Heading with Scroll Reveal -->
+      <div class="text-center max-w-3xl mx-auto mb-14 reveal-item">
         <span class="font-cinzel text-xs font-bold tracking-[0.3em] uppercase text-forest-700 block mb-2">
           SANCTUARY OF ELEGANCE
         </span>
@@ -498,26 +565,26 @@
         <p class="font-signature text-3xl text-gold-600 mt-1">
           Designed for restful slumber amidst the whispers of the valley.
         </p>
-        <p class="text-silk-700 text-xs sm:text-sm mt-3 leading-relaxed">
+        <p class="text-silk-700 text-xs sm:text-sm mt-3 leading-relaxed font-outfit">
           From stream-facing air-conditioned Swiss cottages to authentic Himalayan glamping tents, all stays feature attached modern bathrooms, plush bedding, and panoramic Himalayan valley vistas.
         </p>
       </div>
 
-      <!-- Accommodations Grid -->
+      <!-- Accommodations Grid with Staggered Scroll Reveal -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7">
         
         <!-- Room 1: Swiss Cottage -->
-        <div class="bg-white rounded-3xl overflow-hidden border border-silk-200 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group luxury-card-glow">
+        <div class="bg-white rounded-3xl overflow-hidden border border-silk-200 shadow-lg flex flex-col justify-between group luxury-hover-card reveal-item delay-100">
           <div>
             <div class="relative aspect-[4/3] overflow-hidden bg-forest-950">
-              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Riverside Swiss AC Cottage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Riverside Swiss AC Cottage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
               <span class="absolute top-3 left-3 bg-forest-950/90 text-gold-300 font-cinzel text-[9.5px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-gold-400/40">
                 Most Popular
               </span>
             </div>
             <div class="p-6 space-y-3">
               <h3 class="font-cormorant font-bold text-2xl text-forest-950 leading-tight">Riverside Swiss AC Cottage</h3>
-              <p class="text-silk-700 text-xs leading-relaxed">
+              <p class="text-silk-700 text-xs leading-relaxed font-outfit">
                 Stream-facing private balcony with king bed, whisper-quiet split AC, and attached luxury granite bathroom with 24/7 hot geyser water.
               </p>
               <div class="flex flex-wrap gap-1.5 pt-2 text-[10.5px] font-semibold text-forest-800">
@@ -539,17 +606,17 @@
         </div>
 
         <!-- Room 2: Mountain View Room -->
-        <div class="bg-white rounded-3xl overflow-hidden border border-silk-200 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group luxury-card-glow">
+        <div class="bg-white rounded-3xl overflow-hidden border border-silk-200 shadow-lg flex flex-col justify-between group luxury-hover-card reveal-item delay-200">
           <div>
             <div class="relative aspect-[4/3] overflow-hidden bg-forest-950">
-              <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Deluxe Mountain Room" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Deluxe Mountain Room" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
               <span class="absolute top-3 left-3 bg-forest-950/90 text-gold-300 font-cinzel text-[9.5px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-gold-400/40">
                 Panoramic View
               </span>
             </div>
             <div class="p-6 space-y-3">
               <h3 class="font-cormorant font-bold text-2xl text-forest-950 leading-tight">Deluxe Mountain Room</h3>
-              <p class="text-silk-700 text-xs leading-relaxed">
+              <p class="text-silk-700 text-xs leading-relaxed font-outfit">
                 Elevated room overlooking lush green pine-clad slopes, teak wooden accents, expansive bay windows, and cozy lounge seating.
               </p>
               <div class="flex flex-wrap gap-1.5 pt-2 text-[10.5px] font-semibold text-forest-800">
@@ -571,17 +638,17 @@
         </div>
 
         <!-- Room 3: Adventure Glamping Tent -->
-        <div class="bg-white rounded-3xl overflow-hidden border border-silk-200 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group luxury-card-glow">
+        <div class="bg-white rounded-3xl overflow-hidden border border-silk-200 shadow-lg flex flex-col justify-between group luxury-hover-card reveal-item delay-300">
           <div>
             <div class="relative aspect-[4/3] overflow-hidden bg-forest-950">
-              <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=800&q=80" alt="Glamping Swiss Tent" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=800&q=80" alt="Glamping Swiss Tent" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
               <span class="absolute top-3 left-3 bg-forest-950/90 text-gold-300 font-cinzel text-[9.5px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-gold-400/40">
                 All Meals Included
               </span>
             </div>
             <div class="p-6 space-y-3">
               <h3 class="font-cormorant font-bold text-2xl text-forest-950 leading-tight">Glamping Swiss Tent</h3>
-              <p class="text-silk-700 text-xs leading-relaxed">
+              <p class="text-silk-700 text-xs leading-relaxed font-outfit">
                 Authentic weatherproof nature camping tent with attached western washroom, sturdy spring mattresses, charging docks & all 3 buffet meals.
               </p>
               <div class="flex flex-wrap gap-1.5 pt-2 text-[10.5px] font-semibold text-forest-800">
@@ -603,17 +670,17 @@
         </div>
 
         <!-- Room 4: Royal Family Valley Suite -->
-        <div class="bg-white rounded-3xl overflow-hidden border border-silk-200 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group luxury-card-glow">
+        <div class="bg-white rounded-3xl overflow-hidden border border-silk-200 shadow-lg flex flex-col justify-between group luxury-hover-card reveal-item delay-400">
           <div>
             <div class="relative aspect-[4/3] overflow-hidden bg-forest-950">
-              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Royal Family Suite" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Royal Family Suite" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
               <span class="absolute top-3 left-3 bg-forest-950/90 text-gold-300 font-cinzel text-[9.5px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-gold-400/40">
                 Presidential 2-BHK
               </span>
             </div>
             <div class="p-6 space-y-3">
               <h3 class="font-cormorant font-bold text-2xl text-forest-950 leading-tight">Royal Family Valley Suite</h3>
-              <p class="text-silk-700 text-xs leading-relaxed">
+              <p class="text-silk-700 text-xs leading-relaxed font-outfit">
                 Expansive 2-bedroom interconnected suite with double ensuite bathrooms, private terrace lounge, and direct mountain pool vantage.
               </p>
               <div class="flex flex-wrap gap-1.5 pt-2 text-[10.5px] font-semibold text-forest-800">
@@ -645,7 +712,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- Section Heading -->
-      <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="text-center max-w-3xl mx-auto mb-14 reveal-item">
         <span class="font-cinzel text-xs font-bold tracking-[0.3em] uppercase text-gold-400 block mb-2">
           CURATED HIMALAYAN EXPEDITIONS
         </span>
@@ -655,16 +722,16 @@
         <p class="font-signature text-3xl text-gold-300 mt-1">
           Stay, feast, party, and conquer the mighty Ganga rapids.
         </p>
-        <p class="text-silk-300 text-xs sm:text-sm mt-3">
+        <p class="text-silk-300 text-xs sm:text-sm mt-3 font-outfit">
           100% transparent pricing with zero surprise charges. All packages include accommodation, buffet dining, evening bonfire, and adventure activities.
         </p>
       </div>
 
-      <!-- Packages Grid -->
+      <!-- Packages Grid with Staggered Reveal -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
         <!-- Package 1 -->
-        <div class="bg-forest-900/80 border border-gold-500/30 rounded-3xl p-7 flex flex-col justify-between shadow-2xl relative hover:border-gold-400 transition-all">
+        <div class="bg-forest-900/80 border border-gold-500/30 rounded-3xl p-7 flex flex-col justify-between shadow-2xl relative hover:border-gold-400 transition-all reveal-item delay-100">
           <div class="space-y-4">
             <span class="font-cinzel text-[10px] font-bold uppercase tracking-[0.2em] text-gold-300 block">
               ADVENTURE TOP SELLER
@@ -672,9 +739,9 @@
             <h3 class="font-cormorant font-bold text-3xl text-white">Rafting & Camp Blast</h3>
             <div class="flex items-baseline gap-1">
               <span class="font-cormorant font-bold text-4xl text-gold-300">₹2,199</span>
-              <span class="text-xs text-silk-300">/ person (All-inclusive)</span>
+              <span class="text-xs text-silk-300 font-outfit">/ person (All-inclusive)</span>
             </div>
-            <ul class="space-y-2.5 text-xs text-silk-200 pt-3 border-t border-forest-800">
+            <ul class="space-y-2.5 text-xs text-silk-200 pt-3 border-t border-forest-800 font-outfit">
               <li class="flex items-center gap-2.5">
                 <span class="text-gold-400 font-bold">✓</span>
                 <span><strong>1 Night Nature Camp Stay</strong> (Quad / Triple sharing)</span>
@@ -697,13 +764,13 @@
               </li>
             </ul>
           </div>
-          <a href="https://wa.me/918511129570?text=I%20want%20to%20book%20the%20₹2,199%20Rafting%20&%20Camp%20Blast%20Package%20at%20Amrah%20Resorts." target="_blank" class="mt-8 w-full py-3.5 rounded-full gold-gradient-bg text-forest-950 font-cinzel font-bold text-xs uppercase tracking-widest text-center block shadow-lg hover:brightness-110 active:scale-95 transition-all">
+          <a href="https://wa.me/918511129570?text=I%20want%20to%20book%20the%20₹2,199%20Rafting%20&%20Camp%20Blast%20Package%20at%20Amrah%20Resorts." target="_blank" class="mt-8 w-full py-3.5 rounded-full btn-gold-shimmer text-forest-950 font-cinzel font-bold text-xs uppercase tracking-widest text-center block shadow-lg hover:brightness-110 active:scale-95 transition-all">
             Book Rafting Package
           </a>
         </div>
 
         <!-- Package 2: Couples Special (Featured Highlight) -->
-        <div class="bg-forest-900 border-2 border-gold-400 rounded-3xl p-7 flex flex-col justify-between shadow-[0_0_40px_rgba(212,163,70,0.25)] relative">
+        <div class="bg-forest-900 border-2 border-gold-400 rounded-3xl p-7 flex flex-col justify-between shadow-[0_0_40px_rgba(212,163,70,0.25)] relative reveal-item delay-200">
           <span class="absolute -top-3.5 right-6 gold-gradient-bg text-forest-950 font-cinzel text-[9.5px] font-black px-4 py-1 rounded-full uppercase tracking-widest shadow-md">
             Romantic Special
           </span>
@@ -714,9 +781,9 @@
             <h3 class="font-cormorant font-bold text-3xl text-white">Riverside Couple Sanctuary</h3>
             <div class="flex items-baseline gap-1">
               <span class="font-cormorant font-bold text-4xl text-gold-300">₹5,999</span>
-              <span class="text-xs text-silk-300">/ couple (2 Days / 1 Night)</span>
+              <span class="text-xs text-silk-300 font-outfit">/ couple (2 Days / 1 Night)</span>
             </div>
-            <ul class="space-y-2.5 text-xs text-silk-200 pt-3 border-t border-forest-800">
+            <ul class="space-y-2.5 text-xs text-silk-200 pt-3 border-t border-forest-800 font-outfit">
               <li class="flex items-center gap-2.5">
                 <span class="text-gold-400 font-bold">✓</span>
                 <span><strong>Riverside Swiss AC Cottage</strong> with river balcony</span>
@@ -739,13 +806,13 @@
               </li>
             </ul>
           </div>
-          <a href="https://wa.me/918511129570?text=I%20want%20to%20book%20the%20₹5,999%20Riverside%20Couple%20Retreat%20at%20Amrah%20Resorts." target="_blank" class="mt-8 w-full py-3.5 rounded-full gold-gradient-bg text-forest-950 font-cinzel font-black text-xs uppercase tracking-widest text-center block shadow-lg hover:brightness-110 active:scale-95 transition-all">
+          <a href="https://wa.me/918511129570?text=I%20want%20to%20book%20the%20₹5,999%20Riverside%20Couple%20Retreat%20at%20Amrah%20Resorts." target="_blank" class="mt-8 w-full py-3.5 rounded-full btn-gold-shimmer text-forest-950 font-cinzel font-black text-xs uppercase tracking-widest text-center block shadow-lg hover:brightness-110 active:scale-95 transition-all">
             Book Couple Sanctuary
           </a>
         </div>
 
         <!-- Package 3: Corporate & College Groups -->
-        <div class="bg-forest-900/80 border border-gold-500/30 rounded-3xl p-7 flex flex-col justify-between shadow-2xl relative hover:border-gold-400 transition-all">
+        <div class="bg-forest-900/80 border border-gold-500/30 rounded-3xl p-7 flex flex-col justify-between shadow-2xl relative hover:border-gold-400 transition-all reveal-item delay-300">
           <div class="space-y-4">
             <span class="font-cinzel text-[10px] font-bold uppercase tracking-[0.2em] text-gold-300 block">
               GROUPS & CORPORATE
@@ -753,9 +820,9 @@
             <h3 class="font-cormorant font-bold text-3xl text-white">Corporate & College Offsite</h3>
             <div class="flex items-baseline gap-1">
               <span class="font-cormorant font-bold text-4xl text-gold-300">Custom</span>
-              <span class="text-xs text-silk-300">/ person (Best Bulk Rates)</span>
+              <span class="text-xs text-silk-300 font-outfit">/ person (Best Bulk Rates)</span>
             </div>
-            <ul class="space-y-2.5 text-xs text-silk-200 pt-3 border-t border-forest-800">
+            <ul class="space-y-2.5 text-xs text-silk-200 pt-3 border-t border-forest-800 font-outfit">
               <li class="flex items-center gap-2.5">
                 <span class="text-gold-400 font-bold">✓</span>
                 <span><strong>Private Exclusive Lawn</strong> & DJ Night Area for your group</span>
@@ -792,7 +859,7 @@
   <section id="itinerary" class="py-20 bg-silk-100 border-b border-silk-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="text-center max-w-3xl mx-auto mb-14 reveal-item">
         <span class="font-cinzel text-xs font-bold tracking-[0.3em] uppercase text-forest-700 block mb-2">
           EFFORTLESS TRIP PLANNING
         </span>
@@ -807,13 +874,13 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
         
         <!-- Day 1 Card -->
-        <div class="bg-white rounded-3xl p-7 border border-silk-200 shadow-xl space-y-6">
+        <div class="bg-white rounded-3xl p-7 border border-silk-200 shadow-xl space-y-6 reveal-item delay-100 luxury-hover-card">
           <div class="flex items-center justify-between pb-4 border-b border-silk-100">
             <div>
               <span class="font-cinzel text-xs font-bold text-gold-600 tracking-widest uppercase">DAY 01</span>
               <h3 class="font-cormorant font-bold text-2xl text-forest-950">Arrival, Hilltop Pool & Starlit DJ Bonfire</h3>
             </div>
-            <span class="w-10 h-10 rounded-2xl bg-forest-900 text-gold-300 flex items-center justify-center font-bold text-sm">01</span>
+            <span class="w-10 h-10 rounded-2xl bg-forest-900 text-gold-300 flex items-center justify-center font-bold text-sm timeline-dot">01</span>
           </div>
 
           <div class="space-y-4">
@@ -821,7 +888,7 @@
               <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">12:00 PM</span>
               <div>
                 <h4 class="font-bold text-sm text-forest-950">Traditional Himalayan Welcome & Check-in</h4>
-                <p class="text-silk-700 text-xs">Sip authentic Garhwali Buransh (Rhododendron) welcome drink as you settle into your luxury cottage or glamping tent.</p>
+                <p class="text-silk-700 text-xs font-outfit">Sip authentic Garhwali Buransh (Rhododendron) welcome drink as you settle into your luxury cottage or glamping tent.</p>
               </div>
             </div>
 
@@ -829,7 +896,7 @@
               <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">01:30 PM</span>
               <div>
                 <h4 class="font-bold text-sm text-forest-950">Grand Valley Lunch Buffet</h4>
-                <p class="text-silk-700 text-xs">Fresh hot lunch buffet served at The Pine & Pebble dining hall overlooking the flowing river.</p>
+                <p class="text-silk-700 text-xs font-outfit">Fresh hot lunch buffet served at The Pine & Pebble dining hall overlooking the flowing river.</p>
               </div>
             </div>
 
@@ -837,7 +904,7 @@
               <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">03:30 PM</span>
               <div>
                 <h4 class="font-bold text-sm text-forest-950">Hilltop Swimming Pool & Sun Loungers</h4>
-                <p class="text-silk-700 text-xs">Dive into the cool mountain-view pool, play water volleyball, or walk down to Mohan Chatti river stream.</p>
+                <p class="text-silk-700 text-xs font-outfit">Dive into the cool mountain-view pool, play water volleyball, or walk down to Mohan Chatti river stream.</p>
               </div>
             </div>
 
@@ -845,7 +912,7 @@
               <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">06:00 PM</span>
               <div>
                 <h4 class="font-bold text-sm text-forest-950">Sunset Hi-Tea with Hot Snacks</h4>
-                <p class="text-silk-700 text-xs">Ginger tea, coffee, and crispy vegetable pakoras as the sun dips behind the Garhwal peaks.</p>
+                <p class="text-silk-700 text-xs font-outfit">Ginger tea, coffee, and crispy vegetable pakoras as the sun dips behind the Garhwal peaks.</p>
               </div>
             </div>
 
@@ -853,7 +920,7 @@
               <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">08:00 PM</span>
               <div>
                 <h4 class="font-bold text-sm text-forest-950">Crackling Campfire, Live Barbecue & DJ Night</h4>
-                <p class="text-silk-700 text-xs">Live tandoori tikka starters, acoustic beats, and high-energy music around the bonfire under crystal clear stars.</p>
+                <p class="text-silk-700 text-xs font-outfit">Live tandoori tikka starters, acoustic beats, and high-energy music around the bonfire under crystal clear stars.</p>
               </div>
             </div>
 
@@ -861,20 +928,20 @@
               <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">09:30 PM</span>
               <div>
                 <h4 class="font-bold text-sm text-forest-950">Royal Dinner Feast & Restful Slumber</h4>
-                <p class="text-silk-700 text-xs">Multi-course buffet dinner (Veg & Non-Veg) followed by peaceful sleep in sound-insulated cottages.</p>
+                <p class="text-silk-700 text-xs font-outfit">Multi-course buffet dinner (Veg & Non-Veg) followed by peaceful sleep in sound-insulated cottages.</p>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Day 2 Card -->
-        <div class="bg-white rounded-3xl p-7 border border-silk-200 shadow-xl space-y-6">
+        <div class="bg-white rounded-3xl p-7 border border-silk-200 shadow-xl space-y-6 reveal-item delay-200 luxury-hover-card">
           <div class="flex items-center justify-between pb-4 border-b border-silk-100">
             <div>
               <span class="font-cinzel text-xs font-bold text-gold-600 tracking-widest uppercase">DAY 02</span>
               <h3 class="font-cormorant font-bold text-2xl text-forest-950">16 KM Ganga Rafting & Cliff Jump</h3>
             </div>
-            <span class="w-10 h-10 rounded-2xl bg-forest-900 text-gold-300 flex items-center justify-center font-bold text-sm">02</span>
+            <span class="w-10 h-10 rounded-2xl bg-forest-900 text-gold-300 flex items-center justify-center font-bold text-sm timeline-dot">02</span>
           </div>
 
           <div class="space-y-4">
@@ -882,7 +949,7 @@
               <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">07:30 AM</span>
               <div>
                 <h4 class="font-bold text-sm text-forest-950">Mountain River Morning Walk / Bird Watching</h4>
-                <p class="text-silk-700 text-xs">Wake up to clean mountain breeze and stroll along the Mohan Chatti pebble banks.</p>
+                <p class="text-silk-700 text-xs font-outfit">Wake up to clean mountain breeze and stroll along the Mohan Chatti pebble banks.</p>
               </div>
             </div>
 
@@ -890,7 +957,7 @@
               <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">08:30 AM</span>
               <div>
                 <h4 class="font-bold text-sm text-forest-950">Hearty Buffet Breakfast</h4>
-                <p class="text-silk-700 text-xs">Hot stuffed parathas, poori bhaji, eggs to order, toast, poha, and masala tea to fuel your adventure.</p>
+                <p class="text-silk-700 text-xs font-outfit">Hot stuffed parathas, poori bhaji, eggs to order, toast, poha, and masala tea to fuel your adventure.</p>
               </div>
             </div>
 
@@ -898,7 +965,7 @@
               <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">09:45 AM</span>
               <div>
                 <h4 class="font-bold text-sm text-forest-950">Transfer to Shivpuri Rafting Launch Point</h4>
-                <p class="text-silk-700 text-xs">Resort vehicle transfer to Shivpuri. Professional safety briefing, life jackets, helmets, and certified river guides.</p>
+                <p class="text-silk-700 text-xs font-outfit">Resort vehicle transfer to Shivpuri. Professional safety briefing, life jackets, helmets, and certified river guides.</p>
               </div>
             </div>
 
@@ -906,7 +973,7 @@
               <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">10:30 AM</span>
               <div>
                 <h4 class="font-bold text-sm text-forest-950">16 KM White Water Ganga Rafting + Cliff Jump</h4>
-                <p class="text-silk-700 text-xs">Ride exhilarating Grade III & IV rapids (Roller Coaster, Golf Course, Clubhouse) and jump off the famous Magpie rock cliff.</p>
+                <p class="text-silk-700 text-xs font-outfit">Ride exhilarating Grade III & IV rapids (Roller Coaster, Golf Course, Clubhouse) and jump off the famous Magpie rock cliff.</p>
               </div>
             </div>
 
@@ -914,13 +981,13 @@
               <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">01:00 PM</span>
               <div>
                 <h4 class="font-bold text-sm text-forest-950">Finish at NIM Beach Rishikesh & Farewell</h4>
-                <p class="text-silk-700 text-xs">Conclude your exhilarating rafting session with epic action photos and depart with lifelong memories.</p>
+                <p class="text-silk-700 text-xs font-outfit">Conclude your exhilarating rafting session with epic action photos and depart with lifelong memories.</p>
               </div>
             </div>
           </div>
 
           <div class="p-4 rounded-2xl bg-forest-50 border border-forest-100 flex items-center justify-between">
-            <span class="text-xs font-bold text-forest-900">Want a 2 Nights / 3 Days Custom Plan?</span>
+            <span class="text-xs font-bold text-forest-900 font-outfit">Want a 2 Nights / 3 Days Custom Plan?</span>
             <a href="https://wa.me/918511129570?text=Please%20share%20a%202%20Nights%203%20Days%20itinerary%20for%20Amrah%20Resorts." target="_blank" class="px-4 py-2 rounded-xl gold-gradient-bg text-forest-950 font-cinzel text-[10.5px] font-bold uppercase tracking-wider">
               Get Itinerary
             </a>
@@ -936,27 +1003,27 @@
   <section id="comparison" class="py-20 bg-forest-950 text-white relative">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="text-center max-w-3xl mx-auto mb-14 reveal-item">
         <span class="font-cinzel text-xs font-bold tracking-[0.3em] uppercase text-gold-400 block mb-2">
           TRANSPARENT VALUE GUARANTEE
         </span>
         <h2 class="font-cormorant font-bold text-4xl sm:text-5xl text-white">
           Why Book Directly on Our Official Site?
         </h2>
-        <p class="text-silk-300 text-xs sm:text-sm mt-2">
+        <p class="text-silk-300 text-xs sm:text-sm mt-2 font-outfit">
           Booking portals like MakeMyTrip and Goibibo charge 20% commission markups. When you book directly with Amrah Resort, you get the lowest price and VIP perks.
         </p>
       </div>
 
-      <!-- Comparison Matrix Table -->
-      <div class="bg-forest-900/90 rounded-3xl border border-gold-500/30 overflow-hidden shadow-2xl">
+      <!-- Comparison Matrix Table with Subtle Animation -->
+      <div class="bg-forest-900/90 rounded-3xl border border-gold-500/30 overflow-hidden shadow-2xl reveal-item delay-100">
         <div class="grid grid-cols-12 bg-forest-950 p-4 sm:p-5 border-b border-gold-500/20 text-xs font-cinzel font-bold uppercase tracking-wider">
           <div class="col-span-6 sm:col-span-6 text-silk-300">Feature / Benefit</div>
           <div class="col-span-3 sm:col-span-3 text-center text-gold-300">Direct on Website</div>
           <div class="col-span-3 sm:col-span-3 text-center text-silk-400">MakeMyTrip / Goibibo</div>
         </div>
 
-        <div class="divide-y divide-forest-800 text-xs sm:text-sm">
+        <div class="divide-y divide-forest-800 text-xs sm:text-sm font-outfit">
           <div class="grid grid-cols-12 p-4 sm:p-4.5 items-center">
             <div class="col-span-6 font-semibold text-white">Guaranteed Lowest Room Rates</div>
             <div class="col-span-3 text-center text-emerald-400 font-bold">✓ Best Price (0% Fee)</div>
@@ -997,9 +1064,9 @@
         <div class="p-6 bg-forest-950 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-gold-500/20">
           <div>
             <span class="font-cormorant font-bold text-xl text-gold-300 block">Lock in Your Guaranteed Direct Rate</span>
-            <span class="text-xs text-silk-300">No advance payment required for initial inquiry.</span>
+            <span class="text-xs text-silk-300 font-outfit">No advance payment required for initial inquiry.</span>
           </div>
-          <a href="#bookingEngine" class="px-7 py-3.5 rounded-full gold-gradient-bg text-forest-950 font-cinzel font-bold text-xs uppercase tracking-wider hover:brightness-110 active:scale-95 transition-all">
+          <a href="#bookingEngine" class="px-7 py-3.5 rounded-full btn-gold-shimmer text-forest-950 font-cinzel font-bold text-xs uppercase tracking-wider hover:brightness-110 active:scale-95 transition-all">
             Check Direct Availability
           </a>
         </div>
@@ -1008,11 +1075,11 @@
     </div>
   </section>
 
-  <!-- ================= 09. HIMALAYAN EXPERIENCES (SWIMMING POOL, RAFTING, BUNGEE) ================= -->
+  <!-- ================= 09. HIMALAYAN EXPERIENCES ================= -->
   <section id="experiences" class="py-20 bg-silk-50 border-b border-silk-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="text-center max-w-3xl mx-auto mb-14 reveal-item">
         <span class="font-cinzel text-xs font-bold tracking-[0.3em] uppercase text-forest-700 block mb-2">
           UNFORGETTABLE MOMENTS
         </span>
@@ -1027,67 +1094,67 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
         
         <!-- Experience 1: Swimming Pool -->
-        <div class="rounded-3xl overflow-hidden border border-silk-200 bg-white p-5 space-y-3 shadow-md hover:shadow-xl transition-all group luxury-card-glow">
+        <div class="rounded-3xl overflow-hidden border border-silk-200 bg-white p-5 space-y-3 shadow-md group luxury-hover-card reveal-item delay-100">
           <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-forest-950">
-            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80" alt="Mountain Swimming Pool" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80" alt="Mountain Swimming Pool" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
           </div>
           <h3 class="font-cormorant font-bold text-2xl text-forest-950">Hilltop Swimming Pool</h3>
-          <p class="text-silk-700 text-xs leading-relaxed">
+          <p class="text-silk-700 text-xs leading-relaxed font-outfit">
             Crystal clear turquoise waters framed by misty pine hills. Relax on teak sun loungers, enjoy poolside mocktails, and soak in Rishikesh's mountain sunset.
           </p>
         </div>
 
         <!-- Experience 2: Bonfire & DJ Night -->
-        <div class="rounded-3xl overflow-hidden border border-silk-200 bg-white p-5 space-y-3 shadow-md hover:shadow-xl transition-all group luxury-card-glow">
+        <div class="rounded-3xl overflow-hidden border border-silk-200 bg-white p-5 space-y-3 shadow-md group luxury-hover-card reveal-item delay-200">
           <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-forest-950">
-            <img src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format&fit=crop&w=800&q=80" alt="Evening Bonfire & DJ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <img src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format&fit=crop&w=800&q=80" alt="Evening Bonfire & DJ" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
           </div>
           <h3 class="font-cormorant font-bold text-2xl text-forest-950">Evening Bonfire & Acoustic DJ</h3>
-          <p class="text-silk-700 text-xs leading-relaxed">
+          <p class="text-silk-700 text-xs leading-relaxed font-outfit">
             As darkness carpets the valley, gather around the crackling bonfire. Enjoy live tandoori barbecue starters, acoustic jams, and high-energy DJ music under unpolluted starry skies.
           </p>
         </div>
 
         <!-- Experience 3: Ganga River Rafting -->
-        <div class="rounded-3xl overflow-hidden border border-silk-200 bg-white p-5 space-y-3 shadow-md hover:shadow-xl transition-all group luxury-card-glow">
+        <div class="rounded-3xl overflow-hidden border border-silk-200 bg-white p-5 space-y-3 shadow-md group luxury-hover-card reveal-item delay-300">
           <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-forest-950">
-            <img src="https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?auto=format&fit=crop&w=800&q=80" alt="Ganga White Water Rafting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <img src="https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?auto=format&fit=crop&w=800&q=80" alt="Ganga White Water Rafting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
           </div>
           <h3 class="font-cormorant font-bold text-2xl text-forest-950">16 KM & 26 KM Ganga Rafting</h3>
-          <p class="text-silk-700 text-xs leading-relaxed">
+          <p class="text-silk-700 text-xs leading-relaxed font-outfit">
             Navigate the thunderous rapids of Mother Ganga—Roller Coaster, Golf Course, and Club House—guided by licensed instructors with cliff jumping and body surfing stops.
           </p>
         </div>
 
         <!-- Experience 4: Bungee Jumping (Jumpin Heights) -->
-        <div class="rounded-3xl overflow-hidden border border-silk-200 bg-white p-5 space-y-3 shadow-md hover:shadow-xl transition-all group luxury-card-glow">
+        <div class="rounded-3xl overflow-hidden border border-silk-200 bg-white p-5 space-y-3 shadow-md group luxury-hover-card reveal-item delay-100">
           <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-forest-950">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Bungee Jumping Mohan Chatti" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Bungee Jumping Mohan Chatti" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
           </div>
           <h3 class="font-cormorant font-bold text-2xl text-forest-950">Jumpin Heights Bungee (5 Mins Away)</h3>
-          <p class="text-silk-700 text-xs leading-relaxed">
+          <p class="text-silk-700 text-xs leading-relaxed font-outfit">
             India's highest 83-meter fixed platform bungee jump and giant swing is situated right here in Mohan Chatti, just 2.5 km from Amrah Resort. VIP slot coordination available.
           </p>
         </div>
 
         <!-- Experience 5: Dining & Culinary Buffet -->
-        <div class="rounded-3xl overflow-hidden border border-silk-200 bg-white p-5 space-y-3 shadow-md hover:shadow-xl transition-all group luxury-card-glow">
+        <div class="rounded-3xl overflow-hidden border border-silk-200 bg-white p-5 space-y-3 shadow-md group luxury-hover-card reveal-item delay-200">
           <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-forest-950">
-            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Gourmet Dining Hall" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Gourmet Dining Hall" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
           </div>
           <h3 class="font-cormorant font-bold text-2xl text-forest-950">Pahadi & North Indian Feasts</h3>
-          <p class="text-silk-700 text-xs leading-relaxed">
+          <p class="text-silk-700 text-xs leading-relaxed font-outfit">
             Relish authentic Garhwali local delicacies along with rich North Indian gravies, freshly baked rotis, Chinese specialties, and mouthwatering desserts served buffet-style.
           </p>
         </div>
 
         <!-- Experience 6: River Pebble Trail -->
-        <div class="rounded-3xl overflow-hidden border border-silk-200 bg-white p-5 space-y-3 shadow-md hover:shadow-xl transition-all group luxury-card-glow">
+        <div class="rounded-3xl overflow-hidden border border-silk-200 bg-white p-5 space-y-3 shadow-md group luxury-hover-card reveal-item delay-300">
           <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-forest-950">
-            <img src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=800&q=80" alt="River Stream Trail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <img src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=800&q=80" alt="River Stream Trail" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
           </div>
           <h3 class="font-cormorant font-bold text-2xl text-forest-950">Riverside Pebble Trail & Waterfall</h3>
-          <p class="text-silk-700 text-xs leading-relaxed">
+          <p class="text-silk-700 text-xs leading-relaxed font-outfit">
             Step directly from the resort down to the Mohan Chatti river stream. Cool mountain water, natural stone pebble beaches, and serene spots for morning yoga and photography.
           </p>
         </div>
@@ -1101,7 +1168,7 @@
   <section class="py-16 bg-white border-b border-silk-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="text-center max-w-3xl mx-auto mb-12 reveal-item">
         <span class="font-cinzel text-xs font-bold tracking-[0.3em] uppercase text-forest-700 block mb-2">
           COMFORT & ASSURANCE
         </span>
@@ -1112,73 +1179,73 @@
 
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
         
-        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200 hover:border-gold-400 transition-all reveal-item delay-100">
           <span class="text-2xl block mb-1">⚡</span>
           <h4 class="font-bold text-xs text-forest-950">100% Power Backup</h4>
           <p class="text-[10px] text-silk-700 mt-0.5">Heavy DG Genset 24/7</p>
         </div>
 
-        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200 hover:border-gold-400 transition-all reveal-item delay-100">
           <span class="text-2xl block mb-1">🚿</span>
           <h4 class="font-bold text-xs text-forest-950">Hot Water Geysers</h4>
           <p class="text-[10px] text-silk-700 mt-0.5">24 Hours running hot water</p>
         </div>
 
-        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200 hover:border-gold-400 transition-all reveal-item delay-200">
           <span class="text-2xl block mb-1">📶</span>
           <h4 class="font-bold text-xs text-forest-950">High-Speed Wi-Fi</h4>
           <p class="text-[10px] text-silk-700 mt-0.5">+ 5G Jio/Airtel Signal</p>
         </div>
 
-        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200 hover:border-gold-400 transition-all reveal-item delay-200">
           <span class="text-2xl block mb-1">🚗</span>
           <h4 class="font-bold text-xs text-forest-950">Free Safe Parking</h4>
           <p class="text-[10px] text-silk-700 mt-0.5">Gated for Cars & Buses</p>
         </div>
 
-        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200 hover:border-gold-400 transition-all reveal-item delay-300">
           <span class="text-2xl block mb-1">🥗</span>
           <h4 class="font-bold text-xs text-forest-950">Veg & Non-Veg</h4>
           <p class="text-[10px] text-silk-700 mt-0.5">Separate Kitchen Areas</p>
         </div>
 
-        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200 hover:border-gold-400 transition-all reveal-item delay-300">
           <span class="text-2xl block mb-1">🐾</span>
           <h4 class="font-bold text-xs text-forest-950">Pet Friendly</h4>
           <p class="text-[10px] text-silk-700 mt-0.5">Open Lawn & Grounds</p>
         </div>
 
-        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200 hover:border-gold-400 transition-all reveal-item delay-100">
           <span class="text-2xl block mb-1">🏸</span>
           <h4 class="font-bold text-xs text-forest-950">Outdoor Games</h4>
           <p class="text-[10px] text-silk-700 mt-0.5">Volleyball, Badminton</p>
         </div>
 
-        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200 hover:border-gold-400 transition-all reveal-item delay-100">
           <span class="text-2xl block mb-1">🩺</span>
           <h4 class="font-bold text-xs text-forest-950">Doctor on Call</h4>
           <p class="text-[10px] text-silk-700 mt-0.5">First Aid & Emergency</p>
         </div>
 
-        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200 hover:border-gold-400 transition-all reveal-item delay-200">
           <span class="text-2xl block mb-1">🧳</span>
           <h4 class="font-bold text-xs text-forest-950">Luggage Storage</h4>
           <p class="text-[10px] text-silk-700 mt-0.5">Pre & Post Check-in</p>
         </div>
 
-        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200 hover:border-gold-400 transition-all reveal-item delay-200">
           <span class="text-2xl block mb-1">📹</span>
           <h4 class="font-bold text-xs text-forest-950">CCTV Security</h4>
           <p class="text-[10px] text-silk-700 mt-0.5">24/7 Monitored Campus</p>
         </div>
 
-        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200 hover:border-gold-400 transition-all reveal-item delay-300">
           <span class="text-2xl block mb-1">🚰</span>
           <h4 class="font-bold text-xs text-forest-950">RO Filtered Water</h4>
           <p class="text-[10px] text-silk-700 mt-0.5">Pure Mountain Springs</p>
         </div>
 
-        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200 hover:border-gold-400 transition-all reveal-item delay-300">
           <span class="text-2xl block mb-1">👔</span>
           <h4 class="font-bold text-xs text-forest-950">Daily Housekeeping</h4>
           <p class="text-[10px] text-silk-700 mt-0.5">Sanitized Fresh Linen</p>
@@ -1196,17 +1263,17 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
         <!-- Left Culinary Imagery Grid -->
-        <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+        <div class="lg:col-span-6 grid grid-cols-2 gap-4 reveal-item">
           <div class="aspect-[4/5] rounded-3xl overflow-hidden border border-gold-500/30">
-            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=80" alt="Himalayan Gourmet Dining" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=80" alt="Himalayan Gourmet Dining" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700 ease-out">
           </div>
           <div class="aspect-[4/5] rounded-3xl overflow-hidden border border-gold-500/30 mt-6">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80" alt="Candlelight Dining by Pool" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80" alt="Candlelight Dining by Pool" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700 ease-out">
           </div>
         </div>
 
         <!-- Right Dining Philosophy & Schedule -->
-        <div class="lg:col-span-6 space-y-6">
+        <div class="lg:col-span-6 space-y-6 reveal-item delay-100">
           <span class="font-cinzel text-xs font-bold tracking-[0.3em] uppercase text-gold-400 block">
             THE PINE & PEBBLE RESTAURANT
           </span>
@@ -1214,7 +1281,7 @@
             Flavors of the Himalayas, <br>
             <span class="italic font-normal text-gold-300">Served with Mountain Warmth.</span>
           </h2>
-          <p class="text-silk-300 text-xs sm:text-sm leading-relaxed">
+          <p class="text-silk-300 text-xs sm:text-sm leading-relaxed font-outfit">
             Our multi-cuisine dining hall overlooks the winding mountain valley. Every dish is crafted using farm-fresh organic produce, cold-pressed mountain mustard oil, and authentic Himalayan herbs.
           </p>
 
@@ -1223,7 +1290,7 @@
             <div class="p-3.5 rounded-2xl bg-forest-900 border border-gold-500/20 flex items-center justify-between">
               <div>
                 <span class="font-cinzel text-xs font-bold text-gold-200 block">Himalayan Sunrise Breakfast</span>
-                <span class="text-[11px] text-silk-300">Aloo Poori, Stuffed Parathas, Eggs, Poha, Fresh Fruits & Ginger Tea</span>
+                <span class="text-[11px] text-silk-300 font-outfit">Aloo Poori, Stuffed Parathas, Eggs, Poha, Fresh Fruits & Ginger Tea</span>
               </div>
               <span class="font-cinzel text-[11px] text-gold-300 font-bold shrink-0">8:30 - 10:30 AM</span>
             </div>
@@ -1231,7 +1298,7 @@
             <div class="p-3.5 rounded-2xl bg-forest-900 border border-gold-500/20 flex items-center justify-between">
               <div>
                 <span class="font-cinzel text-xs font-bold text-gold-200 block">Valley Lunch Buffet</span>
-                <span class="text-[11px] text-silk-300">Paneer Special, Dal Tadka, Seasonal Subzi, Jeera Rice, Phulkas & Raita</span>
+                <span class="text-[11px] text-silk-300 font-outfit">Paneer Special, Dal Tadka, Seasonal Subzi, Jeera Rice, Phulkas & Raita</span>
               </div>
               <span class="font-cinzel text-[11px] text-gold-300 font-bold shrink-0">1:00 - 3:00 PM</span>
             </div>
@@ -1239,7 +1306,7 @@
             <div class="p-3.5 rounded-2xl bg-forest-900 border border-gold-500/20 flex items-center justify-between">
               <div>
                 <span class="font-cinzel text-xs font-bold text-gold-200 block">Bonfire Barbecue & Grand Dinner</span>
-                <span class="text-[11px] text-silk-300">Live Grilled Tikka & Kebabs, Butter Chicken / Kadhai Paneer, Gulab Jamun</span>
+                <span class="text-[11px] text-silk-300 font-outfit">Live Grilled Tikka & Kebabs, Butter Chicken / Kadhai Paneer, Gulab Jamun</span>
               </div>
               <span class="font-cinzel text-[11px] text-gold-300 font-bold shrink-0">8:30 - 10:30 PM</span>
             </div>
@@ -1261,7 +1328,7 @@
   <section id="gallery" class="py-20 bg-silk-50 border-b border-silk-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-10">
+      <div class="text-center max-w-3xl mx-auto mb-10 reveal-item">
         <span class="font-cinzel text-xs font-bold tracking-[0.3em] uppercase text-forest-700 block mb-2">
           VISUAL SANCTUARY
         </span>
@@ -1274,7 +1341,7 @@
       </div>
 
       <!-- Gallery Filter Tabs -->
-      <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-10 reveal-item">
         <button onclick="filterGallery('all')" class="gallery-tab px-5 py-2 rounded-full gold-gradient-bg text-forest-950 font-cinzel text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer" data-filter="all">All Photos</button>
         <button onclick="filterGallery('cottages')" class="gallery-tab px-5 py-2 rounded-full bg-white border border-silk-200 text-silk-700 hover:text-forest-950 font-cinzel text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer" data-filter="cottages">Suites & Cottages</button>
         <button onclick="filterGallery('pool')" class="gallery-tab px-5 py-2 rounded-full bg-white border border-silk-200 text-silk-700 hover:text-forest-950 font-cinzel text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer" data-filter="pool">Hilltop Pool</button>
@@ -1285,42 +1352,42 @@
       <!-- Gallery Grid -->
       <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         
-        <div class="gallery-item cottages aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950" onclick="openLightbox('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=85', 'Riverside Swiss AC Cottage Exterior')">
+        <div class="gallery-item cottages aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-100" onclick="openLightbox('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=85', 'Riverside Swiss AC Cottage Exterior')">
           <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=700&q=80" alt="Swiss Cottage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
         </div>
 
-        <div class="gallery-item pool aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950" onclick="openLightbox('https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1400&q=85', 'Hilltop Mountain View Swimming Pool')">
+        <div class="gallery-item pool aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-100" onclick="openLightbox('https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1400&q=85', 'Hilltop Mountain View Swimming Pool')">
           <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=700&q=80" alt="Swimming Pool" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
         </div>
 
-        <div class="gallery-item cottages aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950" onclick="openLightbox('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1400&q=85', 'Deluxe Mountain Valley Bedroom')">
+        <div class="gallery-item cottages aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-200" onclick="openLightbox('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1400&q=85', 'Deluxe Mountain Valley Bedroom')">
           <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=700&q=80" alt="Deluxe Room" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
         </div>
 
-        <div class="gallery-item rafting aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950" onclick="openLightbox('https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?auto=format&fit=crop&w=1400&q=85', '16KM White Water Ganga River Rafting')">
+        <div class="gallery-item rafting aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-200" onclick="openLightbox('https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?auto=format&fit=crop&w=1400&q=85', '16KM White Water Ganga River Rafting')">
           <img src="https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?auto=format&fit=crop&w=700&q=80" alt="Ganga Rafting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
         </div>
 
-        <div class="gallery-item nightlife aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950" onclick="openLightbox('https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format&fit=crop&w=1400&q=85', 'Evening Starlit Bonfire with DJ Music')">
+        <div class="gallery-item nightlife aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-300" onclick="openLightbox('https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format&fit=crop&w=1400&q=85', 'Evening Starlit Bonfire with DJ Music')">
           <img src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format&fit=crop&w=700&q=80" alt="Bonfire Night" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
         </div>
 
-        <div class="gallery-item cottages aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950" onclick="openLightbox('https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1400&q=85', 'Adventure Glamping Swiss Tent in Nature')">
+        <div class="gallery-item cottages aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-300" onclick="openLightbox('https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1400&q=85', 'Adventure Glamping Swiss Tent in Nature')">
           <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=700&q=80" alt="Glamping Tent" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
         </div>
 
-        <div class="gallery-item rafting aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950" onclick="openLightbox('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=85', 'Jumpin Heights Bungee Jumping Mohan Chatti Valley')">
+        <div class="gallery-item rafting aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-400" onclick="openLightbox('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=85', 'Jumpin Heights Bungee Jumping Mohan Chatti Valley')">
           <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80" alt="Bungee Jumping Valley" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
         </div>
 
-        <div class="gallery-item nightlife aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950" onclick="openLightbox('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1400&q=85', 'Group Celebration & Dining Ambiance')">
+        <div class="gallery-item nightlife aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group relative bg-forest-950 reveal-item delay-400" onclick="openLightbox('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1400&q=85', 'Group Celebration & Dining Ambiance')">
           <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80" alt="Group Reunion" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-forest-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-cinzel text-xs font-bold uppercase tracking-wider">View Fullscreen 🔍</div>
         </div>
@@ -1337,35 +1404,35 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
         <!-- Left Route Information -->
-        <div class="lg:col-span-6 space-y-5">
+        <div class="lg:col-span-6 space-y-5 reveal-item">
           <span class="font-cinzel text-xs font-bold tracking-[0.3em] uppercase text-forest-700 block">
             HOW TO REACH US
           </span>
           <h2 class="font-cormorant font-bold text-4xl sm:text-5xl text-forest-950">
             A Scenic Mountain Drive to Mohan Chatti
           </h2>
-          <p class="text-silk-700 text-xs sm:text-sm leading-relaxed">
+          <p class="text-silk-700 text-xs sm:text-sm leading-relaxed font-outfit">
             Perched 18 km beyond Tapovan on the smooth, fully paved Neelkanth Temple scenic corridor. Easily reachable by personal car, hatchback, sedan, SUV, or tempo traveler.
           </p>
 
           <!-- Distance Metrics Cards -->
           <div class="grid grid-cols-2 gap-3.5 pt-2">
-            <div class="p-3.5 bg-white rounded-2xl border border-silk-200 shadow-sm">
+            <div class="p-3.5 bg-white rounded-2xl border border-silk-200 shadow-sm hover:border-gold-400 transition-all">
               <span class="font-cinzel text-[9.5px] text-silk-700 font-bold block uppercase tracking-wider">From Tapovan / Laxman Jhula</span>
               <span class="font-cormorant font-bold text-2xl text-forest-950">18 KM</span>
               <span class="text-[10px] text-emerald-700 font-semibold block">~35 Mins Valley Drive</span>
             </div>
-            <div class="p-3.5 bg-white rounded-2xl border border-silk-200 shadow-sm">
+            <div class="p-3.5 bg-white rounded-2xl border border-silk-200 shadow-sm hover:border-gold-400 transition-all">
               <span class="font-cinzel text-[9.5px] text-silk-700 font-bold block uppercase tracking-wider">From Jumpin Heights Bungee</span>
               <span class="font-cormorant font-bold text-2xl text-forest-950">2.5 KM</span>
               <span class="text-[10px] text-emerald-700 font-semibold block">~5 Mins Away</span>
             </div>
-            <div class="p-3.5 bg-white rounded-2xl border border-silk-200 shadow-sm">
+            <div class="p-3.5 bg-white rounded-2xl border border-silk-200 shadow-sm hover:border-gold-400 transition-all">
               <span class="font-cinzel text-[9.5px] text-silk-700 font-bold block uppercase tracking-wider">From Shivpuri Rafting Point</span>
               <span class="font-cormorant font-bold text-2xl text-forest-950">14 KM</span>
               <span class="text-[10px] text-emerald-700 font-semibold block">~25 Mins via Valley</span>
             </div>
-            <div class="p-3.5 bg-white rounded-2xl border border-silk-200 shadow-sm">
+            <div class="p-3.5 bg-white rounded-2xl border border-silk-200 shadow-sm hover:border-gold-400 transition-all">
               <span class="font-cinzel text-[9.5px] text-silk-700 font-bold block uppercase tracking-wider">From Dehradun Airport (DED)</span>
               <span class="font-cormorant font-bold text-2xl text-forest-950">42 KM</span>
               <span class="text-[10px] text-emerald-700 font-semibold block">~1 hr 15 Mins</span>
@@ -1374,7 +1441,7 @@
 
           <!-- Route Action Buttons -->
           <div class="flex flex-wrap items-center gap-3.5 pt-2">
-            <a href="https://www.google.com/maps/place/Amrah+Resorts/@30.0636875,78.3774375,17z" target="_blank" class="px-7 py-3.5 rounded-full gold-gradient-bg text-forest-950 font-cinzel font-bold text-xs uppercase tracking-widest flex items-center gap-2 shadow-lg hover:brightness-110 active:scale-95 transition-all">
+            <a href="https://www.google.com/maps/place/Amrah+Resorts/@30.0636875,78.3774375,17z" target="_blank" class="px-7 py-3.5 rounded-full btn-gold-shimmer text-forest-950 font-cinzel font-bold text-xs uppercase tracking-widest flex items-center gap-2 shadow-lg hover:brightness-110 active:scale-95 transition-all">
               <span>📍 Open Google Maps Navigation</span>
               <span>→</span>
             </a>
@@ -1386,7 +1453,7 @@
         </div>
 
         <!-- Right Interactive Map Embed -->
-        <div class="lg:col-span-6">
+        <div class="lg:col-span-6 reveal-item delay-100">
           <div class="bg-white rounded-3xl p-4 sm:p-5 shadow-2xl border border-silk-200 space-y-3">
             <div class="aspect-[16/11] rounded-2xl overflow-hidden relative bg-silk-200">
               <iframe 
@@ -1400,7 +1467,7 @@
                 <span>Amrah Resort & Camp • Mohan Chatti</span>
               </div>
             </div>
-            <div class="flex items-center justify-between text-xs text-silk-700 px-1 pt-1">
+            <div class="flex items-center justify-between text-xs text-silk-700 px-1 pt-1 font-outfit">
               <span class="font-bold text-forest-900">✓ 100% Safe Free On-Site Parking</span>
               <span class="font-semibold text-silk-700">GPS: 30.0636° N, 78.3774° E</span>
             </div>
@@ -1416,7 +1483,7 @@
   <section id="reviews" class="py-20 bg-silk-50 border-b border-silk-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="text-center max-w-3xl mx-auto mb-14 reveal-item">
         <span class="font-cinzel text-xs font-bold tracking-[0.3em] uppercase text-forest-700 block mb-2">
           WORDS FROM OUR GUESTS
         </span>
@@ -1432,15 +1499,15 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
         
         <!-- Review 1 -->
-        <div class="bg-white rounded-3xl p-7 border border-silk-200 shadow-md space-y-4 hover:shadow-xl transition-all luxury-card-glow">
+        <div class="bg-white rounded-3xl p-7 border border-silk-200 shadow-md space-y-4 luxury-hover-card reveal-item delay-100">
           <div class="flex items-center justify-between">
             <span class="text-gold-500 text-sm">★★★★★</span>
             <span class="px-2.5 py-0.5 rounded-full bg-forest-50 text-forest-800 text-[10px] font-cinzel font-bold uppercase">Friends Reunion</span>
           </div>
-          <p class="text-silk-700 text-xs leading-relaxed italic">
+          <p class="text-silk-700 text-xs leading-relaxed italic font-editorial">
             "We were a group of 14 college buddies visiting Rishikesh. Amrah Resort exceeded all expectations! The swimming pool facing the mountains was sparkling clean, food tasted truly homemade, and the evening bonfire with DJ party was unreal. They also arranged our 16km rafting without any hassle."
           </p>
-          <div class="pt-3 border-t border-silk-100 flex items-center justify-between">
+          <div class="pt-3 border-t border-silk-100 flex items-center justify-between font-outfit">
             <div>
               <span class="font-cormorant font-bold text-base text-forest-950 block">Aman Sharma</span>
               <span class="text-[10px] text-silk-700">Delhi NCR • Stayed Oct 2026</span>
@@ -1450,15 +1517,15 @@
         </div>
 
         <!-- Review 2 -->
-        <div class="bg-white rounded-3xl p-7 border border-silk-200 shadow-md space-y-4 hover:shadow-xl transition-all luxury-card-glow">
+        <div class="bg-white rounded-3xl p-7 border border-silk-200 shadow-md space-y-4 luxury-hover-card reveal-item delay-200">
           <div class="flex items-center justify-between">
             <span class="text-gold-500 text-sm">★★★★★</span>
             <span class="px-2.5 py-0.5 rounded-full bg-forest-50 text-forest-800 text-[10px] font-cinzel font-bold uppercase">Family Vacation</span>
           </div>
-          <p class="text-silk-700 text-xs leading-relaxed italic">
+          <p class="text-silk-700 text-xs leading-relaxed italic font-editorial">
             "Super peaceful and family-safe property. The Riverside Swiss AC cottages have proper hot geysers, clean linen, and air conditioning that actually works. Walking down to Mohan Chatti river with my kids was magical. Miles ahead of cramped Tapovan hotels."
           </p>
-          <div class="pt-3 border-t border-silk-100 flex items-center justify-between">
+          <div class="pt-3 border-t border-silk-100 flex items-center justify-between font-outfit">
             <div>
               <span class="font-cormorant font-bold text-base text-forest-950 block">Pooja & Rohan Verma</span>
               <span class="text-[10px] text-silk-700">Chandigarh • Stayed Sep 2026</span>
@@ -1468,15 +1535,15 @@
         </div>
 
         <!-- Review 3 -->
-        <div class="bg-white rounded-3xl p-7 border border-silk-200 shadow-md space-y-4 hover:shadow-xl transition-all luxury-card-glow">
+        <div class="bg-white rounded-3xl p-7 border border-silk-200 shadow-md space-y-4 luxury-hover-card reveal-item delay-300">
           <div class="flex items-center justify-between">
             <span class="text-gold-500 text-sm">★★★★★</span>
             <span class="px-2.5 py-0.5 rounded-full bg-forest-50 text-forest-800 text-[10px] font-cinzel font-bold uppercase">Corporate Retreat</span>
           </div>
-          <p class="text-silk-700 text-xs leading-relaxed italic">
+          <p class="text-silk-700 text-xs leading-relaxed italic font-editorial">
             "Organized our corporate team outing of 32 members at Amrah Resort. Everything from buffet catering to Jumpin Heights bungee bookings and evening bonfire was orchestrated seamlessly. The management is honest, attentive, and very professional."
           </p>
-          <div class="pt-3 border-t border-silk-100 flex items-center justify-between">
+          <div class="pt-3 border-t border-silk-100 flex items-center justify-between font-outfit">
             <div>
               <span class="font-cormorant font-bold text-base text-forest-950 block">Vikramaditya Rathore</span>
               <span class="text-[10px] text-silk-700">Noida Tech Hub • Stayed Aug 2026</span>
@@ -1494,66 +1561,66 @@
   <section class="py-20 bg-silk-100 border-b border-silk-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center mb-12">
+      <div class="text-center mb-12 reveal-item">
         <span class="font-cinzel text-xs font-bold tracking-[0.3em] uppercase text-forest-700 block mb-2">
           CLARITY & ASSURANCE
         </span>
         <h2 class="font-cormorant font-bold text-4xl text-forest-950">
           Frequently Asked Questions
         </h2>
-        <p class="text-silk-700 text-xs sm:text-sm mt-2">
+        <p class="text-silk-700 text-xs sm:text-sm mt-2 font-outfit">
           Essential insights to help plan your Himalayan retreat at Amrah Resort.
         </p>
       </div>
 
       <div class="space-y-3.5">
         
-        <details class="bg-white rounded-2xl p-5 border border-silk-200 group">
+        <details class="bg-white rounded-2xl p-5 border border-silk-200 group reveal-item">
           <summary class="font-cinzel font-bold text-xs sm:text-sm text-forest-950 cursor-pointer list-none flex items-center justify-between">
             <span>Is swimming pool access free for all staying guests?</span>
             <span class="text-gold-600 group-open:rotate-180 transition-transform font-bold">▼</span>
           </summary>
-          <p class="text-silk-700 text-xs pt-3 mt-3 border-t border-silk-100 leading-relaxed">
+          <p class="text-silk-700 text-xs pt-3 mt-3 border-t border-silk-100 leading-relaxed font-outfit">
             Yes! Access to our hilltop swimming pool is 100% complimentary for all residing guests staying in both our Riverside Swiss Cottages and Glamping Tents. Clean poolside loungers and towels are provided.
           </p>
         </details>
 
-        <details class="bg-white rounded-2xl p-5 border border-silk-200 group">
+        <details class="bg-white rounded-2xl p-5 border border-silk-200 group reveal-item">
           <summary class="font-cinzel font-bold text-xs sm:text-sm text-forest-950 cursor-pointer list-none flex items-center justify-between">
             <span>How far is Jumpin Heights Bungee Jumping and Ganga Rafting?</span>
             <span class="text-gold-600 group-open:rotate-180 transition-transform font-bold">▼</span>
           </summary>
-          <p class="text-silk-700 text-xs pt-3 mt-3 border-t border-silk-100 leading-relaxed">
+          <p class="text-silk-700 text-xs pt-3 mt-3 border-t border-silk-100 leading-relaxed font-outfit">
             Jumpin Heights Bungee Jumping is located just 2.5 KM (a 5-minute drive) from our resort in Mohan Chatti. Ganga River Rafting pickup points (Shivpuri 16km & Marine Drive 26km) are directly arranged by our resort desk with vehicle transfers.
           </p>
         </details>
 
-        <details class="bg-white rounded-2xl p-5 border border-silk-200 group">
+        <details class="bg-white rounded-2xl p-5 border border-silk-200 group reveal-item">
           <summary class="font-cinzel font-bold text-xs sm:text-sm text-forest-950 cursor-pointer list-none flex items-center justify-between">
             <span>Can small cars (Swift, i10, Baleno) easily reach the resort?</span>
             <span class="text-gold-600 group-open:rotate-180 transition-transform font-bold">▼</span>
           </summary>
-          <p class="text-silk-700 text-xs pt-3 mt-3 border-t border-silk-100 leading-relaxed">
+          <p class="text-silk-700 text-xs pt-3 mt-3 border-t border-silk-100 leading-relaxed font-outfit">
             Absolutely! The entire road from Tapovan across the Neelkanth bridge to Mohan Chatti is a smooth, wide tar road (pucca highway). All small cars, sedans, SUVs, and tempo travelers easily reach right up to our resort gate, where ample free parking is available.
           </p>
         </details>
 
-        <details class="bg-white rounded-2xl p-5 border border-silk-200 group">
+        <details class="bg-white rounded-2xl p-5 border border-silk-200 group reveal-item">
           <summary class="font-cinzel font-bold text-xs sm:text-sm text-forest-950 cursor-pointer list-none flex items-center justify-between">
             <span>Do mobile network and Wi-Fi work in Mohan Chatti?</span>
             <span class="text-gold-600 group-open:rotate-180 transition-transform font-bold">▼</span>
           </summary>
-          <p class="text-silk-700 text-xs pt-3 mt-3 border-t border-silk-100 leading-relaxed">
+          <p class="text-silk-700 text-xs pt-3 mt-3 border-t border-silk-100 leading-relaxed font-outfit">
             Jio and Airtel have strong 4G/5G mobile tower connectivity across our property. We also provide high-speed Wi-Fi in the main resort dining and lobby areas.
           </p>
         </details>
 
-        <details class="bg-white rounded-2xl p-5 border border-silk-200 group">
+        <details class="bg-white rounded-2xl p-5 border border-silk-200 group reveal-item">
           <summary class="font-cinzel font-bold text-xs sm:text-sm text-forest-950 cursor-pointer list-none flex items-center justify-between">
             <span>Are pets allowed at Amrah Resort?</span>
             <span class="text-gold-600 group-open:rotate-180 transition-transform font-bold">▼</span>
           </summary>
-          <p class="text-silk-700 text-xs pt-3 mt-3 border-t border-silk-100 leading-relaxed">
+          <p class="text-silk-700 text-xs pt-3 mt-3 border-t border-silk-100 leading-relaxed font-outfit">
             Yes, we are a pet-friendly nature retreat! Well-behaved pets are welcome in our open camping grounds and designated Swiss cottages with prior notification at the time of booking.
           </p>
         </details>
@@ -1580,7 +1647,7 @@
               <span class="font-cinzel text-[8px] tracking-[0.25em] text-gold-400 uppercase">RESORT & CAMP • RISHIKESH</span>
             </div>
           </div>
-          <p class="text-silk-300 text-xs leading-relaxed">
+          <p class="text-silk-300 text-xs leading-relaxed font-outfit">
             Premier nature sanctuary, luxury Swiss cottages, and adventure base nestled along the gentle river streams of Mohan Chatti, Rishikesh.
           </p>
           <div class="text-[11px] text-gold-300 font-cinzel font-bold">
@@ -1589,7 +1656,7 @@
         </div>
 
         <!-- Col 2: Direct Concierge -->
-        <div class="space-y-3 text-xs">
+        <div class="space-y-3 text-xs font-outfit">
           <h4 class="font-cinzel font-bold text-xs text-gold-400 uppercase tracking-widest">Direct Reception</h4>
           <p class="text-silk-300"><strong class="text-white">Call Desk:</strong> +91 85111 29570</p>
           <p class="text-silk-300"><strong class="text-white">WhatsApp VIP:</strong> +91 85111 29570</p>
@@ -1598,7 +1665,7 @@
         </div>
 
         <!-- Col 3: Accommodations & Quick Links -->
-        <div class="space-y-2 text-xs">
+        <div class="space-y-2 text-xs font-outfit">
           <h4 class="font-cinzel font-bold text-xs text-gold-400 uppercase tracking-widest">Accommodations</h4>
           <p><a href="#accommodations" class="text-silk-300 hover:text-gold-300 transition-colors">Riverside Swiss AC Cottages</a></p>
           <p><a href="#accommodations" class="text-silk-300 hover:text-gold-300 transition-colors">Deluxe Mountain Valley Rooms</a></p>
@@ -1608,12 +1675,12 @@
         </div>
 
         <!-- Col 4: Corporate & Group Bookings -->
-        <div class="space-y-4 text-xs">
+        <div class="space-y-4 text-xs font-outfit">
           <h4 class="font-cinzel font-bold text-xs text-gold-400 uppercase tracking-widest">Corporate & Events</h4>
           <p class="text-silk-300 leading-relaxed">
             Planning a corporate team offsite, college reunion, or destination pre-wedding celebration?
           </p>
-          <button onclick="openGroupModal()" class="w-full py-3 rounded-full gold-gradient-bg text-forest-950 font-cinzel font-bold text-xs uppercase tracking-wider hover:brightness-110 transition-all cursor-pointer">
+          <button onclick="openGroupModal()" class="w-full py-3 rounded-full btn-gold-shimmer text-forest-950 font-cinzel font-bold text-xs uppercase tracking-wider hover:brightness-110 transition-all cursor-pointer">
             Get Custom Group Quote
           </button>
         </div>
@@ -1650,8 +1717,8 @@
       </a>
     </div>
 
-    <!-- Toggle Button -->
-    <button onclick="toggleQuickConcierge()" class="w-14 h-14 rounded-full gold-gradient-bg text-forest-950 flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all relative cursor-pointer" aria-label="Toggle Concierge Desk">
+    <!-- Toggle Button with Gentle Floating Animation -->
+    <button onclick="toggleQuickConcierge()" class="w-14 h-14 rounded-full btn-gold-shimmer text-forest-950 flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all relative cursor-pointer animate-float" aria-label="Toggle Concierge Desk">
       <svg class="w-7 h-7 fill-forest-950" viewBox="0 0 24 24">
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
       </svg>
@@ -1664,7 +1731,7 @@
     <a href="tel:+918511129570" class="flex-1 py-3.5 rounded-xl bg-forest-900 border border-gold-500/40 text-gold-300 font-cinzel font-bold text-[11px] uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 shadow-md">
       <span>📞 Call Desk</span>
     </a>
-    <a href="https://wa.me/918511129570?text=Hello%20Amrah%20Resort,%20I%20am%20inquiring%20about%20stay%20and%20rafting%20packages." target="_blank" class="flex-1 py-3.5 rounded-xl gold-gradient-bg text-forest-950 font-cinzel font-black text-[11px] uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 shadow-lg">
+    <a href="https://wa.me/918511129570?text=Hello%20Amrah%20Resort,%20I%20am%20inquiring%20about%20stay%20and%20rafting%20packages." target="_blank" class="flex-1 py-3.5 rounded-xl btn-gold-shimmer text-forest-950 font-cinzel font-black text-[11px] uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 shadow-lg">
       <svg class="w-4 h-4 fill-forest-950" viewBox="0 0 24 24">
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
       </svg>
@@ -1688,7 +1755,7 @@
       
       <span class="font-cinzel text-[10px] text-gold-400 font-bold uppercase tracking-[0.25em] block mb-1">AMRAH RESORT B2B CONCIERGE</span>
       <h3 class="font-cormorant font-bold text-2xl sm:text-3xl text-white">Corporate Offsite & Group Quote</h3>
-      <p class="text-silk-300 text-xs mt-1 mb-5 leading-relaxed">
+      <p class="text-silk-300 text-xs mt-1 mb-5 leading-relaxed font-outfit">
         Get customized group tariff, private DJ lawn reservation, and adventure itinerary within minutes.
       </p>
 
@@ -1719,14 +1786,14 @@
           </select>
         </div>
 
-        <button type="submit" class="w-full py-3.5 mt-2 rounded-xl gold-gradient-bg text-forest-950 font-cinzel font-black text-xs uppercase tracking-widest shadow-xl hover:brightness-110 active:scale-95 transition-all cursor-pointer">
+        <button type="submit" class="w-full py-3.5 mt-2 rounded-xl btn-gold-shimmer text-forest-950 font-cinzel font-black text-xs uppercase tracking-widest shadow-xl hover:brightness-110 active:scale-95 transition-all cursor-pointer">
           Generate Instant WhatsApp Proposal
         </button>
       </form>
     </div>
   </div>
 
-  <!-- ================= MASTER INTERACTIVE JAVASCRIPT LOGIC ================= -->
+  <!-- ================= MASTER INTERACTIVE JAVASCRIPT & ANIMATION ENGINE ================= -->
   <script>
     // Ambient Audio API State
     let audioCtx = null;
@@ -1744,7 +1811,7 @@
     let currentHeroIdx = 0;
 
     window.addEventListener('DOMContentLoaded', () => {
-      // Set default checkin & checkout
+      // 1. Set default checkin & checkout
       const today = new Date();
       const tomorrow = new Date(today);
       tomorrow.setDate(tomorrow.getDate() + 1);
@@ -1755,7 +1822,7 @@
       if (outInput) outInput.value = tomorrow.toISOString().split('T')[0];
       calculateLiveQuote();
 
-      // Cycle hero images every 6 seconds
+      // 2. Cycle hero images every 6 seconds
       setInterval(() => {
         currentHeroIdx = (currentHeroIdx + 1) % heroImages.length;
         const heroEl = document.getElementById('heroBgImage');
@@ -1764,10 +1831,57 @@
           setTimeout(() => {
             heroEl.src = heroImages[currentHeroIdx];
             heroEl.style.opacity = '1';
-          }, 350);
+          }, 400);
         }
       }, 6000);
+
+      // 3. Scroll Reveal IntersectionObserver
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            // If item has a counter, trigger animated counter
+            const counterEl = entry.target.querySelector('[data-counter]');
+            if (counterEl) {
+              animateCounter(counterEl);
+            }
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.reveal-item').forEach(el => {
+        revealObserver.observe(el);
+      });
+
+      // 4. Animate hero counter numbers on load
+      document.querySelectorAll('#home [data-counter]').forEach(el => {
+        animateCounter(el);
+      });
     });
+
+    // Animated Numbers Counter
+    function animateCounter(el) {
+      if (el.dataset.animated) return;
+      el.dataset.animated = 'true';
+      const target = parseFloat(el.dataset.counter);
+      const suffix = el.dataset.suffix || '';
+      const isFloat = el.dataset.float === 'true';
+      const duration = 1600;
+      const startTime = performance.now();
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const current = target * ease;
+        el.innerText = `${isFloat ? current.toFixed(1) : Math.round(current).toLocaleString('en-IN')}${suffix}`;
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+      requestAnimationFrame(update);
+    }
 
     // Mobile Menu Toggle
     function toggleMobileMenu() {
@@ -1948,7 +2062,6 @@
           const AudioContext = window.AudioContext || window.webkitAudioContext;
           audioCtx = new AudioContext();
 
-          // Generate pink/brown noise filtered to sound like a babbling mountain river
           const bufferSize = audioCtx.sampleRate * 2;
           const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
           const output = noiseBuffer.getChannelData(0);
@@ -1970,7 +2083,6 @@
           whiteNoise.buffer = noiseBuffer;
           whiteNoise.loop = true;
 
-          // Gentle low-pass filter (mountain water frequency)
           const filter = audioCtx.createBiquadFilter();
           filter.type = 'lowpass';
           filter.frequency.value = 420;
