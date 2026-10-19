@@ -65,6 +65,7 @@
       color: #2C251E;
       background-color: #F8F4EE;
       -webkit-font-smoothing: antialiased;
+      touch-action: manipulation;
     }
 
     /* Editorial Serif Selection */
@@ -101,6 +102,11 @@
       box-shadow: 0 20px 40px -15px rgba(212, 163, 70, 0.2), 0 0 25px rgba(38, 115, 87, 0.15);
     }
 
+    /* Safe Area Padding for Modern Mobile Devices (iPhones notch & home indicator) */
+    .safe-bottom-padding {
+      padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+    }
+
     /* Modal Animation */
     .fade-enter {
       animation: fadeIn 0.25s ease-out forwards;
@@ -109,9 +115,14 @@
       from { opacity: 0; transform: scale(0.97); }
       to { opacity: 1; transform: scale(1); }
     }
+
+    /* Timeline pulse indicator */
+    .timeline-dot {
+      box-shadow: 0 0 0 4px rgba(212, 163, 70, 0.25);
+    }
   </style>
 </head>
-<body class="bg-silk-100 text-silk-800 antialiased selection:bg-gold-500 selection:text-forest-950 pb-20 lg:pb-0">
+<body class="bg-silk-100 text-silk-800 antialiased selection:bg-gold-500 selection:text-forest-950 safe-bottom-padding lg:pb-0">
 
   <!-- ================= 01. REGAL TOP STATUS & NATURE SOUNDSCAPE BAR ================= -->
   <aside aria-label="Announcement & Status Bar" class="bg-forest-950 text-white text-[11px] font-medium border-b border-forest-900 sticky top-0 z-50">
@@ -141,10 +152,10 @@
       </div>
 
       <!-- Right: Interactive Soundscape Toggle & Direct Contact -->
-      <div class="flex items-center gap-4 shrink-0">
+      <div class="flex items-center gap-3 sm:gap-4 shrink-0">
         
         <!-- Mountain River Audio Ambience Toggle (Synthesized Audio API) -->
-        <button id="natureSoundBtn" onclick="toggleNatureAmbience()" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-forest-900/90 border border-gold-500/40 text-gold-300 hover:text-white text-[10px] font-bold transition-all shadow-sm active:scale-95">
+        <button id="natureSoundBtn" onclick="toggleNatureAmbience()" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-forest-900/90 border border-gold-500/40 text-gold-300 hover:text-white text-[10px] font-bold transition-all shadow-sm active:scale-95 cursor-pointer">
           <span id="soundIcon">🔇</span>
           <span id="soundLabel" class="hidden xs:inline">River Ambience</span>
         </button>
@@ -167,7 +178,6 @@
       <!-- Brand Royal Insignia Logo -->
       <a href="#home" class="flex items-center gap-3.5 group shrink-0">
         <div class="w-12 h-12 rounded-full bg-gradient-to-br from-forest-900 via-forest-950 to-forest-900 border-2 border-gold-400/90 text-gold-400 flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:border-gold-300 transition-all duration-300">
-          <!-- Royal Crest SVG -->
           <svg class="w-6 h-6 fill-current text-gold-400" viewBox="0 0 24 24">
             <path d="M12 2L1 21h22L12 2zm0 3.8l7.2 13.2H4.8L12 5.8zm0 4.2l-4 7h8l-4-7z"/>
           </svg>
@@ -183,21 +193,22 @@
       </a>
 
       <!-- Desktop Luxury Editorial Menu -->
-      <nav class="hidden xl:flex items-center gap-7 text-[11px] font-cinzel font-semibold tracking-[0.2em] uppercase text-silk-200">
+      <nav class="hidden xl:flex items-center gap-6 text-[11px] font-cinzel font-semibold tracking-[0.2em] uppercase text-silk-200">
         <a href="#accommodations" class="hover:text-gold-400 transition-colors">Suites & Tents</a>
         <a href="#experiences" class="hover:text-gold-400 transition-colors">Experiences</a>
         <a href="#packages" class="hover:text-gold-400 transition-colors">Rafting Deals</a>
+        <a href="#itinerary" class="hover:text-gold-400 transition-colors">Weekend Plan</a>
         <a href="#dining" class="hover:text-gold-400 transition-colors">Dining</a>
+        <a href="#comparison" class="hover:text-gold-400 transition-colors">Why Book Direct</a>
         <a href="#gallery" class="hover:text-gold-400 transition-colors">Gallery</a>
         <a href="#route" class="hover:text-gold-400 transition-colors">Route Guide</a>
-        <a href="#reviews" class="hover:text-gold-400 transition-colors">Reviews</a>
       </nav>
 
       <!-- Right Action Controls -->
       <div class="flex items-center gap-3">
         
         <!-- Corporate / Group Quote Modal Trigger -->
-        <button onclick="openGroupModal()" class="hidden md:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-gold-400/40 text-gold-300 hover:bg-gold-500/10 text-[10.5px] font-cinzel font-bold tracking-wider uppercase transition-all">
+        <button onclick="openGroupModal()" class="hidden md:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-gold-400/40 text-gold-300 hover:bg-gold-500/10 text-[10.5px] font-cinzel font-bold tracking-wider uppercase transition-all cursor-pointer">
           <span>Corporate & Groups</span>
         </button>
 
@@ -211,7 +222,7 @@
         </a>
 
         <!-- Mobile Drawer Hamburger -->
-        <button onclick="toggleMobileMenu()" class="xl:hidden w-10 h-10 rounded-xl bg-forest-900 border border-gold-500/30 flex items-center justify-center text-gold-400 hover:text-white" aria-label="Toggle Navigation">
+        <button onclick="toggleMobileMenu()" class="xl:hidden w-10 h-10 rounded-xl bg-forest-900 border border-gold-500/30 flex items-center justify-center text-gold-400 hover:text-white cursor-pointer" aria-label="Toggle Navigation">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -224,15 +235,17 @@
 
     <!-- Mobile Navigation Drawer -->
     <div id="mobileMenu" class="hidden xl:hidden border-t border-forest-900 bg-forest-950/98 px-6 py-6 space-y-4 text-xs font-cinzel font-bold uppercase tracking-widest text-silk-200 shadow-2xl">
-      <a href="#accommodations" onclick="toggleMobileMenu()" class="block py-2 border-b border-forest-900 hover:text-gold-400">Luxury Cottages & Glamping Tents</a>
-      <a href="#experiences" onclick="toggleMobileMenu()" class="block py-2 border-b border-forest-900 hover:text-gold-400">Resort Pool, Bonfire & Rafting</a>
-      <a href="#packages" onclick="toggleMobileMenu()" class="block py-2 border-b border-forest-900 hover:text-gold-400">All-Inclusive Weekend Packages</a>
-      <a href="#dining" onclick="toggleMobileMenu()" class="block py-2 border-b border-forest-900 hover:text-gold-400">Multi-Cuisine Dining & Barbecue</a>
-      <a href="#gallery" onclick="toggleMobileMenu()" class="block py-2 border-b border-forest-900 hover:text-gold-400">Photo & Atmosphere Gallery</a>
-      <a href="#route" onclick="toggleMobileMenu()" class="block py-2 border-b border-forest-900 hover:text-gold-400">How to Reach (Interactive Map)</a>
-      <a href="#reviews" onclick="toggleMobileMenu()" class="block py-2 hover:text-gold-400">4.8★ Google Ratings (450+ Reviews)</a>
+      <a href="#accommodations" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900 hover:text-gold-400">Luxury Cottages & Glamping Tents</a>
+      <a href="#experiences" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900 hover:text-gold-400">Resort Pool, Bonfire & Rafting</a>
+      <a href="#packages" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900 hover:text-gold-400">All-Inclusive Weekend Packages</a>
+      <a href="#itinerary" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900 hover:text-gold-400">Weekend Adventure Itinerary (1N/2D)</a>
+      <a href="#dining" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900 hover:text-gold-400">Multi-Cuisine Dining & Barbecue</a>
+      <a href="#comparison" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900 hover:text-gold-400">Direct Booking vs MakeMyTrip</a>
+      <a href="#gallery" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900 hover:text-gold-400">Photo & Atmosphere Gallery</a>
+      <a href="#route" onclick="toggleMobileMenu()" class="block py-2.5 border-b border-forest-900 hover:text-gold-400">How to Reach (Interactive Map)</a>
+      <a href="#reviews" onclick="toggleMobileMenu()" class="block py-2.5 hover:text-gold-400">4.8★ Google Ratings (450+ Reviews)</a>
       <div class="pt-2">
-        <button onclick="openGroupModal(); toggleMobileMenu();" class="w-full py-2.5 rounded-xl border border-gold-400 text-gold-300 text-center font-bold">
+        <button onclick="openGroupModal(); toggleMobileMenu();" class="w-full py-3 rounded-xl border border-gold-400 text-gold-300 text-center font-bold">
           Group & Corporate Offsite Inquiry
         </button>
       </div>
@@ -240,12 +253,11 @@
   </header>
 
   <!-- ================= 03. GRAND HERO BANNER WITH AMBIENT CAROUSEL & VIP BOOKING ENGINE ================= -->
-  <section id="home" class="relative bg-forest-950 text-white min-h-[90vh] flex items-center py-12 lg:py-20 overflow-hidden">
+  <section id="home" class="relative bg-forest-950 text-white min-h-[92vh] flex items-center py-12 lg:py-20 overflow-hidden">
     
     <!-- Hero Background Image Carousel with Vignette Overlay -->
     <div class="absolute inset-0 z-0">
       <img id="heroBgImage" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2000&q=85" alt="Amrah Luxury Resort Mohan Chatti" class="w-full h-full object-cover transition-opacity duration-1000 brightness-[0.35]">
-      <!-- Deep Forest Gradient Vignette -->
       <div class="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/60 to-forest-950/80"></div>
       <div class="absolute inset-0 bg-[radial-gradient(#D4A346_0.8px,transparent_0.8px)] [background-size:28px_28px] opacity-10"></div>
     </div>
@@ -312,7 +324,7 @@
 
         </div>
 
-        <!-- Right Hero: Interactive VIP Availability & Dynamic Cost Calculator -->
+        <!-- Right Hero: Interactive VIP Availability, Cost Calculator & Promo Code Engine -->
         <div id="bookingEngine" class="lg:col-span-5 relative">
           
           <div class="bg-forest-900/90 backdrop-blur-xl rounded-3xl p-6 sm:p-7 text-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] border border-gold-500/40 relative">
@@ -331,7 +343,7 @@
             </div>
 
             <!-- Booking Engine Form -->
-            <form id="masterBookingForm" onsubmit="handleMasterBookingSubmit(event)" class="space-y-4 pt-4">
+            <form id="masterBookingForm" onsubmit="handleMasterBookingSubmit(event)" class="space-y-3.5 pt-4">
               
               <!-- Check-In & Check-Out Date Row -->
               <div class="grid grid-cols-2 gap-3">
@@ -379,12 +391,27 @@
                 </div>
               </div>
 
+              <!-- Direct Promo Code Feature -->
+              <div>
+                <label class="block font-cinzel text-[10px] font-bold uppercase tracking-widest text-gold-200 mb-1">Direct Promo Code</label>
+                <div class="flex gap-2">
+                  <input type="text" id="promoCodeInput" placeholder="Enter AMRAH10" value="AMRAH10" class="flex-1 bg-forest-950/80 border border-gold-500/30 rounded-xl px-3 py-2 text-xs font-semibold text-white uppercase focus:outline-none focus:border-gold-400">
+                  <button type="button" onclick="applyPromoCode()" class="px-4 py-2 rounded-xl bg-forest-950 border border-gold-400 text-gold-300 font-cinzel text-[10.5px] font-bold uppercase tracking-wider hover:bg-gold-500 hover:text-forest-950 transition-all cursor-pointer">
+                    Apply
+                  </button>
+                </div>
+                <p id="promoMessage" class="text-[10px] text-emerald-300 font-semibold mt-1">✓ Promo AMRAH10 active: 10% Extra Direct Discount Applied!</p>
+              </div>
+
               <!-- Live Estimated Cost Pill -->
-              <div class="p-4 bg-forest-950/90 border border-gold-500/30 rounded-2xl flex items-center justify-between">
+              <div class="p-3.5 bg-forest-950/90 border border-gold-500/30 rounded-2xl flex items-center justify-between">
                 <div>
                   <span class="font-cinzel text-[9px] text-gold-300 font-bold uppercase block tracking-wider">Direct Guaranteed Rate</span>
-                  <span id="liveCostDisplay" class="font-cormorant font-bold text-2xl text-gold-300">₹3,499</span>
-                  <span class="text-[9.5px] text-silk-300 block">Includes taxes & pool access</span>
+                  <div class="flex items-baseline gap-2">
+                    <span id="liveCostDisplay" class="font-cormorant font-bold text-2xl text-gold-300">₹3,149</span>
+                    <span id="originalCostDisplay" class="text-xs line-through text-silk-700 font-medium">₹3,499</span>
+                  </div>
+                  <span class="text-[9.5px] text-emerald-400 block font-semibold">Taxes, Pool & Bonfire Included</span>
                 </div>
                 <div class="text-right text-[10px] text-emerald-300 font-semibold space-y-0.5">
                   <div>✓ Free Hilltop Pool</div>
@@ -456,7 +483,7 @@
     </div>
   </section>
 
-  <!-- ================= 05. ACCOMMODATIONS & LUXURY SUITES (WITH INTERACTIVE MODAL) ================= -->
+  <!-- ================= 05. ACCOMMODATIONS & LUXURY SUITES ================= -->
   <section id="accommodations" class="py-20 bg-silk-50 border-b border-silk-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -751,7 +778,7 @@
               </li>
             </ul>
           </div>
-          <button onclick="openGroupModal()" class="mt-8 w-full py-3.5 rounded-full bg-forest-950 border border-gold-400/50 hover:bg-gold-500 hover:text-forest-950 text-gold-300 font-cinzel font-bold text-xs uppercase tracking-widest text-center block transition-all shadow-md">
+          <button onclick="openGroupModal()" class="mt-8 w-full py-3.5 rounded-full bg-forest-950 border border-gold-400/50 hover:bg-gold-500 hover:text-forest-950 text-gold-300 font-cinzel font-bold text-xs uppercase tracking-widest text-center block transition-all shadow-md cursor-pointer">
             Request Corporate Proposal
           </button>
         </div>
@@ -761,8 +788,228 @@
     </div>
   </section>
 
-  <!-- ================= 07. HIMALAYAN EXPERIENCES (SWIMMING POOL, RAFTING, BUNGEE) ================= -->
-  <section id="experiences" class="py-20 bg-silk-100 border-b border-silk-200">
+  <!-- ================= 07. INTERACTIVE WEEKEND ITINERARY (1 NIGHT / 2 DAYS) ================= -->
+  <section id="itinerary" class="py-20 bg-silk-100 border-b border-silk-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="font-cinzel text-xs font-bold tracking-[0.3em] uppercase text-forest-700 block mb-2">
+          EFFORTLESS TRIP PLANNING
+        </span>
+        <h2 class="font-cormorant font-bold text-4xl sm:text-5xl text-forest-950">
+          How Your 2-Day Adventure Unfolds
+        </h2>
+        <p class="font-signature text-3xl text-gold-600 mt-1">
+          A seamless blend of high adrenaline and deep mountain relaxation.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        
+        <!-- Day 1 Card -->
+        <div class="bg-white rounded-3xl p-7 border border-silk-200 shadow-xl space-y-6">
+          <div class="flex items-center justify-between pb-4 border-b border-silk-100">
+            <div>
+              <span class="font-cinzel text-xs font-bold text-gold-600 tracking-widest uppercase">DAY 01</span>
+              <h3 class="font-cormorant font-bold text-2xl text-forest-950">Arrival, Hilltop Pool & Starlit DJ Bonfire</h3>
+            </div>
+            <span class="w-10 h-10 rounded-2xl bg-forest-900 text-gold-300 flex items-center justify-center font-bold text-sm">01</span>
+          </div>
+
+          <div class="space-y-4">
+            <div class="flex gap-4">
+              <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">12:00 PM</span>
+              <div>
+                <h4 class="font-bold text-sm text-forest-950">Traditional Himalayan Welcome & Check-in</h4>
+                <p class="text-silk-700 text-xs">Sip authentic Garhwali Buransh (Rhododendron) welcome drink as you settle into your luxury cottage or glamping tent.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">01:30 PM</span>
+              <div>
+                <h4 class="font-bold text-sm text-forest-950">Grand Valley Lunch Buffet</h4>
+                <p class="text-silk-700 text-xs">Fresh hot lunch buffet served at The Pine & Pebble dining hall overlooking the flowing river.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">03:30 PM</span>
+              <div>
+                <h4 class="font-bold text-sm text-forest-950">Hilltop Swimming Pool & Sun Loungers</h4>
+                <p class="text-silk-700 text-xs">Dive into the cool mountain-view pool, play water volleyball, or walk down to Mohan Chatti river stream.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">06:00 PM</span>
+              <div>
+                <h4 class="font-bold text-sm text-forest-950">Sunset Hi-Tea with Hot Snacks</h4>
+                <p class="text-silk-700 text-xs">Ginger tea, coffee, and crispy vegetable pakoras as the sun dips behind the Garhwal peaks.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">08:00 PM</span>
+              <div>
+                <h4 class="font-bold text-sm text-forest-950">Crackling Campfire, Live Barbecue & DJ Night</h4>
+                <p class="text-silk-700 text-xs">Live tandoori tikka starters, acoustic beats, and high-energy music around the bonfire under crystal clear stars.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">09:30 PM</span>
+              <div>
+                <h4 class="font-bold text-sm text-forest-950">Royal Dinner Feast & Restful Slumber</h4>
+                <p class="text-silk-700 text-xs">Multi-course buffet dinner (Veg & Non-Veg) followed by peaceful sleep in sound-insulated cottages.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 2 Card -->
+        <div class="bg-white rounded-3xl p-7 border border-silk-200 shadow-xl space-y-6">
+          <div class="flex items-center justify-between pb-4 border-b border-silk-100">
+            <div>
+              <span class="font-cinzel text-xs font-bold text-gold-600 tracking-widest uppercase">DAY 02</span>
+              <h3 class="font-cormorant font-bold text-2xl text-forest-950">16 KM Ganga Rafting & Cliff Jump</h3>
+            </div>
+            <span class="w-10 h-10 rounded-2xl bg-forest-900 text-gold-300 flex items-center justify-center font-bold text-sm">02</span>
+          </div>
+
+          <div class="space-y-4">
+            <div class="flex gap-4">
+              <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">07:30 AM</span>
+              <div>
+                <h4 class="font-bold text-sm text-forest-950">Mountain River Morning Walk / Bird Watching</h4>
+                <p class="text-silk-700 text-xs">Wake up to clean mountain breeze and stroll along the Mohan Chatti pebble banks.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">08:30 AM</span>
+              <div>
+                <h4 class="font-bold text-sm text-forest-950">Hearty Buffet Breakfast</h4>
+                <p class="text-silk-700 text-xs">Hot stuffed parathas, poori bhaji, eggs to order, toast, poha, and masala tea to fuel your adventure.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">09:45 AM</span>
+              <div>
+                <h4 class="font-bold text-sm text-forest-950">Transfer to Shivpuri Rafting Launch Point</h4>
+                <p class="text-silk-700 text-xs">Resort vehicle transfer to Shivpuri. Professional safety briefing, life jackets, helmets, and certified river guides.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">10:30 AM</span>
+              <div>
+                <h4 class="font-bold text-sm text-forest-950">16 KM White Water Ganga Rafting + Cliff Jump</h4>
+                <p class="text-silk-700 text-xs">Ride exhilarating Grade III & IV rapids (Roller Coaster, Golf Course, Clubhouse) and jump off the famous Magpie rock cliff.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <span class="font-cinzel text-xs font-bold text-gold-600 shrink-0 w-16 pt-0.5">01:00 PM</span>
+              <div>
+                <h4 class="font-bold text-sm text-forest-950">Finish at NIM Beach Rishikesh & Farewell</h4>
+                <p class="text-silk-700 text-xs">Conclude your exhilarating rafting session with epic action photos and depart with lifelong memories.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-forest-50 border border-forest-100 flex items-center justify-between">
+            <span class="text-xs font-bold text-forest-900">Want a 2 Nights / 3 Days Custom Plan?</span>
+            <a href="https://wa.me/918511129570?text=Please%20share%20a%202%20Nights%203%20Days%20itinerary%20for%20Amrah%20Resorts." target="_blank" class="px-4 py-2 rounded-xl gold-gradient-bg text-forest-950 font-cinzel text-[10.5px] font-bold uppercase tracking-wider">
+              Get Itinerary
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 08. WHY BOOK DIRECT VS OTAs (MAKEMYTRIP / GOIBIBO) ================= -->
+  <section id="comparison" class="py-20 bg-forest-950 text-white relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="font-cinzel text-xs font-bold tracking-[0.3em] uppercase text-gold-400 block mb-2">
+          TRANSPARENT VALUE GUARANTEE
+        </span>
+        <h2 class="font-cormorant font-bold text-4xl sm:text-5xl text-white">
+          Why Book Directly on Our Official Site?
+        </h2>
+        <p class="text-silk-300 text-xs sm:text-sm mt-2">
+          Booking portals like MakeMyTrip and Goibibo charge 20% commission markups. When you book directly with Amrah Resort, you get the lowest price and VIP perks.
+        </p>
+      </div>
+
+      <!-- Comparison Matrix Table -->
+      <div class="bg-forest-900/90 rounded-3xl border border-gold-500/30 overflow-hidden shadow-2xl">
+        <div class="grid grid-cols-12 bg-forest-950 p-4 sm:p-5 border-b border-gold-500/20 text-xs font-cinzel font-bold uppercase tracking-wider">
+          <div class="col-span-6 sm:col-span-6 text-silk-300">Feature / Benefit</div>
+          <div class="col-span-3 sm:col-span-3 text-center text-gold-300">Direct on Website</div>
+          <div class="col-span-3 sm:col-span-3 text-center text-silk-400">MakeMyTrip / Goibibo</div>
+        </div>
+
+        <div class="divide-y divide-forest-800 text-xs sm:text-sm">
+          <div class="grid grid-cols-12 p-4 sm:p-4.5 items-center">
+            <div class="col-span-6 font-semibold text-white">Guaranteed Lowest Room Rates</div>
+            <div class="col-span-3 text-center text-emerald-400 font-bold">✓ Best Price (0% Fee)</div>
+            <div class="col-span-3 text-center text-rose-400 font-medium">✕ +20% OTA Markup</div>
+          </div>
+
+          <div class="grid grid-cols-12 p-4 sm:p-4.5 items-center bg-forest-950/40">
+            <div class="col-span-6 font-semibold text-white">Hilltop Swimming Pool Access</div>
+            <div class="col-span-3 text-center text-emerald-400 font-bold">✓ 100% Free</div>
+            <div class="col-span-3 text-center text-silk-400">Limited / Extra Charge</div>
+          </div>
+
+          <div class="grid grid-cols-12 p-4 sm:p-4.5 items-center">
+            <div class="col-span-6 font-semibold text-white">Ganga River Rafting Pickup Assistance</div>
+            <div class="col-span-3 text-center text-emerald-400 font-bold">✓ Coordinated Direct</div>
+            <div class="col-span-3 text-center text-rose-400 font-medium">✕ Not Included</div>
+          </div>
+
+          <div class="grid grid-cols-12 p-4 sm:p-4.5 items-center bg-forest-950/40">
+            <div class="col-span-6 font-semibold text-white">Early Check-in Priority</div>
+            <div class="col-span-3 text-center text-emerald-400 font-bold">✓ Priority VIP Status</div>
+            <div class="col-span-3 text-center text-silk-400 font-medium">Standard Strict 12 PM</div>
+          </div>
+
+          <div class="grid grid-cols-12 p-4 sm:p-4.5 items-center">
+            <div class="col-span-6 font-semibold text-white">Direct WhatsApp Concierge & Support</div>
+            <div class="col-span-3 text-center text-emerald-400 font-bold">✓ Instant 24/7 Access</div>
+            <div class="col-span-3 text-center text-rose-400 font-medium">✕ Call Center Queues</div>
+          </div>
+
+          <div class="grid grid-cols-12 p-4 sm:p-4.5 items-center bg-forest-950/40">
+            <div class="col-span-6 font-semibold text-white">Evening Bonfire Barbecue Starters</div>
+            <div class="col-span-3 text-center text-emerald-400 font-bold">✓ Included in Packages</div>
+            <div class="col-span-3 text-center text-silk-400">A-la-carte Bill Extra</div>
+          </div>
+        </div>
+
+        <div class="p-6 bg-forest-950 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-gold-500/20">
+          <div>
+            <span class="font-cormorant font-bold text-xl text-gold-300 block">Lock in Your Guaranteed Direct Rate</span>
+            <span class="text-xs text-silk-300">No advance payment required for initial inquiry.</span>
+          </div>
+          <a href="#bookingEngine" class="px-7 py-3.5 rounded-full gold-gradient-bg text-forest-950 font-cinzel font-bold text-xs uppercase tracking-wider hover:brightness-110 active:scale-95 transition-all">
+            Check Direct Availability
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 09. HIMALAYAN EXPERIENCES (SWIMMING POOL, RAFTING, BUNGEE) ================= -->
+  <section id="experiences" class="py-20 bg-silk-50 border-b border-silk-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-14">
@@ -850,7 +1097,99 @@
     </div>
   </section>
 
-  <!-- ================= 08. GASTRONOMY & BUFFET DINING SHOWCASE ================= -->
+  <!-- ================= 10. COMPREHENSIVE RESORT FACILITIES (12 ICONS) ================= -->
+  <section class="py-16 bg-white border-b border-silk-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="font-cinzel text-xs font-bold tracking-[0.3em] uppercase text-forest-700 block mb-2">
+          COMFORT & ASSURANCE
+        </span>
+        <h2 class="font-cormorant font-bold text-3xl sm:text-4xl text-forest-950">
+          World-Class Resort Infrastructure
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+        
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+          <span class="text-2xl block mb-1">⚡</span>
+          <h4 class="font-bold text-xs text-forest-950">100% Power Backup</h4>
+          <p class="text-[10px] text-silk-700 mt-0.5">Heavy DG Genset 24/7</p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+          <span class="text-2xl block mb-1">🚿</span>
+          <h4 class="font-bold text-xs text-forest-950">Hot Water Geysers</h4>
+          <p class="text-[10px] text-silk-700 mt-0.5">24 Hours running hot water</p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+          <span class="text-2xl block mb-1">📶</span>
+          <h4 class="font-bold text-xs text-forest-950">High-Speed Wi-Fi</h4>
+          <p class="text-[10px] text-silk-700 mt-0.5">+ 5G Jio/Airtel Signal</p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+          <span class="text-2xl block mb-1">🚗</span>
+          <h4 class="font-bold text-xs text-forest-950">Free Safe Parking</h4>
+          <p class="text-[10px] text-silk-700 mt-0.5">Gated for Cars & Buses</p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+          <span class="text-2xl block mb-1">🥗</span>
+          <h4 class="font-bold text-xs text-forest-950">Veg & Non-Veg</h4>
+          <p class="text-[10px] text-silk-700 mt-0.5">Separate Kitchen Areas</p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+          <span class="text-2xl block mb-1">🐾</span>
+          <h4 class="font-bold text-xs text-forest-950">Pet Friendly</h4>
+          <p class="text-[10px] text-silk-700 mt-0.5">Open Lawn & Grounds</p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+          <span class="text-2xl block mb-1">🏸</span>
+          <h4 class="font-bold text-xs text-forest-950">Outdoor Games</h4>
+          <p class="text-[10px] text-silk-700 mt-0.5">Volleyball, Badminton</p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+          <span class="text-2xl block mb-1">🩺</span>
+          <h4 class="font-bold text-xs text-forest-950">Doctor on Call</h4>
+          <p class="text-[10px] text-silk-700 mt-0.5">First Aid & Emergency</p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+          <span class="text-2xl block mb-1">🧳</span>
+          <h4 class="font-bold text-xs text-forest-950">Luggage Storage</h4>
+          <p class="text-[10px] text-silk-700 mt-0.5">Pre & Post Check-in</p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+          <span class="text-2xl block mb-1">📹</span>
+          <h4 class="font-bold text-xs text-forest-950">CCTV Security</h4>
+          <p class="text-[10px] text-silk-700 mt-0.5">24/7 Monitored Campus</p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+          <span class="text-2xl block mb-1">🚰</span>
+          <h4 class="font-bold text-xs text-forest-950">RO Filtered Water</h4>
+          <p class="text-[10px] text-silk-700 mt-0.5">Pure Mountain Springs</p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-silk-50 border border-silk-200">
+          <span class="text-2xl block mb-1">👔</span>
+          <h4 class="font-bold text-xs text-forest-950">Daily Housekeeping</h4>
+          <p class="text-[10px] text-silk-700 mt-0.5">Sanitized Fresh Linen</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 11. GASTRONOMY & BUFFET DINING SHOWCASE ================= -->
   <section id="dining" class="py-20 bg-forest-950 text-white relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -918,7 +1257,7 @@
     </div>
   </section>
 
-  <!-- ================= 09. FILTERABLE PHOTO GALLERY WITH LIGHTBOX ================= -->
+  <!-- ================= 12. FILTERABLE PHOTO GALLERY WITH LIGHTBOX ================= -->
   <section id="gallery" class="py-20 bg-silk-50 border-b border-silk-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -936,11 +1275,11 @@
 
       <!-- Gallery Filter Tabs -->
       <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
-        <button onclick="filterGallery('all')" class="gallery-tab px-5 py-2 rounded-full gold-gradient-bg text-forest-950 font-cinzel text-[11px] font-bold uppercase tracking-wider transition-all" data-filter="all">All Photos</button>
-        <button onclick="filterGallery('cottages')" class="gallery-tab px-5 py-2 rounded-full bg-white border border-silk-200 text-silk-700 hover:text-forest-950 font-cinzel text-[11px] font-bold uppercase tracking-wider transition-all" data-filter="cottages">Suites & Cottages</button>
-        <button onclick="filterGallery('pool')" class="gallery-tab px-5 py-2 rounded-full bg-white border border-silk-200 text-silk-700 hover:text-forest-950 font-cinzel text-[11px] font-bold uppercase tracking-wider transition-all" data-filter="pool">Hilltop Pool</button>
-        <button onclick="filterGallery('rafting')" class="gallery-tab px-5 py-2 rounded-full bg-white border border-silk-200 text-silk-700 hover:text-forest-950 font-cinzel text-[11px] font-bold uppercase tracking-wider transition-all" data-filter="rafting">Rafting & Bungee</button>
-        <button onclick="filterGallery('nightlife')" class="gallery-tab px-5 py-2 rounded-full bg-white border border-silk-200 text-silk-700 hover:text-forest-950 font-cinzel text-[11px] font-bold uppercase tracking-wider transition-all" data-filter="nightlife">Bonfire & Parties</button>
+        <button onclick="filterGallery('all')" class="gallery-tab px-5 py-2 rounded-full gold-gradient-bg text-forest-950 font-cinzel text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer" data-filter="all">All Photos</button>
+        <button onclick="filterGallery('cottages')" class="gallery-tab px-5 py-2 rounded-full bg-white border border-silk-200 text-silk-700 hover:text-forest-950 font-cinzel text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer" data-filter="cottages">Suites & Cottages</button>
+        <button onclick="filterGallery('pool')" class="gallery-tab px-5 py-2 rounded-full bg-white border border-silk-200 text-silk-700 hover:text-forest-950 font-cinzel text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer" data-filter="pool">Hilltop Pool</button>
+        <button onclick="filterGallery('rafting')" class="gallery-tab px-5 py-2 rounded-full bg-white border border-silk-200 text-silk-700 hover:text-forest-950 font-cinzel text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer" data-filter="rafting">Rafting & Bungee</button>
+        <button onclick="filterGallery('nightlife')" class="gallery-tab px-5 py-2 rounded-full bg-white border border-silk-200 text-silk-700 hover:text-forest-950 font-cinzel text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer" data-filter="nightlife">Bonfire & Parties</button>
       </div>
 
       <!-- Gallery Grid -->
@@ -991,7 +1330,7 @@
     </div>
   </section>
 
-  <!-- ================= 10. INTERACTIVE ROUTE & DISTANCE GUIDE (MOHAN CHATTI) ================= -->
+  <!-- ================= 13. INTERACTIVE ROUTE & DISTANCE GUIDE (MOHAN CHATTI) ================= -->
   <section id="route" class="py-20 bg-silk-100 border-b border-silk-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -1073,7 +1412,7 @@
     </div>
   </section>
 
-  <!-- ================= 11. GOOGLE VERIFIED GUEST REVIEWS (4.8 ★) ================= -->
+  <!-- ================= 14. GOOGLE VERIFIED GUEST REVIEWS (4.8 ★) ================= -->
   <section id="reviews" class="py-20 bg-silk-50 border-b border-silk-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -1151,7 +1490,7 @@
     </div>
   </section>
 
-  <!-- ================= 12. FREQUENTLY ASKED QUESTIONS (ACCORDION) ================= -->
+  <!-- ================= 15. FREQUENTLY ASKED QUESTIONS (ACCORDION) ================= -->
   <section class="py-20 bg-silk-100 border-b border-silk-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -1224,7 +1563,7 @@
     </div>
   </section>
 
-  <!-- ================= 13. GRAND FOOTER & OPERATIONAL DIRECTORY ================= -->
+  <!-- ================= 16. GRAND FOOTER & OPERATIONAL DIRECTORY ================= -->
   <footer class="bg-forest-950 text-white py-16 border-t border-gold-500/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -1274,7 +1613,7 @@
           <p class="text-silk-300 leading-relaxed">
             Planning a corporate team offsite, college reunion, or destination pre-wedding celebration?
           </p>
-          <button onclick="openGroupModal()" class="w-full py-3 rounded-full gold-gradient-bg text-forest-950 font-cinzel font-bold text-xs uppercase tracking-wider hover:brightness-110 transition-all">
+          <button onclick="openGroupModal()" class="w-full py-3 rounded-full gold-gradient-bg text-forest-950 font-cinzel font-bold text-xs uppercase tracking-wider hover:brightness-110 transition-all cursor-pointer">
             Get Custom Group Quote
           </button>
         </div>
@@ -1289,12 +1628,43 @@
     </div>
   </footer>
 
-  <!-- ================= 14. STICKY MOBILE CONCIERGE BAR ================= -->
-  <aside aria-label="Mobile Quick Action Bar" class="lg:hidden fixed bottom-0 inset-x-0 z-50 bg-forest-950/95 backdrop-blur-md border-t border-gold-500/30 p-2.5 flex items-center gap-2 shadow-2xl">
-    <a href="tel:+918511129570" class="flex-1 py-3 rounded-xl bg-forest-900 border border-gold-500/40 text-gold-300 font-cinzel font-bold text-[11px] uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 shadow-md">
+  <!-- ================= 17. FLOATING QUICK WHATSAPP CONCIERGE DRAWER ================= -->
+  <div class="fixed bottom-20 lg:bottom-6 right-4 sm:right-6 z-50">
+    <!-- Floating Concierge Menu (Hidden by default) -->
+    <div id="quickConciergeMenu" class="hidden mb-3 bg-forest-950/95 backdrop-blur-xl border border-gold-500/40 rounded-3xl p-4 w-64 shadow-2xl text-white space-y-2 fade-enter">
+      <div class="flex items-center justify-between pb-2 border-b border-forest-900">
+        <span class="font-cinzel text-[10px] font-bold text-gold-300 uppercase tracking-wider">Amrah Concierge Desk</span>
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      </div>
+      <a href="https://wa.me/918511129570?text=Hello%20Amrah%20Resorts,%20I%20want%20to%20check%20room%20availability." target="_blank" class="block p-2 rounded-xl bg-forest-900 hover:bg-gold-500 hover:text-forest-950 text-xs font-semibold transition-all">
+        🏕️ Check Room Availability
+      </a>
+      <a href="https://wa.me/918511129570?text=Please%20share%20details%20for%2016km%20Ganga%20Rafting%20&%20Bungee%20Jumping." target="_blank" class="block p-2 rounded-xl bg-forest-900 hover:bg-gold-500 hover:text-forest-950 text-xs font-semibold transition-all">
+        🚣 Rafting & Bungee Info
+      </a>
+      <a href="https://wa.me/918511129570?text=Please%20send%20the%20live%20Google%20Map%20location%20of%20Amrah%20Resort." target="_blank" class="block p-2 rounded-xl bg-forest-900 hover:bg-gold-500 hover:text-forest-950 text-xs font-semibold transition-all">
+        📍 Send Google Maps Pin
+      </a>
+      <a href="tel:+918511129570" class="block p-2 rounded-xl bg-emerald-700/80 hover:bg-emerald-600 text-white text-xs font-bold text-center transition-all">
+        📞 Call Manager Directly
+      </a>
+    </div>
+
+    <!-- Toggle Button -->
+    <button onclick="toggleQuickConcierge()" class="w-14 h-14 rounded-full gold-gradient-bg text-forest-950 flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all relative cursor-pointer" aria-label="Toggle Concierge Desk">
+      <svg class="w-7 h-7 fill-forest-950" viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+      </svg>
+      <span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-forest-950 animate-ping"></span>
+    </button>
+  </div>
+
+  <!-- ================= 18. STICKY MOBILE CONCIERGE BAR ================= -->
+  <aside aria-label="Mobile Quick Action Bar" class="lg:hidden fixed bottom-0 inset-x-0 z-50 bg-forest-950/98 backdrop-blur-md border-t border-gold-500/30 p-2.5 flex items-center gap-2 shadow-2xl">
+    <a href="tel:+918511129570" class="flex-1 py-3.5 rounded-xl bg-forest-900 border border-gold-500/40 text-gold-300 font-cinzel font-bold text-[11px] uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 shadow-md">
       <span>📞 Call Desk</span>
     </a>
-    <a href="https://wa.me/918511129570?text=Hello%20Amrah%20Resort,%20I%20am%20inquiring%20about%20stay%20and%20rafting%20packages." target="_blank" class="flex-1 py-3 rounded-xl gold-gradient-bg text-forest-950 font-cinzel font-black text-[11px] uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 shadow-lg">
+    <a href="https://wa.me/918511129570?text=Hello%20Amrah%20Resort,%20I%20am%20inquiring%20about%20stay%20and%20rafting%20packages." target="_blank" class="flex-1 py-3.5 rounded-xl gold-gradient-bg text-forest-950 font-cinzel font-black text-[11px] uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 shadow-lg">
       <svg class="w-4 h-4 fill-forest-950" viewBox="0 0 24 24">
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
       </svg>
@@ -1302,19 +1672,19 @@
     </a>
   </aside>
 
-  <!-- ================= 15. LIGHTBOX MODAL ================= -->
+  <!-- ================= 19. LIGHTBOX MODAL ================= -->
   <div id="lightboxModal" class="hidden fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4">
-    <button onclick="closeLightbox()" class="absolute top-5 right-5 text-white/80 hover:text-white text-3xl font-light">✕</button>
+    <button onclick="closeLightbox()" class="absolute top-5 right-5 text-white/80 hover:text-white text-3xl font-light cursor-pointer">✕</button>
     <div class="max-w-4xl max-h-[85vh] flex flex-col items-center">
       <img id="lightboxImg" src="" alt="Fullscreen View" class="max-h-[75vh] w-auto rounded-2xl object-contain border border-gold-500/30 shadow-2xl">
       <p id="lightboxCaption" class="font-cinzel text-xs text-gold-300 mt-4 tracking-widest uppercase font-bold text-center"></p>
     </div>
   </div>
 
-  <!-- ================= 16. CORPORATE & GROUP INQUIRY MODAL ================= -->
+  <!-- ================= 20. CORPORATE & GROUP INQUIRY MODAL ================= -->
   <div id="groupModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
     <div class="bg-forest-950 border border-gold-400/50 rounded-3xl p-6 sm:p-8 max-w-lg w-full text-white shadow-2xl relative fade-enter">
-      <button onclick="closeGroupModal()" class="absolute top-5 right-5 text-white/70 hover:text-white text-2xl">✕</button>
+      <button onclick="closeGroupModal()" class="absolute top-5 right-5 text-white/70 hover:text-white text-2xl cursor-pointer">✕</button>
       
       <span class="font-cinzel text-[10px] text-gold-400 font-bold uppercase tracking-[0.25em] block mb-1">AMRAH RESORT B2B CONCIERGE</span>
       <h3 class="font-cormorant font-bold text-2xl sm:text-3xl text-white">Corporate Offsite & Group Quote</h3>
@@ -1349,7 +1719,7 @@
           </select>
         </div>
 
-        <button type="submit" class="w-full py-3.5 mt-2 rounded-xl gold-gradient-bg text-forest-950 font-cinzel font-black text-xs uppercase tracking-widest shadow-xl hover:brightness-110 active:scale-95 transition-all">
+        <button type="submit" class="w-full py-3.5 mt-2 rounded-xl gold-gradient-bg text-forest-950 font-cinzel font-black text-xs uppercase tracking-widest shadow-xl hover:brightness-110 active:scale-95 transition-all cursor-pointer">
           Generate Instant WhatsApp Proposal
         </button>
       </form>
@@ -1362,6 +1732,7 @@
     let audioCtx = null;
     let isPlayingAmbience = false;
     let ambientGain = null;
+    let isPromoApplied = true;
 
     // Background Image Carousel list
     const heroImages = [
@@ -1404,12 +1775,42 @@
       if (m) m.classList.toggle('hidden');
     }
 
+    // Quick Concierge Drawer Toggle
+    function toggleQuickConcierge() {
+      const q = document.getElementById('quickConciergeMenu');
+      if (q) q.classList.toggle('hidden');
+    }
+
+    // Promo Code Engine
+    function applyPromoCode() {
+      const code = document.getElementById('promoCodeInput')?.value.trim().toUpperCase();
+      const msg = document.getElementById('promoMessage');
+      if (code === 'AMRAH10') {
+        isPromoApplied = true;
+        if (msg) {
+          msg.innerText = '✓ Promo AMRAH10 active: 10% Extra Direct Discount Applied!';
+          msg.className = 'text-[10px] text-emerald-300 font-semibold mt-1';
+        }
+      } else if (code.length > 0) {
+        isPromoApplied = false;
+        if (msg) {
+          msg.innerText = '✕ Invalid promo code. Try AMRAH10 for 10% off.';
+          msg.className = 'text-[10px] text-rose-300 font-semibold mt-1';
+        }
+      } else {
+        isPromoApplied = false;
+        if (msg) msg.innerText = '';
+      }
+      calculateLiveQuote();
+    }
+
     // Dynamic Live Quote Calculation
     function calculateLiveQuote() {
       const catSelect = document.getElementById('bookCategory');
       const guestsSelect = document.getElementById('bookGuests');
       const raftingSelect = document.getElementById('bookRafting');
       const display = document.getElementById('liveCostDisplay');
+      const originalDisplay = document.getElementById('originalCostDisplay');
 
       if (!catSelect || !display) return;
 
@@ -1418,13 +1819,26 @@
       const guests = parseInt(guestsSelect.value || '2');
       const raftingCost = parseInt(raftingSelect.value || '0');
 
-      let total = basePrice;
+      let originalTotal = basePrice;
       if (catSelect.value === 'tent' || catSelect.value === 'daypass') {
-        total = basePrice * guests;
+        originalTotal = basePrice * guests;
       }
-      total += raftingCost * guests;
+      originalTotal += raftingCost * guests;
 
-      display.innerText = `₹${total.toLocaleString('en-IN')}`;
+      let finalTotal = originalTotal;
+      if (isPromoApplied) {
+        finalTotal = Math.round(originalTotal * 0.90);
+        if (originalDisplay) {
+          originalDisplay.innerText = `₹${originalTotal.toLocaleString('en-IN')}`;
+          originalDisplay.style.display = 'inline';
+        }
+      } else {
+        if (originalDisplay) {
+          originalDisplay.style.display = 'none';
+        }
+      }
+
+      display.innerText = `₹${finalTotal.toLocaleString('en-IN')}`;
     }
 
     // Direct WhatsApp Submission
@@ -1438,15 +1852,17 @@
       const raftingSelect = document.getElementById('bookRafting');
       const raftingText = raftingSelect.options[raftingSelect.selectedIndex].text;
       const estPrice = document.getElementById('liveCostDisplay')?.innerText || '';
+      const promoStatus = isPromoApplied ? 'AMRAH10 (10% Direct Discount Applied)' : 'None';
 
       const msg = `*VIP Direct Booking Inquiry — Amrah Resort & Camp, Rishikesh*%0A%0A` +
         `• *Check-in Date:* ${inDate}%0A` +
         `• *Check-out Date:* ${outDate}%0A` +
         `• *Room Category:* ${catName}%0A` +
         `• *Guests:* ${guests} Adults%0A` +
-        `• *Ganga Rafting Selection:* ${raftingText}%0A` +
+        `• *Ganga Rafting:* ${raftingText}%0A` +
+        `• *Promo Code:* ${promoStatus}%0A` +
         `• *Direct Estimated Quote:* ${estPrice}%0A%0A` +
-        `Please check availability and share advance confirmation details.`;
+        `Please confirm room availability and payment details.`;
 
       const targetUrl = `https://wa.me/918511129570?text=${msg}`;
       window.open(targetUrl, '_blank');
@@ -1459,9 +1875,9 @@
 
       tabs.forEach(t => {
         if (t.getAttribute('data-filter') === category) {
-          t.className = 'gallery-tab px-5 py-2 rounded-full gold-gradient-bg text-forest-950 font-cinzel text-[11px] font-bold uppercase tracking-wider transition-all';
+          t.className = 'gallery-tab px-5 py-2 rounded-full gold-gradient-bg text-forest-950 font-cinzel text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer';
         } else {
-          t.className = 'gallery-tab px-5 py-2 rounded-full bg-white border border-silk-200 text-silk-700 hover:text-forest-950 font-cinzel text-[11px] font-bold uppercase tracking-wider transition-all';
+          t.className = 'gallery-tab px-5 py-2 rounded-full bg-white border border-silk-200 text-silk-700 hover:text-forest-950 font-cinzel text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer';
         }
       });
 
